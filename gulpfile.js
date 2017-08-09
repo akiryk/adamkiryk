@@ -15,6 +15,9 @@ const
   mqpacker = require('css-mqpacker'),
   cssnano = require('cssnano'),
   babel = require('gulp-babel'),
+  watch = require('gulp-watch'),
+  webserver = require('gulp-webserver'),
+  livereload = require('gulp-livereload');
 
 // development mode?
   devBuild = true,
@@ -53,7 +56,8 @@ gulp.task('js', function() {
 
   var jsbuild = gulp.src(folder.src + 'js/**/*')
     .pipe(deporder())
-    .pipe(concat('main.js'));
+    .pipe(concat('main.js'))
+    .pipe(livereload());
 
   if (!devBuild) {
     jsbuild = jsbuild
@@ -86,9 +90,11 @@ gulp.task('css', ['images'], function() {
       errLogToConsole: true
     }))
     .pipe(postcss(postCssOpts))
-    .pipe(gulp.dest(folder.build + 'css/'));
+    .pipe(gulp.dest(folder.build + 'css/'))
+    .pipe(livereload());
 
 });
+
 
 gulp.task('babel', function() {
  return gulp.src('docs/js/main.js')
@@ -96,8 +102,27 @@ gulp.task('babel', function() {
         presets: ['es2015']
     }))
     .pipe(gulp.dest('docs/js/'));
-})
-
-gulp.task('default', function() {
-  // place code for your default task here
 });
+
+// gulp.task('webserver', function() {
+//   connect.server({
+//     livereload: true,
+//     root: 'docs'
+//   });
+// });
+
+gulp.task('webserver', function() {
+  gulp.src('docs')
+    .pipe(webserver({
+      livereload: true,
+      open: true,
+    }));
+});
+
+gulp.task('watch', ['webserver'], function() {
+  livereload.listen();
+  gulp.watch('src/scss/**/*.scss', ['css']);
+  gulp.watch('src/js/**/*.js', ['js']);
+});
+
+gulp.task('default', ['html', 'css', 'js', 'webserver', 'livereload', 'stream']);

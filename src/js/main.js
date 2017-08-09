@@ -76,22 +76,11 @@ var path = document.createElementNS("http://www.w3.org/2000/svg", 'path'); //Cre
 path.setAttribute("d", `M ${p1.x} ${p1.y} ${p2.x} ${p2.y} ${p3.x} ${p3.y} ${p4.x} ${p4.y} Z`); //Set path's data
 path.style.stroke = "#000"; //Set stroke colour
 path.style.strokeWidth = "5px"; //Set stroke width
-path.style.fill = "red"
+path.setAttribute('class', 'path-shape')
 path.style.stroke = "none"
 svgContainer.append(path)
 
 var controller = new ScrollMagic.Controller();
-
-var fromTween = new TweenMax.from('#tween-item', 1, {
-  x: 500,
-  // opacity: 0.0,
-  // scale: 0.0,
-  // ease: Elastic.easeOut
-})
-
-var fadeInTween = new TweenMax.from('#pin-item', 2.5, {
-  opacity: 0.0
-})
 
 /**
  * One of possibly many scenes
@@ -107,18 +96,6 @@ var fadeInTween = new TweenMax.from('#pin-item', 2.5, {
  * @param {Number} triggerHook,
       0-1 percentage from top of page to bottom for where the start is placed once triggerElement enters page. 0=top of page; 1=bottom.
  */
-var tweenScene = new ScrollMagic.Scene({
-  triggerElement: '#tween-item',
-  duration: 800,
-  offset: 0,
-  reverse: true,
-  triggerHook: 0.85,
-})
-.setTween(fromTween)
-.addIndicators()
-.addTo(controller)
-
-let dir = 'DOWN';
 
 var shapeScene = new ScrollMagic.Scene({
   triggerElement: '#shapes'
@@ -129,41 +106,11 @@ let offset = shapeScene.scrollOffset();
 
 shapeScene.on("shift", function (event) {
   if (this.scrollOffset() > offset) {
-    setTargets(pathShape, shape2)
+    setTargets(pathShape, shape2);
   } else {
-    setTargets(pathShape, shape1)
+    setTargets(pathShape, shape1);
   }
-  offset = this.scrollOffset()
+  offset = this.scrollOffset();
   // update point coordinates and then re-render the path
   updatePath();
-})
-
-
-var fadingScene = new ScrollMagic.Scene({
-  triggerElement: '#pin-item',
-  triggerHook: 0.5,
-})
-.setTween(fadeInTween)
-.addTo(controller)
-
-var pinnedScene = new ScrollMagic.Scene({
-  triggerElement: '#pin-item',
-  offset: 0,
-  duration: 600,
-  reverse: true,
-  triggerHook: 0.1,
-})
-.setPin('#pin-item')
-.addIndicators()
-.addTo(controller)
-
-/**
- * setClassToggle ([element on which to attach class], [classes])
- * You could toggle classes on the body or on the trigger element.
- */
-var classedScene = new ScrollMagic.Scene({
-  triggerElement: '.snowflake',
-  // reverse: false,
-})
-.setClassToggle('.snowflake__target', 'special-snowflake')
-.addTo(controller)
+});
