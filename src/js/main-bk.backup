@@ -14,7 +14,7 @@
       0-1 percentage from top of page to bottom for where the start is placed once triggerElement enters page. 0=top of page; 1=bottom.
  */
 
- var controller = new ScrollMagic.Controller();
+var controller = new ScrollMagic.Controller();
 
 var fromTween = new TweenMax.from('#tween-item', 1, {
   x: 500

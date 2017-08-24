@@ -127,6 +127,7 @@ img {
 
 /**
  * Styles for testing and development
+ *
  */
 
 @media screen and (min-width: 800px) {
@@ -149,3 +150,5 @@ img {
     width: 25%; }
   .work-example__image {
     width: 200px; } }
+
+/*# sourceMappingURL=main.css.map */

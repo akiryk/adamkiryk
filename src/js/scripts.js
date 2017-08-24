@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  *
@@ -20,12 +19,14 @@
 var controller = new ScrollMagic.Controller();
 
 var scene = new ScrollMagic.Scene({
-     triggerElement: '#myScene',
-     duration: window.innerHeight
-}).addTo(controller);
+  triggerElement: '#myScene',
+  duration: window.innerHeight,
+})
+.addTo(controller)
 
 var arr = ['bird', 'parrot', 'turkey'];
-var cloned = arr.slice(0);
+var [...cloned] = arr;
+
 
 // get the current duration value
 // var duration = scene.duration();
@@ -44,4 +45,3 @@ var cloned = arr.slice(0);
 // $(window).on("resize", updateDuration); // update the duration when the window size changes
 // $(window).triggerHandler("resize"); // set to initial value
 // scene.duration(getDuration); // supply duration method
-//# sourceMappingURL=main.js.map
