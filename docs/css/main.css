@@ -1,19 +1,151 @@
-html {
-  background-color: ivory; }
+/**
+ * Mixins and variables come first
+ */
+/**
+ *
+ * Variables
+ *
+ */
+:root {
+  --bg-color: #fff;
+  --contentWidth: 800px; }
+
+/**
+ * General styles for things like basic html elements and page layout
+ */
+/**
+ *
+ * Foundations
+ *
+ * Base styles for html, body, as well as foundational elements
+ * such as <a>, <p>, <ul>, <ol>, etc.
+ */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 body {
-  margin: 0; }
+  background-color: var(--bg-color);
+  margin: 0;
+  font-size: 100%;
+  color: #222;
+  font-family: 'Libre Franklin', 'Georgia', sans-serif;
+  line-height: 1.6; }
 
-.page-content {
-  height: 3400px; }
+/**
+ *
+ * Page-layout
+ *
+ */
 
-#shapes {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1; }
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden; }
 
-.path-shape {
-  fill: darkseagreen; }
+/**
+ * Display Grid
+ */
+@supports not (display: grid) {
+  .grid {
+    display: block;
+    overflow: hidden; }
+  .grid > div {
+    display: block;
+    float: left;
+    margin-right: 1rem; }
+  .grid > div:last-of-type {
+    margin-right: 0; } }
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem; } }
+
+/**
+ * Components
+ */
+/**
+ * Navigation
+ */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 2rem; }
+
+.navbar__menu {
+  list-style: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+
+.navbar__menu-link {
+  color: #fff;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none; }
+
+/**
+ *
+ * Images
+ *
+ */
+img {
+  display: block;
+  max-width: 100%; }
+
+.profile-img {
+  width: 100%; }
+
+/**
+ *
+ * Headings
+ *
+ */
+.heading {
+  line-height: 1.2; }
+
+.heading--massive {
+  font-size: 64px;
+  font-weight: 900; }
+
+/**
+ * Styles for testing and development
+ */
+
+@media screen and (min-width: 800px) {
+  .page-content {
+    margin-top: 1rem; }
+  .section {
+    padding: 0 calc((100vw - var(--contentWidth))/2); }
+  .section--wide {
+    padding: 0 2rem; }
+  .card {
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem; }
+  .work-example {
+    height: 450px;
+    background-color: #cbeeef; }
+  .work-example:nth-of-type(odd) {
+    background-color: #e3f6f7; }
+  .profile-img {
+    width: 25%; }
+  .work-example__image {
+    width: 200px; } }

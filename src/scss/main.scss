@@ -1,24 +1,24 @@
-html {
-  background-color: ivory;
-}
+/**
+ * Mixins and variables come first
+ */
+@import "components/variables";
 
-body {
-  margin: 0;
-}
+/**
+ * General styles for things like basic html elements and page layout
+ */
+@import "components/foundations";
+@import "components/page-layout";
+@import "components/accessibility";
+@import "components/grid";
 
-.page-content {
-  height: 3400px;
-}
+/**
+ * Components
+ */
+@import "components/navigation";
+@import "components/images";
+@import "components/headings";
 
-#shapes {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-
-.path-shape {
-  fill: darkseagreen;
-}
+/**
+ * Styles for testing and development
+ */
+// @import "testing/no-grid";

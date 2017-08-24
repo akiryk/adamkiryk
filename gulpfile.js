@@ -20,7 +20,7 @@ const
   livereload = require('gulp-livereload');
 
 // development mode?
-  devBuild = true,
+  const devBuild = true;
 
 folder = {
   src: 'src/',
@@ -104,13 +104,6 @@ gulp.task('babel', function() {
     .pipe(gulp.dest('docs/js/'));
 });
 
-// gulp.task('webserver', function() {
-//   connect.server({
-//     livereload: true,
-//     root: 'docs'
-//   });
-// });
-
 gulp.task('webserver', function() {
   gulp.src('docs')
     .pipe(webserver({
@@ -123,6 +116,7 @@ gulp.task('watch', ['webserver'], function() {
   livereload.listen();
   gulp.watch('src/scss/**/*.scss', ['css']);
   gulp.watch('src/js/**/*.js', ['js']);
+  gulp.watch('src/index.html', ['html'])
 });
 
-gulp.task('default', ['html', 'css', 'js', 'webserver', 'livereload', 'stream']);
+gulp.task('default', ['html', 'css', 'js', 'watch', 'webserver']);

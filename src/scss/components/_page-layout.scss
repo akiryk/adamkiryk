@@ -1,0 +1,38 @@
+/**
+ *
+ * Page-layout
+ *
+ */
+
+@media screen and (min-width: $medium){
+  .home-page {
+  }
+
+  .page-content {
+    margin-top: 1rem;
+  }
+
+  .section {
+    padding: 0 calc((100vw - var(--contentWidth))/2);
+  }
+
+  .section--wide {
+    padding: 0 2rem;
+  }
+
+  .card {
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .work-example {
+    height: 450px;
+    background-color: #cbeeef;
+  }
+
+  .work-example:nth-of-type(odd) {
+    background-color: #e3f6f7;
+  }
+
+}

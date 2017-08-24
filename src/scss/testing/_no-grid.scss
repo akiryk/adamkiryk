@@ -1,0 +1,19 @@
+/**
+ * Test browsers that don't support grid
+ */
+
+// override grid styles for non-supported browsers
+.grid {
+  display: block !important;
+  overflow: hidden !important;
+}
+
+.grid > div {
+  display: block !important;
+  float: left !important;
+  margin-right: 1rem !important;
+}
+
+.grid >div:last-of-type {
+  margin-right: 0 !important;
+}

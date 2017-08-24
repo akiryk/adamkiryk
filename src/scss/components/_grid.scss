@@ -1,0 +1,26 @@
+/**
+ * Display Grid
+ */
+
+@supports not (display: grid) {
+  .grid {
+    display: block;
+    overflow: hidden;
+  }
+  .grid > div {
+    display: block;
+    float: left;
+    margin-right: 1rem;
+  }
+  .grid >div:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@supports (display: grid){
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
