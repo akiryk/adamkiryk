@@ -1,0 +1,29 @@
+.skills__item {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+}
+
+@supports (display: grid){
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+@supports not (display: grid) {
+  .skills {
+    display: block;
+    overflow: hidden;
+  }
+  .skills__item {
+    display: block;
+    float: left;
+    margin-right: 1rem;
+  }
+  .skills__item:last-of-type {
+    margin-right: 0;
+  }
+}

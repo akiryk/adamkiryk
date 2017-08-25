@@ -121,13 +121,13 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('concatJS', function() {
-  return gulp.src(['src/js/scripts.js'])
+  return gulp.src(['src/js/devScripts.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('docs/js/'))
 })
 
 gulp.task('babel', () =>
-  gulp.src('src/js/scripts.js')
+  gulp.src('src/js/devScripts.js')
     .pipe(sourcemaps.init())
     .pipe(babel({
         presets: ['es2015']

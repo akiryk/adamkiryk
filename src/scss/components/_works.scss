@@ -1,0 +1,23 @@
+/**
+ * Works
+ * Component for displaying portfolio work examples
+ */
+
+.works {
+
+}
+
+.works__item {
+  //min-height: 100vh;
+  background-color: hsla(255, 100%, 100%, 0.5);
+  border: 1px solid #ddd;
+  border-radius: var(--borderRadius);
+  margin: 5rem auto;
+  max-width: var(--contentWidth);
+  padding:1rem;
+}
+
+.works__image {
+  display: inline;
+  max-width: 300px;
+}

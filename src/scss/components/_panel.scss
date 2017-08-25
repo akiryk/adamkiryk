@@ -1,0 +1,33 @@
+.panel {
+  //padding: 0 calc((100vw - var(--contentWidth))/2);
+  min-height: 100vh;
+}
+
+.panel--intro {
+  background-color: green;
+  display: flex;
+}
+
+.panel--skills {
+  background-color: #b1d4b1;
+  min-height: unset;
+}
+
+.panel--work {
+  background-color: #e7f3e7;
+}
+
+.panel--work:nth-of-type(even){
+  background-color: #7b9ec5;
+}
+
+.panel__card {
+  margin: auto;
+  padding: 1rem;
+}
+
+@media screen and (min-height: 600px) {
+  .panel--intro {
+    min-height: calc(100vh - 72px)
+  }
+}
