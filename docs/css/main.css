@@ -44,10 +44,6 @@ body, html {
 .page-content {
   height: 100%; }
 
-.card--intro {
-  width: 800px;
-  margin: auto; }
-
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -63,20 +59,24 @@ body, html {
   min-height: 100vh; }
 
 .panel--intro {
-  background-color: green;
+  background-color: #b1e0a2;
+  background-image: linear-gradient(145deg, #b1e0a2 30%, #569641);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
 .panel--skills {
   background-color: #b1d4b1;
+  background-image: linear-gradient(145deg, #b1e0a2 30%, #569641);
   min-height: unset; }
 
 .panel--work {
-  background-color: #e7f3e7; }
+  background-color: #e7f3e7;
+  background-image: linear-gradient(145deg, #b1e0a2 30%, #569641); }
 
 .panel--work:nth-of-type(even) {
-  background-color: #7b9ec5; }
+  background-color: #7b9ec5;
+  background-image: linear-gradient(145deg, #b1e0a2 30%, #569641); }
 
 .panel__card {
   margin: auto;
@@ -171,15 +171,31 @@ img {
  * Headings
  *
  */
-.heading {
-  line-height: 1.2; }
-
-.heading--massive {
-  font-size: 64px;
-  font-weight: 900; }
-
 h1, h2, h3, h4 {
   margin: 0; }
+
+.intro {
+  max-width: 800px;
+  margin: auto; }
+
+.intro__heading {
+  line-height: 1.2;
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 1rem; }
+
+.intro__body {
+  font-size: 1.25rem; }
+
+.intro__button {
+  display: inline-block;
+  padding: .75em 1.25em;
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer; }
 
 /**
  * Styles for testing and development
