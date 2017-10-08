@@ -13,5 +13,6 @@ Next steps:
 * Use the entire width of screen rather than only the center part
 * Create transitions with scrollmagic and greensock (or possibly anime.js)
 * See 'curriculum' on drive for examples of sites that include transitions
+* Check branch. Use master branch to push site live
 
 This site can be viewed [on github pages](https://akiryk.github.io/adamkiryk/).
