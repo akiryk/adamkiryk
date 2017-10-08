@@ -1,0 +1,49 @@
+@supports (display: grid) {
+  .skillsgrid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      "emptyLeft empty empty title title title title title"
+      "emptyLeft empty empty one one two two emptyRight"
+      "emptyLeft empty empty three three four four emptyRight";
+  }
+
+  .skills__heading {
+    grid-area: title;
+    color: #888;
+    font-weight: 700;
+    font-size: 2.25rem;
+    border-bottom: 4px solid;
+  }
+
+  .skills__title {
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .skills__desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .skills__skill--code {
+    grid-area: one;
+  }
+
+  .skills__skill--design {
+    grid-area: two;
+  }
+
+  .skills__skill--communication {
+    grid-area: three;
+  }
+
+  .skills__skill--collaboration {
+    grid-area: four;
+  }
+
+}

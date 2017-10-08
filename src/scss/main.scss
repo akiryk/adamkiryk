@@ -1,25 +1,42 @@
 /**
  * Mixins and variables come first
  */
-@import "components/variables";
+@import "utilities/variables";
+@import "utilities/mixins";
 
 /**
  * General styles for things like basic html elements and page layout
  */
-@import "components/foundations";
-@import "components/page-layout";
-@import "components/accessibility";
-@import "components/panel";
-@import "components/skills";
-@import "components/works";
-@import "components/navigation";
-@import "components/images";
+@import "base";
+@import "base-custom";
+
+/**
+ * Components
+ */
+// @import "components/grid";
 @import "components/headings";
-@import "components/intro";
+@import "components/images";
+@import "components/navigation";
+@import "components/navigation-intro";
+@import "components/page-layout";
+@import "components/panel";
+
+/**
+ * Homepage sections
+ */
+@import "components/homepage-skills";
+@import "components/homepage-works";
+@import "components/homepage-intro";
+
+/**
+ * Utilities
+ */
+@import "utilities/accessibility";
+@import "utilities/typography";
+@import "utilities/helpers";
 
 /**
  * Styles for testing and development
  *
  */
-
 // @import "testing/no-grid";

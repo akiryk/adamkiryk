@@ -9,25 +9,8 @@ body, html {
   height: 100%;
 }
 
-.home-page {
-}
-
 .page-content {
   height: 100%;
-}
-
-.section {
-  //padding: 0 calc((100vw - var(--contentWidth))/2);
-}
-
-.section--wide {
-  //padding: 0 2rem;
-}
-
-.card {
-  // background-color: #fff;
-  // margin-bottom: 1rem;
-  // padding: 1rem;
 }
 
 section#intro {
@@ -45,26 +28,13 @@ section#intro {
 }
 
 .panel {
-  background-color: #bad5f3;
   overflow: hidden;
   height: 100%;
   width: 100%;
 }
 
-.panel:nth-of-type(even){
-  background-color: #7b9ec5;
-}
-
 #work {
   height: 100%;
-}
-
-.panel--skills {
-  background-color: #7b9ec5;
-}
-
-.panel--work-a {
-  background-color: #7b9ec5;
 }
 
 .box1 {

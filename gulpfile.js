@@ -3,6 +3,7 @@ const
   assets = require('postcss-assets'),
   autoprefixer = require('autoprefixer'),
   babel = require('gulp-babel'),
+  cache = require('gulp-cache'),
   concat = require('gulp-concat'),
   // minify css
   cssnano = require('cssnano'),
@@ -31,17 +32,26 @@ folder = {
   build: 'docs/'
 }
 
+gulp.task('clear', function (done) {
+  return cache.clearAll(done);
+});
+
 // image processing
 gulp.task('images', function() {
-  var out = folder.build + ' images/';
+  var out = folder.build + 'images/';
   return gulp.src(folder.src + 'images/**/*')
     .pipe(newer(out))
-    .pipe(imagemin({ optimizationLevel: 9 }))
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 6}),
+      imagemin.svgo({plugins: [{removeViewBox: true}]})
+    ]))
     .pipe(gulp.dest(out));
 });
 
 // HTML processing
-gulp.task('html', ['images'], function() {
+gulp.task('html', function() {
   var
     out = folder.build,
     page = gulp.src(folder.src + 'index.html')

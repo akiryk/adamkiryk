@@ -1,0 +1,28 @@
+/**
+ * Navigation Intro
+ * Styles for the secondary navigation inside the intro section
+ *
+ */
+
+.intro-nav {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0 0 .5rem 0;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+}
+
+.intro-nav__menu-item {
+  padding-left: 4rem;
+}
+
+.intro-nav__menu-item:first-of-type {
+  padding-left: 0;
+}
+
+.intro-nav__menu-link {
+  color: #999;
+  font-weight: 600;
+  text-decoration: none;
+}

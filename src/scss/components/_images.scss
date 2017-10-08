@@ -4,22 +4,6 @@
  *
  */
 
-// Base image styles
-img {
-  display: block;
-  max-width: 100%;
-}
-
 .profile-img {
   width: 100%;
-}
-
-@media screen and (min-width: $medium) {
-  .profile-img {
-    width: 25%;
-  }
-
-  .work-example__image {
-    width: 200px;
-  }
 }

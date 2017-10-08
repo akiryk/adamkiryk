@@ -1,0 +1,41 @@
+/**
+ *
+ * Base Custom
+ *
+ * Custom styles for base HTML elements.
+ *
+ */
+
+body {
+  background-color: #fff;
+  color: var(--fontColor);
+  font-family: var(--bodyFont);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--displayFont);
+  margin: 0;
+}
+
+p {
+  font-family: var(--bodyFont);
+}
+
+a {
+  color: var(--bluegreen);
+  text-decoration: none;
+  transition: box-shadow .25s;
+}
+
+a:hover {
+  box-shadow: 0 1px 0;
+}

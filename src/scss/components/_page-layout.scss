@@ -4,15 +4,46 @@
  *
  */
 
-
-body, html {
+.main {
+  // background-color: #fff;
   height: 100%;
 }
 
-.home-page {
-}
+/**
+ * A special case of grid for the page wrapper.
+ * See _grid.scss for general grid styles
+ *
+ * TODO: style wrapper in cases where grid isn't supported
+ */
 
-.page-content {
-  height: 100%;
-}
+@supports (display: grid){
+  @media screen and (min-width: $large) {
+    .pagegrid {
+      display: grid;
+      grid-template-columns:
+        [fullbleed-start] minmax(1em, 1fr)
+        [main-start] minmax(40em, 85em) [main-end]
+        minmax(1em, 1fr) [fullbleed-end];
+      grid-row-gap: 0;
+    }
+    .pagegrid > * {
+      background-color: #fff;
+      grid-column: main;
+    }
 
+    .pagegrid--main__full {
+      grid-column: fullbleed;
+    }
+  }
+
+  @media screen and (min-width: $xlarge) {
+    .pagegrid {
+      background-color: #fff;
+      grid-template-columns:
+        [fullbleed-start] minmax(1em, 1fr)
+        [main-start] minmax(40em, 90em) [main-end]
+        minmax(1em, 1fr) [fullbleed-end];
+      grid-row-gap: 0;
+    }
+  }
+}
