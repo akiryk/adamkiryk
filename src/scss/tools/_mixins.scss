@@ -1,0 +1,22 @@
+/**
+ * Mixins
+ */
+
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin grid-12($columns) {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas: $columns;
+}
+
+@mixin body-copy() {
+  @include font-smoothing;
+  font-family: $fb-body-font-stack;
+  font-size: $font-md;
+  line-height: 1.35;
+}

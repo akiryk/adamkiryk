@@ -1,0 +1,17 @@
+/**
+ *
+ * Object: Horizontal List
+ * -----------------------------------------------
+ *
+ *
+ */
+
+.o-horizontal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.o-horizontal-list > li {
+  display: inline-block;
+  margin-right: 2rem;
+}

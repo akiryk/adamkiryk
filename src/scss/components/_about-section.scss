@@ -1,0 +1,47 @@
+/**
+ *
+ * Component: About Section
+ * -----------------------------------------------
+ *
+ * The panel for the about section
+ *
+ */
+
+.about-section {
+  background-color: black;
+  min-height: auto;
+  padding: 2rem 0;
+}
+
+.about-section {
+  padding: 0 calc( (100% - 1640px) / 2 );
+  padding-top: 3rem;
+}
+
+.about-section__menu-link {
+  font-family: $sans-serif;
+  font-size: 1.125rem;
+}
+
+// About Section
+@supports (display: grid){
+  .about-section {
+    grid-column: fullbleed;
+  }
+
+  .about-section__grid {
+    display: grid;
+    grid-template-columns: 4fr 1fr 6fr 1fr;
+    align-items: center;
+  }
+
+  .about-section__image {
+    grid-column: 1;
+    margin-right: -5rem;
+    margin-left: -4rem;
+  }
+
+  .about-section__contents {
+    grid-column: 3;
+  }
+}

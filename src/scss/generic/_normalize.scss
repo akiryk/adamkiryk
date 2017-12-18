@@ -1,16 +1,4 @@
-/**
- *
- * Base
- *
- * This is a slightly customized version of normalize.css for creating
- * decent defaults for HTML across browsers.
- *
- */
-
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
@@ -22,10 +10,9 @@
  */
 
 html {
-  line-height: 1.6; /* 1 */
+  line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  height: 100%;
 }
 
 /* Sections
@@ -50,6 +37,16 @@ header,
 nav,
 section {
   display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -448,4 +445,3 @@ template {
 [hidden] {
   display: none;
 }
-

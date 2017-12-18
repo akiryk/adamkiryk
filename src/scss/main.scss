@@ -1,39 +1,56 @@
-/**
- * Mixins and variables come first
- */
-@import "utilities/variables";
-@import "utilities/mixins";
+@import "settings/colors";
+@import "settings/widths-and-spacing";
+@import "settings/fonts";
+@import "settings/breakpoints";
 
-/**
- * General styles for things like basic html elements and page layout
- */
-@import "base";
-@import "base-custom";
+@import "tools/functions";
+@import "tools/mixins";
+@import "tools/clearfix";
+@import "tools/system-fonts";
+
+@import "generic/box-sizing";
+@import "generic/normalize";
+
+@import "elements/headings";
+@import "elements/links";
+@import "elements/general";
+@import "elements/images";
+@import "elements/page";
+@import "elements/figure-figcaption";
+
+@import "objects/wrappers";
+@import "objects/horizontal-list";
 
 /**
  * Components
  */
 // @import "components/grid";
-@import "components/headings";
-@import "components/images";
-@import "components/navigation";
-@import "components/navigation-intro";
-@import "components/page-layout";
 @import "components/panel";
+@import "components/headings";
+@import "components/navigation";
+@import "components/page-layout";
+@import "components/chapter";
+@import "components/definition.scss";
+@import "components/case-study.scss";
+@import "components/checkmark-list.scss";
+@import "components/buttons.scss";
+@import "components/skills-panel.scss";
+@import "components/intro-panel.scss";
+@import "components/about-section.scss";
+@import "components/work-images.scss";
 
 /**
  * Homepage sections
  */
-@import "components/homepage-skills";
-@import "components/homepage-works";
+// @import "components/homepage-works";
+// @import "components/homepage-skills";
 @import "components/homepage-intro";
 
-/**
- * Utilities
- */
-@import "utilities/accessibility";
-@import "utilities/typography";
-@import "utilities/helpers";
+@import "trumps/accessibility";
+@import "trumps/helpers";
+@import "trumps/spacing";
+@import "trumps/layout";
+@import "trumps/typekit";
 
 /**
  * Styles for testing and development

@@ -3,35 +3,27 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Adam Kiryk | Front End Developer, UX, Design</title>
+  <title>Adam Kiryk, UX and Product Designer</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="stylesheet" href="css/main.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Alegreya|Libre+Baskerville|PT+Serif|Source+Serif+Pro" rel="stylesheet">
 
-  <!-- Load ScrollMagic and Greensock -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/ScrollToPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script>
+  <!-- TypeKit embed code -->
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'vdt8eam',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+  </script>
 
-  <!-- Load the bridge between scrollmagic and greensock -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
-
-  <!-- Load the scrollmagic debug tool -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script> -->
 </head>
 <body id="home" class="home-page">
   <a class="visually-hidden" href="#main">Skip to content</a>
@@ -45,97 +37,175 @@
           </ul>
         </nav>
       </div>
-    <section id="introTrigger" class="panel panel--intro">
+    <section id="introTrigger" class="panel intro-panel">
       <div class="intro introgrid">
-        <div id="primaryLogo" class="primary-logo introgrid__logo"><img src="images/logoB.svg" alt=""/></div>
+        <div id="primaryLogo" class="primary-logo introgrid__logo"><img src="images/logo-blue-yellow.svg" alt=""/></div>
         <div id="introContent" class="intro__content">
-          <h1 id="introHeading" class="intro__heading"><span class="newline">Hello, I'm Adam Kiryk, </span>a front end developer and designer</h1>
+          <h1 id="introHeading" class="site-heading tk-serif">Adam Kiryk</h1>
+          <div class="site-subheading tk-serif">UX Designer / Product Designer</div>
           <div id="introBody" class="intro__body">
-            <p>I work at the intersection of user experience, visual design, and code, and I focus on creating beautiful, well-crafted, and accessible websites — and I'm always passionate about usability, maintainability, and performance.</p>
+            <p>With over ten years experience building digital products that serve people’s needs, I have a demonstrated ability to produce successful results. My core skills include <a href="#">understanding users</a>, <a href="#">information architecture</a>, <a href="#">visual design</a>, and <a href="#">rapid prototyping</a>.</p>
+            <p>Sound good? I also write and speak clearly about my work. I thrive in a collaborative and multidisciplinary environment. And I’m fluent with HTML, CSS, and JavaScript.</p>
+            <p>Oh, and I love <a href="#">the outdoors</a>.</p>
           </div>
         </div>
-       <!--  <div id="introNav" class="intro__nav">
-          <ul class="intro-nav">
-            <li class="intro-nav__menu-item"><a href="#skills" class="intro-nav__menu-link">Skills</a></li>
-            <li class="intro-nav__menu-item"><a href="#work" class="intro-nav__menu-link">Work Examples</a></li>
-            <li class="intro-nav__menu-item"><a href="#contact" class="intro-nav__menu-link">Let's Talk</a></li>
+      </div>
+    </section>
+
+    <section id="skills" class="panel skills-panel">
+      <div class="chapter">
+        <h2 class="chapter__heading tk-serif">Skills</h2>
+        <div class="chapter__contents">
+          <div class="definition">
+            <h2 class="definition__title">Understanding Users</h2>
+            <div class="definition__desc">As a senior UX and product designer at NPR for over six years, I’ve designed and run user tests and interviews; monitored analytics; and led efforts to optimize our products to meet user needs.</div>
+          </div>
+          <div class="definition">
+            <h2 class="definition__title">Information Architecture</h2>
+            <div class="definition__desc">I create scalable systems that make sense to users — whether for organizing wide-ranging content, implementing consistent labeling, or navigation.</div>
+          </div>
+          <div class="definition">
+            <h2 class="definition__title">Visual Design</h2>
+            <div class="definition__desc">I studied design at California College of the Arts in San Francisco, and I have years of experience creating visual systems that prioritize usability and accessibility. I’m expert in information design and typography. And I’m fluent with Photoshop, Illustrator, and Sketch.</div>
+          </div>
+          <div class="definition">
+            <h2 class="definition__title">Front End Development</h2>
+            <div class="definition__desc">I know HTML, CSS, and JavaScript, and I’m experienced creating WordPress and Drupal themes. I was largely self-taught until 2016, when I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies" class="panel case-studies-panel">
+      <div class="chapter">
+        <h2 class="chapter__heading tk-serif">Case Studies</h2>
+        <div class="chapter__intro">
+          <p>These case studies show how I approach user experience and product design. Through understanding users, experimenting with potential solutions, and collaborating with teammates and clients, I have a record of building successful products.</p>
+        </div>
+      </div>
+      <div class="case-studies">
+        <div class="case-study case-study--ce">
+          <figure class="case-study__image">
+            <img src="images/hp-ce-map.jpg" alt="Map of NPR stations">
+            <figcaption class="caption">There are hundreds of NPR stations across the country, some quite small and lacking resources to build or maintain robust digital operations.</figcaption>
+          </figure>
+          <div class="case-study__copy">
+            <div class="case-study__number tk-serif">1</div>
+            <h2 class="sub-section-heading tk-serif case-study__heading">How can NPR help its member stations increase their digital reach?</h2>
+            <p class="mt-0 mb-2 tk-serif case-study__content">
+              I was UX lead on a product designed to make it easier for station editors to create better, more engaging content.
+            </p>
+            <div class="checkmark-list">
+              <h3 class="checkmark-list__title">What I Did</h3>
+              <ul class="checkmark-list__list">
+                <li class="checkmark-list__item">Defined product objectives.</li>
+                <li class="checkmark-list__item">Designed and carried out a research plan for understanding user needs.</li>
+                <li class="checkmark-list__item">Led a design sprint for generating ideas from a group representing multiple disciplines.</li>
+                <li class="checkmark-list__item">Conducted user tests and interviews; presented findings to stakeholders.</li>
+                <li class="checkmark-list__item">Created wireframes, prototypes, and visual designs.</li>
+              </ul>
+            </div>
+            <a class="btn" href="#">See Details</a>
+          </div>
+        </div>
+        <div class="case-study case-study--cp">
+           <figure class="case-study__image">
+            <img src="images/hp-cp-devices.jpg" alt="Websites viewed in different devices">
+          </figure>
+          <div class="case-study__copy">
+            <div class="case-study__number tk-serif">2</div>
+            <h2 class="sub-section-heading tk-serif case-study__heading">Create a responsive design for the news platform used by over 180 NPR stations.</h2>
+            <p class="mt-0 tk-serif case-study__content">
+              I led user research, designed information architecture, and created visual design for Core Publisher, a website publishing platform we built to help small and medium-sized NPR stations present and distribute content.
+            </p>
+            <div class="checkmark-list">
+              <h3 class="checkmark-list__title">What I Did</h3>
+              <ul class="checkmark-list__list">
+                <li class="checkmark-list__item">Researched station and user needs.</li>
+                <li class="checkmark-list__item">Created a responsive design and helped implement it as a Drupal theme.</li>
+                <li class="checkmark-list__item">Designed a system of tools and display options that helped stations engage users and were easy for editors to use.</li>
+              </ul>
+            </div>
+            <a class="btn" href="#">See Details</a>
+          </div>
+        </div>
+        <div class="case-study case-study--didja">
+          <div class="case-study__image">
+            <img src="images/hp-didja-logo.jpg" alt="Logo for Didja Ever campaign">
+          </div>
+          <div class="case-study__copy">
+            <div class="case-study__number tk-serif">3</div>
+            <h2 class="sub-section-heading tk-serif case-study__heading">Get people who’ve never taken a cruise to consider Carnival.</h2>
+            <p class="mt-0 tk-serif case-study__content">
+              I was creative director and art director for key segments of this major marketing initiative aimed at winning new customers.
+            </p>
+             <div class="checkmark-list">
+              <h3 class="checkmark-list__title">What I Did</h3>
+              <ul class="checkmark-list__list">
+                <li class="checkmark-list__item">I created and presented campaign ideas to clients.</li>
+                <li class="checkmark-list__item">I developed information architecture and visual design for the campaign’s primary website and other online experiences.</li>
+                <li class="checkmark-list__item">I art directed graphics and illustration for the campaign as a whole.</li>
+              </ul>
+            </div>
+            <a class="btn" href="#">See Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work-examples" class="panel">
+      <div class="chapter">
+        <h2 class="chapter__heading tk-serif">Examples of Work</h2>
+        <div class="chapter__contents">
+          <p>With over ten years experience in the field of user experience and visual design, there are many projects that I’m proud of. Here are snapshots of a few of them.</p>
+          <div class="work-images">
+            <div class="work-image__image">
+              <img src="images/hp-work-mobileweb.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-npr-nfplus.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-winesmarts.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-oceanspray.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-gronster.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-waterslide.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-carnival-homepage.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-radioshack.jpg" alt="">
+            </div>
+            <div class="work-image__image">
+              <img src="images/hp-work-pledge-1.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about-section">
+      <div class="about-section__grid">
+        <div class="about-section__image">
+          <img src="images/portrait.jpg" alt="Logo for Didja Ever campaign">
+        </div>
+        <div class="about-section__contents">
+          <h2 class="sub-section-heading sub-section-heading--about tk-serif">About Me</h2>
+          <p class="text-over-dark">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too. Get in touch&hellip;</p>
+          <ul class="o-horizontal-list">
+            <li><a class="about-section__menu-link" href="#">adamkiryk at gmail</a></li>
+            <li><a class="about-section__menu-link" href="#">adamkiryk on linked in</a></li>
+            <li><a class="about-section__menu-link" href="#">resume</a></li>
           </ul>
-        </div> -->
-      </div>
-    </section>
-
-    <section id="skills" class="panel panel--skills">
-      <div class="skills skillsgrid">
-        <h2 class="skills__heading">skills</h2>
-        <div class="skills__skill skills__skill--code">
-          <h2 class="skills__title">code</h2>
-          <div class="skills__desc">I work in HTML, CSS, and JavaScript — most recently creating components in React with Redux for an NPR content editing tool — and I use PHP to build themes in Drupal and Wordpress. I use modern workflow tools like Webpack and Gulp; my preferred CSS preprocessor is SASS; and I use git for version control. Mostly self-taught, I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001">Udacity</a> front end developer certificate program in 2016.</div>
-        </div>
-        <div class="skills__skill skills__skill--design">
-          <h2 class="skills__title">ux + design</h2>
-          <div class="skills__desc"><span class="newline">I studied interaction design at the </span><a href="https://www.cca.edu/">California College of the Arts</a> in San Francisco and Oakland, and have expertise in digital product design, user experience, web design, and branding. As a senior product designer at NPR over the past six years, I’ve honed my skills in design thinking, user research, prototyping, user testing, and designing clean and usable visual systems.</div>
-        </div>
-        <div class="skills__skill skills__skill--communication">
-          <h2 class="skills__title">communication</h2>
-          <div class="skills__desc">With years of experience presenting work to clients, colleagues, and stakeholders, I’m skilled at speaking in front of groups, explaining the rationale behind design decisions, and helping my colleagues discuss challenges and work out technical or design solutions. I’m also a capable writer, both in documenting work for colleagues and in blogging about work for the public.</div>
-        </div>
-        <div class="skills__skill skills__skill--collaboration">
-          <h2 class="skills__title">collaboration</h2>
-          <div class="skills__desc">I’m experienced working with multidisciplinary teams of designers, developers, user researchers, product managers, and others, and I have a successful track record of resolving differences on my team and helping my colleagues stay focused and productive.</div>
         </div>
       </div>
     </section>
-
-    <section id="work" class="panel panel--work">
-      <div class="work workgrid">
-        <h2 class="work__heading">work</h2>
-        <p class="work__overview">I worked for NPR from 2011 to 2017, doing product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at Arnold Worldwide, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
-        <div class="work-examples">
-          <div class="work-example">
-            <div class="work-example__source">National Public Radio</div>
-            <h3 class="work-example__title">Story Editor for NPR Stations</h3>
-            <img class="work-example__image" src="images/content-editor-main.jpg" alt="" />
-            <p class="work-example__desc">I led UX and wrote code for this internally facing web application designed to help member stations create local content for distribution across NPR properties.</p>
-            <ul class="work-example__bullets">
-              <li class="work-example__bullet">Created custom components using React.js</li>
-              <li class="work-example__bullet">Used Redux to manage state</li>
-              <li class="work-example__bullet">Researched station needs and created a streamlined visual design</li>
-              <li class="work-example__bullet">Led team through a design sprint that helped guide product strategy</li>
-              <li class="work-example__bullet">Initiated a living styleguide based on PatternLab.io</li>
-            </ul>
-          </div>
-          <div class="work-example">
-            <div class="work-example__source">National Public Radio</div>
-            <h3 class="work-example__title">Core Publisher News Platform</h3>
-            <img class="work-example__image" src="images/core-publisher-main.jpg" alt="" />
-            <p class="work-example__desc">I led UX research, designed the information architecture, and wrote front end code for Core Publisher, a website publishing system we built to help small and medium-sized NPR stations create digital content and expand their audience.</p>
-            <ul class="work-example__bullets">
-              <li class="work-example__bullet">Researched station and user needs</li>
-              <li class="work-example__bullet">Designed and built a responsive Drupal theme adopted by over 160 stations</li>
-              <li class="work-example__bullet">Created a flexible yet simple system for handling station branding</li>
-              <li class="work-example__bullet">Wrote front end code for the home page and story pages</li>
-              <li class="work-example__bullet">Iterated on story page design to increase user engagement and meet station needs</li>
-            </ul>
-          </div>
-          <div class="work-example">
-            <div class="work-example__source">National Public Radio</div>
-            <h3 class="work-example__title">Community Calendar</h3>
-            <img class="work-example__image" src="images/example3.jpg" alt="" />
-            <p class="work-example__desc">I designed and helped build this online calendar created to help NPR stations promote local events. Using it, members of the public can submit events for consideration; stations can publish those events and add their own as well.</p>
-            <ul class="work-example__bullets">
-              <li class="work-example__bullet">Streamlined the way stations manage user-submitted events, saving time and effort for editors</li>
-              <li class="work-example__bullet">Created clickable prototypes for testing design ideas with stations</li>
-              <li class="work-example__bullet">Designed a simple but clear system for users to find and display event information</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="panel">
-      <h2>Contact</h2>
-    </section>
-
   </main>
   <script src="js/bodymovin.js"></script>
   <script src="js/main.js"></script>

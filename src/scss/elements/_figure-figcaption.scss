@@ -1,0 +1,18 @@
+/**
+ *
+ * Element: Figure/Figcaption
+ * -----------------------------------------------
+ *
+ *
+ */
+
+figure > img {
+  margin-bottom: 2rem;
+}
+
+figcaption {
+  color: $dark-gray-3;
+  font-size: .875rem; // 14px;
+  font-family: $sans-serif;
+  line-height: 1.5;
+}

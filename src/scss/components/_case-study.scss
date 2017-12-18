@@ -1,0 +1,87 @@
+/**
+ *
+ * Component: Case Study
+ * -----------------------------------------------
+ * Home page case study sub-sections
+ *
+ *
+ */
+
+@supports (display: grid) {
+
+  .case-study {
+    @include font-smoothing;
+    margin-bottom: 25vh;
+    margin-top: 30rem;
+    display: grid;
+    grid-template-columns: [a] 1fr [b] 2fr [c];
+    grid-template-rows: auto;
+    grid-column-gap: 4rem;
+    padding: 0 2rem;
+  }
+
+  .case-study__copy {
+    grid-column: b;
+    grid-row: a;
+    position: relative;
+  }
+
+  .case-study__image {
+    grid-column: a;
+    grid-row: b;
+    margin: 0;
+  }
+
+   .case-study__number {
+      display: block;
+      position: absolute;
+      top: -15rem;
+      font-size: 15rem;
+      color: #eee;
+    }
+
+  .case-study:nth-of-type(even) {
+   grid-template-columns: [x] 2fr [y] 1fr [z];
+
+    .case-study__copy {
+      grid-column: a;
+    }
+
+    .case-study__image {
+      grid-column: b;
+    }
+  }
+
+
+
+  .case-study--ce .case-study__number {
+    margin-left: -1rem;
+  }
+
+  @media screen and (min-width: $max-width) {
+    .case-study {
+      grid-template-columns: [a] 4fr [m] 1fr [b] 6fr [n] 1fr [o];
+      grid-column-gap: 2rem;
+    }
+    .case-study--ce .case-study__image {
+      margin-right: -4rem;
+    }
+  }
+
+}
+
+@supports ((-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white))
+  or ((-moz-text-stroke-color: #666)and (-moz-text-fill-color: white)) {
+
+  .case-study__number {
+    color: transparent;
+    opacity: 0.5;
+       -moz-text-fill-color: white;
+    -webkit-text-fill-color: white;
+       -moz-text-stroke-color: $red;
+    -webkit-text-stroke-color: $red;
+       -moz-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1px;
+  }
+
+}

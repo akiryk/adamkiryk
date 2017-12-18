@@ -1,41 +1,115 @@
+@charset "UTF-8";
 /**
- * Mixins and variables come first
+ *
+ * Color variables
+ *
  */
 /**
  *
- * Variables
+ * Widths and spacing variables
  *
  */
-:root {
-  --fontColor: #333;
-  --contentWidth: 50rem;
-  --borderRadius: 5px;
-  --displayFont: 'Libre Franklin';
-  --bodyFont: 'PT Serif', Georgia, serif;
-  --bluegreen: #00c1a9;
-  --gold: #e4ae00; }
-
+/**
+ *
+ * Font variables
+ *
+ */
+/* Fallback font stacks */
+/* Font sizes */
+/**
+ *
+ * Breakpoints
+ *
+ *
+ */
 /**
  * Mixins
  */
 /**
- * Light gray sans serif font
+ *
+ * Base Custom
+ *
+ * Custom styles for base HTML elements.
+ * Further reading: http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+ *
+ *   .usage {
+ *     @include clearfix();
+ *   }
+ *
  */
 /**
- * General styles for things like basic html elements and page layout
- */
-/**
  *
- * Base
+ * System @font-face rules
  *
- * This is a slightly customized version of normalize.css for creating
- * decent defaults for HTML across browsers.
+ * Define system font-face rules using OS system fonts
+ * Thanks to: https://github.com/jonathantneal/system-font-css/blob/gh-pages/system-font.css
  *
  */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Segoe UI Light"), local("Ubuntu Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma"); }
 
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 300;
+  src: local(".SFNSText-LightItalic"), local(".HelveticaNeueDeskInterface-Italic"), local(".LucidaGrandeUI"), local("Segoe UI Light Italic"), local("Ubuntu Light Italic"), local("Roboto-LightItalic"), local("DroidSans"), local("Tahoma"); }
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 400;
+  src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma"); }
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 400;
+  src: local(".SFNSText-Italic"), local(".HelveticaNeueDeskInterface-Italic"), local(".LucidaGrandeUI"), local("Segoe UI Italic"), local("Ubuntu Italic"), local("Roboto-Italic"), local("DroidSans"), local("Tahoma"); }
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 500;
+  src: local(".SFNSText-Medium"), local(".HelveticaNeueDeskInterface-MediumP4"), local(".LucidaGrandeUI"), local("Segoe UI Semibold"), local("Ubuntu Medium"), local("Roboto-Medium"), local("DroidSans-Bold"), local("Tahoma Bold"); }
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 500;
+  src: local(".SFNSText-MediumItalic"), local(".HelveticaNeueDeskInterface-MediumItalicP4"), local(".LucidaGrandeUI"), local("Segoe UI Semibold Italic"), local("Ubuntu Medium Italic"), local("Roboto-MediumItalic"), local("DroidSans-Bold"), local("Tahoma Bold"); }
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 700;
+  src: local(".SFNSText-Bold"), local(".HelveticaNeueDeskInterface-Bold"), local(".LucidaGrandeUI"), local("Segoe UI Bold"), local("Ubuntu Bold"), local("Roboto-Bold"), local("DroidSans-Bold"), local("Tahoma Bold"); }
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 700;
+  src: local(".SFNSText-BoldItalic"), local(".HelveticaNeueDeskInterface-BoldItalic"), local(".LucidaGrandeUI"), local("Segoe UI Bold Italic"), local("Ubuntu Bold Italic"), local("Roboto-BoldItalic"), local("DroidSans-Bold"), local("Tahoma Bold"); }
+
+/* Now, let's apply it on an element */
+body {
+  font-family: "system"; }
+
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -44,13 +118,12 @@
  *    IE on Windows Phone and in iOS.
  */
 html {
-  line-height: 1.6;
+  line-height: 1.15;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
-  height: 100%; }
+  /* 2 */ }
 
 /* Sections
    ========================================================================== */
@@ -70,6 +143,14 @@ header,
 nav,
 section {
   display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
 
 /* Grouping content
    ========================================================================== */
@@ -430,113 +511,230 @@ template {
  * Custom styles for base HTML elements.
  *
  */
-body {
-  background-color: #fff;
-  color: var(--fontColor);
-  font-family: var(--bodyFont); }
-
-img {
-  display: block;
-  max-width: 100%; }
-
-h1 {
-  font-size: 2rem; }
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--displayFont);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Helvetica", sans-serif;
   margin: 0; }
 
-p {
-  font-family: var(--bodyFont); }
-
+/**
+ *
+ * Links
+ *
+ * Custom styles for base HTML elements.
+ *
+ */
 a {
-  color: var(--bluegreen);
+  color: #0091c1;
   text-decoration: none;
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s; }
 
-a:hover {
-  -webkit-box-shadow: 0 1px 0;
-          box-shadow: 0 1px 0; }
+p {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  line-height: 1.35; }
+
+/**
+ *
+ * Images
+ *
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */ }
+
+/**
+ * If a `width` and/or `height` attribute have been explicitly defined, let’s
+ * not make the image fluid.
+ */
+img[width],
+img[height] {
+  max-width: none; }
+
+/**
+ *
+ * Page Styles
+ *
+ */
+/**
+ * HTML
+ *
+ * 1. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ */
+html {
+  overflow-y: scroll;
+  /* [1] */
+  min-height: 100%;
+  /* [2] */ }
+
+body {
+  background-color: #fff;
+  background-image: linear-gradient(#f9f7d4 0, white 140px);
+  color: #555;
+  font-family: "Georgia", serif; }
+
+/**
+ *
+ * Element: Figure/Figcaption
+ * -----------------------------------------------
+ *
+ *
+ */
+figure > img {
+  margin-bottom: 2rem; }
+
+figcaption {
+  color: #888;
+  font-size: .875rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5; }
+
+/**
+ *
+ * Wrappers
+ *
+ * Page level wrapping elements
+ *
+ */
+.o-wrapper {
+  padding-right: 24px;
+  padding-left: 24px;
+  margin-right: auto;
+  margin-left: auto; }
+  .o-wrapper:after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important; }
+
+/**
+ *
+ * Object: Horizontal List
+ * -----------------------------------------------
+ *
+ *
+ */
+.o-horizontal-list {
+  list-style: none;
+  padding: 0; }
+
+.o-horizontal-list > li {
+  display: inline-block;
+  margin-right: 2rem; }
 
 /**
  * Components
  */
 /**
  *
- * Headings
+ * Component: Panels
+ * -----------------------------------------------
+ * Sections on the homepage for displaying content such as "About", "Skills"
+ * or "Intro"
  *
  */
-/**
- *
- * Images
- *
- */
-.profile-img {
-  width: 100%; }
+.panel {
+  min-height: 100vh; }
 
 /**
- * Navigation
+ *
+ * Component: Headings
+ * -----------------------------------------------
+ *
+ *
+ *
+ */
+.site-heading {
+  color: #555;
+  font-size: 4.5rem;
+  font-weight: 400; }
+
+.site-subheading {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #888;
+  font-size: 2.25rem;
+  font-style: italic;
+  margin-bottom: 2rem; }
+
+.chapter__heading {
+  color: #c50404;
+  font-size: 3.75rem;
+  font-weight: 400; }
+
+.sub-section-heading {
+  color: #333;
+  font-size: 3.75rem;
+  font-weight: 400;
+  margin-bottom: 1rem; }
+
+.sub-section-heading--about {
+  color: #ccc; }
+
+/**
+ *
+ * Component: Primary Navigation
+ * -----------------------------------------------
+ * Navigation for site and page
+ *
+ *
  */
 .navbar__menu {
-  list-style: none;
-  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-flex-line-pack: center;
+      align-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center; }
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+  padding: 0;
+  text-shadow: -1px 1px 0px white; }
+
+.navbar__menu-item {
+  border-radius: 5px;
+  -webkit-transition: all .25s;
+  transition: all .25s; }
+
+.navbar__menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15); }
 
 .navbar__menu-link {
-  color: #fff;
+  color: #928e58;
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none; }
 
 @supports (display: grid) {
   .navgrid {
+    grid-column-gap: 2rem;
     display: grid;
     grid-column-gap: 2rem;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-areas: "empty empty empty nav nav nav nav nav"; }
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: "empty empty empty empty empty nav nav nav nav nav nav nav"; }
   .navbar {
-    grid-area: nav;
-    background-color: #fff;
-    color: #666;
-    border-bottom: 1px solid #ddd; }
-  .navbar__menu-link {
-    color: #666;
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none; } }
-
-/**
- * Navigation Intro
- * Styles for the secondary navigation inside the intro section
- *
- */
-.intro-nav {
-  list-style: none;
-  margin-top: 2rem;
-  padding: 0 0 .5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-bottom: 1px solid #ddd;
-  position: fixed; }
-
-.intro-nav__menu-item {
-  padding-left: 4rem; }
-
-.intro-nav__menu-item:first-of-type {
-  padding-left: 0; }
-
-.intro-nav__menu-link {
-  color: #999;
-  font-weight: 600;
-  text-decoration: none; }
+    grid-area: nav; } }
 
 /**
  *
@@ -546,225 +744,370 @@ a:hover {
 .main {
   height: 100%; }
 
-/**
- * A special case of grid for the page wrapper.
- * See _grid.scss for general grid styles
- *
- * TODO: style wrapper in cases where grid isn't supported
- */
 @supports (display: grid) {
-  @media screen and (min-width: 1060px) {
+  @media screen and (min-width: 800px) {
     .pagegrid {
       display: grid;
-      grid-template-columns: [fullbleed-start] minmax(1em, 1fr) [main-start] minmax(40em, 85em) [main-end] minmax(1em, 1fr) [fullbleed-end];
+      grid-template-columns: [fullbleed-start] minmax(2em, 1fr) [main-start] minmax(40em, 85em) [main-end] minmax(2em, 1fr) [fullbleed-end];
       grid-row-gap: 0; }
     .pagegrid > * {
-      background-color: #fff;
       grid-column: main; }
     .pagegrid--main__full {
       grid-column: fullbleed; } }
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1060px) {
     .pagegrid {
-      background-color: #fff;
-      grid-template-columns: [fullbleed-start] minmax(1em, 1fr) [main-start] minmax(40em, 90em) [main-end] minmax(1em, 1fr) [fullbleed-end];
-      grid-row-gap: 0; } } }
+      grid-template-columns: [fullbleed-start] minmax(1em, 1fr) [main-start] minmax(40em, 102.5rem) [main-end] minmax(1em, 1fr) [fullbleed-end]; } } }
 
-.panel {
-  min-height: 100vh; }
+/**
+ *
+ * Component: Chapter
+ * -----------------------------------------------------------
+ * Sections of the home page such as About or Case Studies
+ *
+ *
+ */
+@supports (display: grid) {
+  .chapter {
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: [aa] minmax(1em, 1fr) [bb] 3fr [cc] 7fr [dd] minmax(1em, 1fr) [ee];
+    grid-template-rows: auto 1px auto; }
+  .chapter:after {
+    content: '';
+    background-color: #ccc;
+    grid-row: 2;
+    grid-column: aa / dd; }
+  .chapter__heading {
+    grid-column: cc;
+    grid-row: 1; }
+  .chapter__contents,
+  .chapter__intro {
+    grid-column: cc;
+    grid-row: 3; }
+  @media screen and (min-width: 100em) {
+    .chapter {
+      grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee]; } } }
 
-.panel--intro {
+/**
+ *
+ * Component: Definition
+ * -----------------------------------------------
+ * A text widget for displaying a title and description text.
+ *
+ *
+ */
+@supports (display: grid) {
+  .definition {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    margin: 0.875rem 0; }
+  .definition__title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    text-transform: uppercase; }
+  .definition__desc {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0.75rem 0;
+    line-height: 1.6; } }
+
+/**
+ *
+ * Component: Case Study
+ * -----------------------------------------------
+ * Home page case study sub-sections
+ *
+ *
+ */
+@supports (display: grid) {
+  .case-study {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 25vh;
+    margin-top: 30rem;
+    display: grid;
+    grid-template-columns: [a] 1fr [b] 2fr [c];
+    grid-template-rows: auto;
+    grid-column-gap: 4rem;
+    padding: 0 2rem; }
+  .case-study__copy {
+    grid-column: b;
+    grid-row: a;
+    position: relative; }
+  .case-study__image {
+    grid-column: a;
+    grid-row: b;
+    margin: 0; }
+  .case-study__number {
+    display: block;
+    position: absolute;
+    top: -15rem;
+    font-size: 15rem;
+    color: #eee; }
+  .case-study:nth-of-type(even) {
+    grid-template-columns: [x] 2fr [y] 1fr [z]; }
+    .case-study:nth-of-type(even) .case-study__copy {
+      grid-column: a; }
+    .case-study:nth-of-type(even) .case-study__image {
+      grid-column: b; }
+  .case-study--ce .case-study__number {
+    margin-left: -1rem; }
+  @media screen and (min-width: 100em) {
+    .case-study {
+      grid-template-columns: [a] 4fr [m] 1fr [b] 6fr [n] 1fr [o];
+      grid-column-gap: 2rem; }
+    .case-study--ce .case-study__image {
+      margin-right: -4rem; } } }
+
+@supports ((-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white)) or ((-moz-text-stroke-color: #666) and (-moz-text-fill-color: white)) {
+  .case-study__number {
+    color: transparent;
+    opacity: 0.5;
+    -moz-text-fill-color: white;
+    -webkit-text-fill-color: white;
+    -moz-text-stroke-color: #c50404;
+    -webkit-text-stroke-color: #c50404;
+    -moz-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1px; } }
+
+/**
+ *
+ * Component: Checkmark List
+ * -----------------------------------------------
+ * A stylized list with a title and a list
+ *
+ *
+ */
+.checkmark-list {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 2rem; }
+
+.checkmark-list__title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  color: #333; }
+
+.checkmark-list__list {
+  list-style: none;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+  margin: 0.75rem 0;
+  line-height: 1.6; }
+
+.checkmark-list__item {
+  position: relative;
+  margin: 1rem 0 1rem 2rem; }
+
+.checkmark-list__item:before {
+  content: url("../images/checkmark.svg");
+  width: 20px;
+  height: 24px;
+  left: -2rem;
+  top: 2px;
+  overflow: hidden;
+  position: absolute; }
+
+/**
+ *
+ * Component: Buttons
+ * -----------------------------------------------
+ *
+ *
+ */
+.btn {
+  border: 1px solid #0091c1;
+  -webkit-box-shadow: 0 2px 0px #006384;
+          box-shadow: 0 2px 0px #006384;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #03a0d3;
+  position: relative;
+  border-radius: 5px;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out; }
+
+.btn:hover {
+  background-color: #00364c;
+  border-color: #00364c; }
+
+/**
+ *
+ * Component: Skills Panel
+ * -----------------------------------------------
+ *
+ * The panel for the skills section
+ *
+ */
+.skills-panel {
+  background-color: #fff; }
+
+/**
+ *
+ * Component: Intro Panel
+ * -----------------------------------------------
+ *
+ * The panel for the intro section
+ *
+ */
+.intro-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
-.panel--skills {
-  background-color: #fff; }
+/**
+ *
+ * Component: About Section
+ * -----------------------------------------------
+ *
+ * The panel for the about section
+ *
+ */
+.about-section {
+  background-color: black;
+  min-height: auto;
+  padding: 2rem 0; }
 
-.panel__card {
-  margin: auto;
-  padding: 1rem; }
+.about-section {
+  padding: 0 calc( (100% - 1640px) / 2);
+  padding-top: 3rem; }
+
+.about-section__menu-link {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem; }
+
+@supports (display: grid) {
+  .about-section {
+    grid-column: fullbleed; }
+  .about-section__grid {
+    display: grid;
+    grid-template-columns: 4fr 1fr 6fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .about-section__image {
+    grid-column: 1;
+    margin-right: -5rem;
+    margin-left: -4rem; }
+  .about-section__contents {
+    grid-column: 3; } }
+
+/**
+ *
+ * Component: Work Images
+ * -----------------------------------------------
+ *
+ *
+ *
+ */
+.work-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin: 4rem 0; }
+
+.work-image__image {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  position: relative; }
+
+.work-image__image:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05); }
+
+.work-image__image:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 1px -2px 24px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px -2px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in; }
+
+.work-image__image:hover:after {
+  opacity: 1; }
 
 /**
  * Homepage sections
  */
-@supports (display: grid) {
-  .skillsgrid {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-areas: "emptyLeft empty empty title title title title title" "emptyLeft empty empty one one two two emptyRight" "emptyLeft empty empty three three four four emptyRight"; }
-  .skills__heading {
-    grid-area: title;
-    color: #888;
-    font-weight: 700;
-    font-size: 2.25rem;
-    border-bottom: 4px solid; }
-  .skills__title {
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: 700; }
-  .skills__desc {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 1rem;
-    color: #444; }
-  .skills__skill--code {
-    grid-area: one; }
-  .skills__skill--design {
-    grid-area: two; }
-  .skills__skill--communication {
-    grid-area: three; }
-  .skills__skill--collaboration {
-    grid-area: four; } }
-
 /**
- * Works
- * Component for displaying portfolio work examples
+ *
+ * Component: Homepage Intro Section
+ * -----------------------------------------------
+ *
+ *
  */
-@supports (display: grid) {
-  .workgrid {
-    display: grid;
-    grid-column-gap: 2rem;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-areas: "emptyLeft title title title title title title emptyRight" "emptyLeft empty empty overview overview overview overview emptyRight" "examples examples examples examples examples examples examples examples"; }
-  .work__heading {
-    grid-area: title;
-    color: #888;
-    font-weight: 700;
-    font-size: 2.25rem;
-    border-bottom: 4px solid; }
-  .work__overview {
-    grid-area: overview;
-    color: #666;
-    font-family: var(--bodyFont);
-    font-size: 22px;
-    line-height: 1.5; }
-  .work-examples {
-    grid-area: examples; }
-  .work-example {
-    background-color: #fff;
-    display: grid;
-    grid-column-gap: 2rem;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 2rem 0 4rem;
-    margin-bottom: -2rem;
-    grid-template-areas: "emptyLeft source source source source source source" "emptyLeft title title title title title title" "emptyLeft image image desc desc desc desc" "emptyLeft image image bullets bullets bullets bullets"; }
-  .work-example__source {
-    grid-area: source;
-    font-size: .825rem;
-    color: #999;
-    letter-spacing: .75px;
-    font-weight: 800;
-    text-transform: uppercase; }
-  .work-example__title {
-    grid-area: title;
-    font-size: 2.25rem;
-    margin-bottom: 1rem; }
-  .work-example__desc {
-    grid-area: desc;
-    font-size: 1.5rem;
-    line-height: 1.5; }
-  .work-example__desc:first-of-type {
-    margin-top: 0; }
-  .work-example__image {
-    grid-area: image; }
-  .work-example__bullets {
-    grid-area: bullets;
-    list-style-image: url("../images/checkbox-light.svg");
-    margin-top: 0;
-    padding-left: 1.75rem; }
-  .work-example__bullet {
-    padding: .375rem 0 .375rem .625rem;
-    font-size: 18px; } }
-
 .intro {
   margin: auto; }
-
-.intro__heading {
-  line-height: 1.2;
-  font-size: 3.75rem;
-  font-weight: 900;
-  margin-bottom: 1rem; }
 
 .intro__body {
   font-size: 1.125rem;
   z-index: 99; }
 
-.intro__button {
-  display: inline-block;
-  padding: .75em 1.25em;
-  border-radius: 4px;
-  background-color: green;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer; }
-
-.alpha {
-  font-family: 'Alegreya';
-  font-size: 24px;
-  line-height: 1.5; }
-
-.beta {
-  font-family: Merriweather;
-  font-size: 22px;
-  line-height: 1.6; }
-
-.gamma {
-  font-family: 'Source+Serif+Pro';
-  font-size: 26px;
-  line-height: 1.4; }
-
-.delta {
-  color: #666;
-  font-family: var(--bodyFont);
-  font-size: 22px;
-  line-height: 1.5; }
-
-.primary-logo {
-  visibility: hidden; }
-
-.primary-logo.ready {
-  visibility: visible; }
+.introgrid {
+  margin: auto 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center; }
 
 @supports (display: grid) {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1060px) and (max-width: 1299px) {
     .introgrid {
-      padding: 0 2rem;
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-areas: "logo logo intro1 intro1 intro1 intro1" "logo logo intro2 intro2 intro2 intro2"; }
+      margin: auto;
+      max-width: 1065px;
+      -ms-flex-line-pack: center;
+          align-content: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
     .primary-logo {
-      grid-area: logo; }
-    .intro__heading {
-      grid-area: intro1;
-      margin: 0; }
-    .intro__body {
-      grid-area: intro2; } }
-  @media screen and (min-height: 650px) {
-    .primary-logo {
-      -webkit-transform: translateY(-122px);
-              transform: translateY(-122px); } }
+      -webkit-box-flex: 1;
+          -ms-flex: 1 1 30%;
+              flex: 1 1 30%;
+      margin-right: 2rem; }
+    .intro__content {
+      -webkit-box-flex: 1;
+          -ms-flex: 1 1 70%;
+              flex: 1 1 70%; } }
   @media screen and (min-width: 1300px) {
     .introgrid {
-      padding: 0;
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-areas: "logo logo content content content content content content" "logo logo content content content content content content"; }
-    .intro {
-      margin: auto; }
+      margin: 0;
+      -ms-flex-line-pack: center;
+          align-content: center;
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] minmax(1em, 1fr) [ee];
+      grid-template-rows: auto; }
+    .primary-logo {
+      grid-column: bb;
+      grid-row: 1; }
     .intro__content {
-      grid-area: content; }
+      grid-area: cc;
+      grid-row: 1; }
     .intro__body {
-      color: #666;
-      font-family: var(--bodyFont);
-      font-size: 22px;
-      line-height: 1.5;
-      max-width: 720px; } } }
+      max-width: 48.25rem; } }
+  @media screen and (min-width: 100em) {
+    .introgrid {
+      grid-template-columns: [aa] 2fr [bb] 3fr [cc] 6fr [dd] 1fr [ee]; } } }
 
-/**
- * Utilities
- */
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -776,14 +1119,44 @@ a:hover {
   width: 1px !important;
   overflow: hidden; }
 
-/**
- * Typography utility classes
- */
+.text-over-dark {
+  color: #999;
+  -webkit-font-smoothing: unset;
+  -mac-osx-font-smoothing: unset; }
+
 .newline {
   display: table; }
 
-.fixed {
+.mt-0 {
+  margin-top: 0 !important; }
+
+.mb-0 {
+  margin-bottom: 0 !important; }
+
+.mt-2 {
+  margin-top: 2rem !important; }
+
+.mb-2 {
+  margin-bottom: 2rem !important; }
+
+.u-fixed {
   position: fixed; }
+
+.u-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+/**
+ *
+ * Typekit rules
+ *
+ * Use these web fonts if Typekit fonts have loaded.
+ *
+ */
+.wf-adobecaslonpro-n4-active .tk-serif,
+.wf-adobecaslonpro-n4-active p {
+  font-family: "adobe-caslon-pro", serif; }
 
 /**
  * Styles for testing and development
@@ -791,7 +1164,20 @@ a:hover {
  */
 
 @media screen and (min-height: 600px) {
-  .panel--intro {
+  .intro-panel {
     min-height: calc(90vh); } }
+
+@media screen and (min-width: 800px) {
+  .introgrid {
+    margin: auto; } }
+
+@media screen and (max-width: 1059px) {
+  .primary-logo {
+    width: 36em;
+    position: absolute;
+    left: -150px;
+    top: -205px; }
+  .intro__content {
+    max-width: 48.25rem; } }
 
 /*# sourceMappingURL=main.css.map */

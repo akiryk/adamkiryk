@@ -1,0 +1,44 @@
+/**
+ *
+ * Component: Checkmark List
+ * -----------------------------------------------
+ * A stylized list with a title and a list
+ *
+ *
+ */
+
+.checkmark-list {
+  @include font-smoothing;
+  margin-bottom: 2rem;
+}
+
+.checkmark-list__title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem; // 18px
+  text-transform: uppercase;
+  color: $dark-gray-1;
+}
+
+.checkmark-list__list {
+  list-style: none;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+  margin: 0.75rem 0;
+  line-height: 1.6;
+}
+
+.checkmark-list__item {
+  position: relative;
+  margin: 1rem 0 1rem 2rem;
+}
+
+.checkmark-list__item:before {
+  content: url('../images/checkmark.svg');
+  width: 20px;
+  height: 24px;
+  left: -2rem;
+  top: 2px;
+  overflow: hidden;
+  position: absolute;
+}

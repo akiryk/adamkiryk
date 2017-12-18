@@ -1,28 +1,36 @@
 /**
- * Navigation
+ *
+ * Component: Primary Navigation
+ * -----------------------------------------------
+ * Navigation for site and page
+ *
+ *
  */
 
-.navbar {
-  // background-color: #333;
-  // color: #fff;
-  // display: flex;
-  // align-items: center;
-  // padding: 1rem 2rem;
-  // position: fixed;
-  // top: 0;
-  // width: 100%;
-  // z-index: 99999;
+.navbar__menu {
+  @include font-smoothing;
+  align-content: center;
+  display: flex;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+  padding: 0;
+  text-shadow: -1px 1px 0px white;
 }
 
-.navbar__menu {
-  list-style: none;
-  margin: 0;
-  display: flex;
-  align-content: center;
+.navbar__menu-item {
+  border-radius: $border-radius;
+  transition: all .25s;
+}
+
+.navbar__menu-item:hover {
+  background-color: rgba(255,255,255,0.5);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
 }
 
 .navbar__menu-link {
-  color: #fff;
+  color: #928e58;
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -30,25 +38,12 @@
 
 @supports (display: grid) {
   .navgrid {
-    display: grid;
     grid-column-gap: 2rem;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-areas:
-      "empty empty empty nav nav nav nav nav"
+    @include grid-12("empty empty empty empty empty nav nav nav nav nav nav nav");
   }
 
   .navbar {
     grid-area: nav;
-    background-color: #fff;
-    color: #666;
-    border-bottom: 1px solid #ddd;
-
   }
 
-  .navbar__menu-link {
-    color: #666;
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-  }
 }

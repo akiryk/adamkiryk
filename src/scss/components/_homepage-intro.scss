@@ -1,12 +1,13 @@
+/**
+ *
+ * Component: Homepage Intro Section
+ * -----------------------------------------------
+ *
+ *
+ */
+
 .intro {
   margin: auto;
-}
-
-.intro__heading {
-  line-height: 1.2;
-  font-size: 3.75rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
 }
 
 .intro__body {
@@ -14,114 +15,82 @@
   z-index: 99;
 }
 
-.intro__button {
-  display: inline-block;
-  padding: .75em 1.25em;
-  border-radius: 4px;
-  background-color: green;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+.introgrid {
+  margin: auto 1em;
+  display: flex;
+  align-content: center;
 }
 
-.alpha {
-    font-family: 'Alegreya';
-    font-size: 24px;
-    line-height: 1.5;
+@media screen and (min-width: $medium) {
+  .introgrid {
+    margin: auto;
+  }
 }
 
-.beta {
-  font-family: Merriweather;
-  font-size: 22px;
-  line-height: 1.6;
-}
-
-.gamma {
-  font-family: 'Source+Serif+Pro';
-  font-size: 26px;
-  line-height: 1.4;
-}
-
-.delta {
-  @include fontLargeBody;
-}
-
-.primary-logo {
-  // position: absolute;
-  visibility: hidden;
-}
-
-.primary-logo.ready {
-  visibility: visible;
+@media screen and (max-width: $large-minus-1) {
+  .primary-logo {
+    width: 36em;
+    position: absolute;
+    left: -150px;
+    top: -205px;
+  }
+  .intro__content {
+    max-width: $p-max;
+  }
 }
 
 @supports (display: grid) {
-  @media screen and (min-width: $medium) {
+
+   @media screen and (min-width: $large) and (max-width: $xlarge-minus-1) {
     .introgrid {
-      padding: 0 2rem;
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-areas:
-        "logo logo intro1 intro1 intro1 intro1"
-        "logo logo intro2 intro2 intro2 intro2"
-    }
-
-    .primary-logo {
-      grid-area: logo;
-      // width: 420px;
-      // transform: translate(-50%, -24rem);
-      // top: 50%;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
-    }
-
-    .intro__heading {
-      grid-area: intro1;
-      margin: 0;
-    }
-
-    .intro__body {
-      grid-area: intro2;
-    }
-  }
-
-  @media screen and (min-height: 650px) {
-    .primary-logo {
-      transform: translateY(-122px);
-    }
-  }
-
-  @media screen and (min-width: $xlarge) {
-    .introgrid {
-      padding: 0;
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-areas:
-        "logo logo content content content content content content"
-        "logo logo content content content content content content"
-    }
-
-    .intro {
       margin: auto;
+      max-width: 1065px;
+      align-content: center;
+      display: flex;
+    }
+
+    .primary-logo {
+      flex: 1 1 30%;
+      margin-right: 2rem;
     }
 
     .intro__content {
-      grid-area: content;
+      flex: 1 1 70%;
     }
 
     .intro__body {
-      @include fontLargeBody;
-      max-width: 720px;
+      // max-width: $p-max;
+    }
+  }
+
+
+  @media screen and (min-width: $xlarge) {
+    .introgrid {
+      margin: 0;
+      align-content: center;
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] minmax(1em, 1fr) [ee];
+      grid-template-rows: auto;
+    }
+    .primary-logo {
+      grid-column: bb;
+      grid-row: 1;
     }
 
-   .primary-logo {
-      // width: 460px;
-      // left: 50%;
-      // transform: translate(-50%, -24rem);
-      // float: left;
-      // width: 33.3333%;
-      // margin-right: 2rem;
+    .intro__content {
+      grid-area: cc;
+      grid-row: 1;
+    }
+
+    .intro__body {
+      max-width: $p-max;
+    }
+  }
+
+  @media screen and (min-width: $max-width) {
+    .introgrid {
+      grid-template-columns: [aa] 2fr [bb] 3fr [cc] 6fr [dd] 1fr [ee];
     }
   }
 

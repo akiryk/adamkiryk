@@ -1,6 +1,39 @@
 /**
  *
- * Headings
+ * Component: Headings
+ * -----------------------------------------------
+ *
+ *
  *
  */
 
+.site-heading {
+  color: $font-color;
+  font-size: $font-xxl;
+  font-weight: 400;
+}
+
+.site-subheading {
+  @include font-smoothing;
+  color: $dark-gray-3;
+  font-size: $font-lg;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.chapter__heading {
+  color: $red;
+  font-size: $font-xl;
+  font-weight: 400;
+}
+
+.sub-section-heading {
+  color: $dark-gray-1;
+  font-size: $font-xl;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.sub-section-heading--about {
+  color: $light-gray-2;
+}

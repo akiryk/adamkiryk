@@ -1,34 +1,93 @@
+
+
+
+
+
+
 /**
- * Works
- * Component for displaying portfolio work examples
+ *
+ * NOT USED
+ *
+ *
+ *
+ *
+ *
  */
+
+
+
+
+
+
+
+
+
 
 @supports (display: grid) {
   .workgrid {
+    padding: 0;
     display: grid;
     grid-column-gap: 2rem;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
-      "emptyLeft title title title title title title emptyRight"
-      "emptyLeft empty empty overview overview overview overview emptyRight"
-      "examples examples examples examples examples examples examples examples";
+      ".     .     .     .     title title title title title title title title"
+      ".     .     .     .     overview overview overview overview overview overview  .     ."
+      ".     .     .     .     cs cs cs cs cs cs cs cs";
+    grid-template-rows: repeat(100, 1px);
+    // @include grid-12("left logo logo logo content content content content content content right right");
   }
 
   .work__heading {
-    grid-area: title;
-    color: #888;
-    font-weight: 700;
-    font-size: 2.25rem;
-    border-bottom: 4px solid;
+    grid-column: title;
+    grid-row: 1 / -1;
+    font-size: $font-xl;
+    font-weight: 400;
   }
+    .work__heading::after {
+      display: block;
+      content: '';
+      border-bottom: 1px solid #ccc;
+      margin-left: calc(-50% - 1rem);
+    }
 
   .work__overview {
-    grid-area: overview;
-    @include fontLargeBody;
+    grid-row: 1 / -1;
+    grid-column: overview;
   }
 
-  .work-examples {
-    grid-area: examples
+  .work__case-study {
+    grid-column: cs;
+    grid-row: 1 / -1;
+    margin-top: 20rem;
+  }
+
+  .case-study__heading {
+    color: #444;
+    position: relative;
+  }
+
+  @supports ((-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white))
+    or ((-moz-text-stroke-color: #666)and (-moz-text-fill-color: white)) {
+
+    .case-study__heading:after {
+      display: block;
+      position: absolute;
+      opacity: 0.5;
+      top: -13rem;
+      left: -1.5rem;
+      font-size: 15rem;
+         -moz-text-fill-color: white;
+      -webkit-text-fill-color: white;
+         -moz-text-stroke-color: $red;
+      -webkit-text-stroke-color: $red;
+         -moz-text-stroke-width: 1px;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    .case-study__heading--one:before {
+      content: '1';
+    }
+
   }
 
   .work-example {
@@ -85,29 +144,5 @@
     padding: .375rem 0 .375rem .625rem;
     font-size: 18px;
   }
-
-
-  // .skills__title {
-  //   color: var(--gold);
-  //   font-size: 1.5rem;
-  //   font-weight: 700;
-  // }
-
-
-  // .skills__skill--code {
-  //   grid-area: one;
-  // }
-
-  // .skills__skill--design {
-  //   grid-area: two;
-  // }
-
-  // .skills__skill--communication {
-  //   grid-area: three;
-  // }
-
-  // .skills__skill--collaboration {
-  //   grid-area: four;
-  // }
 
 }
