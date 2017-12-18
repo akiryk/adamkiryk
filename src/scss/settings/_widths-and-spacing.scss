@@ -11,14 +11,12 @@ $border-radius: 5px;
 $global-spacing-unit: 24px;
 
 // maximum width for paragraph text
-$p-max: 48.25rem;
+$p-max: 50rem;
 
 // 1350 - 1400px is my laptop when browser is wide but not max
 
-$medium: 800px;
-$medium-minus-1: 799px;
-$large-minus-1: 1059px;
-$large: 1060px;
-$xlarge-minus-1: 1299px;
-$xlarge: 1300px;
+$small: 800px;
+$medium: 1060px;
+$large: 1200px;
+$xlarge: 1400px;
 $max-width: 100em; //1600px;

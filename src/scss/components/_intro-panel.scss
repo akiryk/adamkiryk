@@ -7,13 +7,3 @@
  *
  */
 
-.intro-panel {
-  display: flex;
-}
-
-
-@media screen and (min-height: 600px) {
-  .intro-panel {
-    min-height: calc(90vh);
-  }
-}

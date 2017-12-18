@@ -7,35 +7,99 @@
  *
  */
 
-@supports (display: grid) {
-  .chapter {
-    display: grid;
-    grid-column-gap: 2rem;
-    grid-template-columns: [aa] minmax(1em, 1fr) [bb] 3fr [cc] 7fr [dd] minmax(1em, 1fr) [ee];
-    grid-template-rows: auto 1px auto;
+.chapter {
+  margin: auto 1rem;
+  position: relative;
+}
+  .chapter:after {
+    content: '';
+    background-color: #ccc;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 4rem;
   }
-    .chapter:after {
-      content: '';
-      background-color: #ccc;
-      grid-row: 2;
-      grid-column: aa / dd;
+
+.chapter__contents {
+  max-width: 500px;
+  margin: auto;
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: $small){
+    .chapter {
+      margin: auto 2rem auto 10%;
     }
 
-  .chapter__heading {
-    grid-column: cc;
-    grid-row: 1;
+    .chapter__heading {
+      grid-column: cc;
+      grid-row: 1;
+    }
+
+    .chapter__contents,
+    .chapter__intro {
+      grid-column: cc;
+      grid-row: 3;
+    }
+
+    .chapter__contents {
+      margin: unset;
+      max-width: unset;
+    }
   }
 
-  .chapter__contents,
-  .chapter__intro {
-    grid-column: cc;
-    grid-row: 3;
+  @media screen and (min-width: $medium){
+
+    .chapter {
+      margin: auto;
+    }
+
+    .chapter__heading,
+    .chapter__contents {
+      margin-left: calc(30% + 2rem);
+    }
+
+  }
+
+  @media screen and (min-width: $large){
+
+    .chapter {
+      margin: unset;
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
+      grid-template-rows: auto 1px auto;
+    }
+
+      .chapter:after {
+        grid-row: 2;
+        grid-column: aa / dd;
+        position: unset;
+        top: unset;
+        width: unset;
+        height: unset;
+      }
+
+    .chapter__heading,
+    .chapter__contents {
+      margin-left: unset;
+    }
+
+  }
+
+  @media screen and (min-width: $xlarge){
+
+    .chapter {
+      grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
+    }
+
   }
 
   @media screen and (min-width: $max-width) {
+
     .chapter {
       grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
     }
-  }
 
+  }
 }

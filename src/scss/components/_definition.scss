@@ -8,24 +8,34 @@
  */
 
 @supports (display: grid) {
+
   .definition {
-    @include font-smoothing;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: baseline;
-    margin: 0.875rem 0;
-  }
+      @include font-smoothing;
+      margin: 0.875rem 0;
+    }
 
-  .definition__title {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.125rem; // 18px
-    text-transform: uppercase;
-  }
+    .definition__title {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.125rem; // 18px
+      text-transform: uppercase;
+    }
 
-  .definition__desc {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem; //0.9375rem; //15px
-    margin: 0.75rem 0;
-    line-height: 1.6;
+    .definition__desc {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem; //0.9375rem; //15px
+      margin: 0.75rem 0;
+      line-height: 1.6;
+    }
+
+  @media screen and (min-width: $small){
+
+    .definition {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: baseline;
+    }
+
+
+
   }
 }

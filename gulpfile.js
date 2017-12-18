@@ -95,7 +95,6 @@ gulp.task('compileSASS', function() {
   var pcssPlugins = [
     autoprefixer({ browsers: ['last 2 versions', '> 2%'] }),
     //cssnano,
-    mqpacker
   ];
 
   return gulp.src(folder.src + 'scss/main.scss')

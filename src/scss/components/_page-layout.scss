@@ -9,8 +9,9 @@
   height: 100%;
 }
 
-@supports (display: grid){
-  @media screen and (min-width: $medium) {
+@media screen and (min-width: $medium) {
+  @supports (display: grid){
+
     .pagegrid {
       display: grid;
       grid-template-columns:
@@ -28,12 +29,19 @@
     }
   }
 
-  @media screen and (min-width: $large) {
+}
+
+@media screen and (min-width: $large) {
+  @supports (display: grid){
+
     .pagegrid {
       grid-template-columns:
         [fullbleed-start] minmax(1em, 1fr)
         [main-start] minmax(40em, $wrapper-width-lg) [main-end]
         minmax(1em, 1fr) [fullbleed-end];
     }
+
   }
 }
+
+
