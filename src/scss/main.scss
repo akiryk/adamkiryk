@@ -25,26 +25,21 @@
  * Components
  */
 // @import "components/grid";
-@import "components/panel";
-@import "components/headings";
-@import "components/navigation";
-@import "components/page-layout";
-@import "components/chapter";
-@import "components/definition.scss";
-@import "components/case-study.scss";
-@import "components/checkmark-list.scss";
-@import "components/buttons.scss";
-@import "components/skills-panel.scss";
-@import "components/intro-panel.scss";
-@import "components/about-section.scss";
-@import "components/work-images.scss";
 
-/**
- * Homepage sections
- */
-// @import "components/homepage-works";
-// @import "components/homepage-skills";
-@import "components/homepage-intro";
+@import "components/buttons";
+@import "components/checkmark-list";
+@import "components/definition";
+@import "components/headings";
+@import "components/hp-about";
+@import "components/hp-case-study";
+@import "components/hp-intro";
+@import "components/hp-skills";
+@import "components/hp-work";
+@import "components/navigation";
+@import "components/pagegrid";
+@import "components/panel";
+@import "components/section-title";
+
 
 @import "trumps/accessibility";
 @import "trumps/helpers";

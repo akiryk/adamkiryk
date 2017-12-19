@@ -1,13 +1,10 @@
 /**
  *
- * Page-layout
+ * Pagegrid Component
+ *
+ * The main wrapper grid
  *
  */
-
-.main {
-  // background-color: #fff;
-  height: 100%;
-}
 
 @media screen and (min-width: $medium) {
   @supports (display: grid){
@@ -19,6 +16,7 @@
         [main-start] minmax(40em, 85em) [main-end]
         minmax(2em, 1fr) [fullbleed-end];
       grid-row-gap: 0;
+      height: 100%;
     }
     .pagegrid > * {
       grid-column: main;

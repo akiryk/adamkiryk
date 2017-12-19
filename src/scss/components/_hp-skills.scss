@@ -1,0 +1,102 @@
+/**
+ *
+ * Component: Home Page Skills
+ * -----------------------------------------------
+ *
+ * A special component for the Skill section.
+ *
+ *
+ */
+
+ /**
+ *
+ * Component: Chapter
+ * -----------------------------------------------------------
+ * Sections of the home page such as About or Case Studies
+ *
+ *
+ */
+
+.hp-skills {
+  @include font-smoothing;
+  margin: auto 1rem;
+}
+
+.hp-skills__skill {
+  font-size: 1.125rem;
+  margin: 2rem 0;
+}
+
+.hp-skills__title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.hp-skills__desc {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  font-size: 1.125rem;
+}
+
+
+@supports (display: grid) {
+  @media screen and (min-width: $small){
+
+    .hp-skills {
+      max-width: unset;
+      margin: auto 2rem auto 10%;
+    }
+
+  }
+
+  @media screen and (min-width: $medium){
+
+    .hp-skills {
+      margin-left: calc(30% + 2rem);
+    }
+
+    .hp-skills__skill {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  @media screen and (min-width: $large){
+
+    .hp-skills {
+      margin: unset;
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
+    }
+
+    .hp-skills__skill {
+      grid-column: 3;
+      align-items: baseline;
+    }
+
+    .hp-skills__desc {
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+  }
+
+  @media screen and (min-width: $xlarge){
+
+    .hp-skills {
+      grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
+    }
+
+  }
+
+  @media screen and (min-width: $max-width) {
+
+    .hp-skills {
+      grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
+    }
+
+  }
+}

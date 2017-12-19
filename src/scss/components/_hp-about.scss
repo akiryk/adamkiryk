@@ -1,0 +1,37 @@
+/**
+ *
+ * Component: Home Page About
+ * -----------------------------------------------
+ *
+ * A special component for the About Me section.
+ *
+ * Note that this section is contained in a panel and
+ * using the panel--about class.
+ *
+ */
+
+.hp-about__menu-link {
+  font-family: $sans-serif;
+  font-size: 1.125rem;
+}
+
+// About Section
+@supports (display: grid){
+
+  .hp-about {
+    display: grid;
+    grid-template-columns: 4fr 1fr 6fr 1fr;
+    align-items: center;
+  }
+
+  .hp-about__image {
+    grid-column: 1;
+    margin-right: -5rem;
+    margin-left: -4rem;
+  }
+
+  .hp-about__contents {
+    grid-column: 3;
+  }
+}
+

@@ -1,17 +1,17 @@
 /**
  *
- * Component: Chapter
+ * Component: Title Bar
  * -----------------------------------------------------------
- * Sections of the home page such as About or Case Studies
+ * Section headings, such as "Skills" or "Case Studies"
  *
  *
  */
 
-.chapter {
+.section-title {
   margin: auto 1rem;
   position: relative;
 }
-  .chapter:after {
+  .section-title:after {
     content: '';
     background-color: #ccc;
     height: 1px;
@@ -20,50 +20,53 @@
     top: 4rem;
   }
 
-.chapter__contents {
-  max-width: 500px;
-  margin: auto;
+.section-title__heading {
+  color: $red;
+  font-size: $font-xl;
+  font-weight: 400;
+}
+
+.section-title__desc {
+  max-width: $p-max;
 }
 
 @supports (display: grid) {
   @media screen and (min-width: $small){
-    .chapter {
+    .section-title {
       margin: auto 2rem auto 10%;
     }
 
-    .chapter__heading {
+    .section-title__heading {
       grid-column: cc;
       grid-row: 1;
     }
 
-    .chapter__contents,
-    .chapter__intro {
+    .section-title__desc {
       grid-column: cc;
       grid-row: 3;
-    }
-
-    .chapter__contents {
       margin: unset;
       max-width: unset;
     }
+
   }
 
   @media screen and (min-width: $medium){
 
-    .chapter {
+    .section-title {
       margin: auto;
     }
 
-    .chapter__heading,
-    .chapter__contents {
-      margin-left: calc(30% + 2rem);
+    .section-title__heading,
+    .section-title__desc {
+      margin-left: calc(33.3333% + 4rem);
+      max-width: unset;
     }
 
   }
 
   @media screen and (min-width: $large){
 
-    .chapter {
+    .section-title {
       margin: unset;
       display: grid;
       grid-column-gap: 2rem;
@@ -71,17 +74,17 @@
       grid-template-rows: auto 1px auto;
     }
 
-      .chapter:after {
+      .section-title:after {
         grid-row: 2;
-        grid-column: aa / dd;
+        grid-column: aa / ee;
         position: unset;
         top: unset;
         width: unset;
         height: unset;
       }
 
-    .chapter__heading,
-    .chapter__contents {
+    .section-title__heading,
+    .section-title__desc {
       margin-left: unset;
     }
 
@@ -89,7 +92,7 @@
 
   @media screen and (min-width: $xlarge){
 
-    .chapter {
+    .section-title {
       grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
     }
 
@@ -97,7 +100,7 @@
 
   @media screen and (min-width: $max-width) {
 
-    .chapter {
+    .section-title  {
       grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
     }
 

@@ -20,34 +20,23 @@
 }
 
 .primary-logo {
-  width: 16rem;
-  position: absolute;
-  left: -64px;
-  top: -110px;
+  margin-bottom: 2rem;
+  width: 35%;
 }
 
-@media screen and (min-height: $medium) {
-  .intro-panel {
-    display: flex;
-    min-height: calc(90vh);
-  }
-}
-
-@media screen and (min-width: 800px){
+@media screen and (min-width: $small){
 
   .introgrid {
     margin: auto 2em auto 10%;
   }
 
   .primary-logo {
-    width: 36em;
-    left: -150px;
-    top: -205px;
+    margin-bottom: 3rem;
   }
 
 }
 
-@media screen and (min-width: 1060px){
+@media screen and (min-width: $medium){
 
   .introgrid {
     margin: auto 1em;
