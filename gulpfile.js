@@ -18,6 +18,7 @@ const
   newer = require('gulp-newer'),
   postcss = require('gulp-postcss'),
   pump = require('pump'),
+  rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   stripdebug = require('gulp-strip-debug'),
@@ -130,9 +131,15 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('concatJS', function() {
-  return gulp.src(['src/js/devScripts.js'])
+  return gulp.src(['src/js/vendors/gsap/*.js', 'src/js/main.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('docs/js/'))
+
+    // gulp.task('scripts', function() {
+    //   return gulp.src(['./lib/file3.js', './lib/file1.js', './lib/file2.js'])
+    //     .pipe(concat('all.js'))
+    //     .pipe(gulp.dest('./dist/'));
+    // });
 })
 
 gulp.task('babel', () =>

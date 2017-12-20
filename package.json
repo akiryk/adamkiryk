@@ -31,5 +31,6 @@
     "gulp-webserver": "^0.9.1",
     "postcss-assets": "^4.2.0",
     "pump": "^1.0.2"
-  }
+  },
+  "dependencies": {}
 }
