@@ -99,12 +99,11 @@
     }
 
     .hp-case-study__copy {
-      grid-column: cc/ee;
+      grid-column: cc/dd;
     }
 
     .hp-case-study__image {
-      grid-column: aa/cc;
-      margin-right: 2rem;
+      grid-column: bb/cc;
     }
 
     /*
@@ -115,13 +114,11 @@
       grid-template-columns: [aa] 0.5fr [bb] 4fr [cc] 2fr [dd] 0.5fr [ee];
 
       .hp-case-study__copy {
-        grid-column: aa/cc;
+        grid-column: bb/cc;
       }
 
       .hp-case-study__image {
-        grid-column: cc/ee;
-        margin-left: 2rem;
-        margin-right: 0;
+        grid-column: cc/dd;
       }
     }
 

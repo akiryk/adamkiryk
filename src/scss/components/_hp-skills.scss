@@ -46,6 +46,9 @@
     .hp-skills {
       max-width: unset;
       margin: auto 2rem auto 10%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
     }
 
   }
@@ -54,10 +57,10 @@
 
     .hp-skills {
       margin-left: calc(30% + 2rem);
+      display: block;
     }
 
     .hp-skills__skill {
-      display: grid;
       grid-template-columns: 1fr 1fr;
     }
 

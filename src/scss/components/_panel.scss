@@ -14,7 +14,7 @@
 /**
  * Intro Panel
  */
-@media screen and (min-height: $small) {
+@media screen and (min-height: 42.5em) {
   .panel--intro {
     display: flex;
     min-height: calc(90vh);

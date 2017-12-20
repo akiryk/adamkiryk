@@ -59,6 +59,7 @@
     .section-title__heading,
     .section-title__desc {
       margin-left: calc(33.3333% + 4rem);
+      margin-left: calc(30% + 2rem);
       max-width: unset;
     }
 
@@ -76,7 +77,7 @@
 
       .section-title:after {
         grid-row: 2;
-        grid-column: aa / ee;
+        grid-column: bb / dd;
         position: unset;
         top: unset;
         width: unset;
@@ -106,3 +107,94 @@
 
   }
 }
+/*
+.section-title {
+  margin: auto 1rem;
+  position: relative;
+}
+
+.section-title__heading {
+  color: $red;
+  font-size: $font-xl;
+  font-weight: 400;
+}
+
+.section-title__desc {
+  max-width: $p-max;
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: $small){
+    .section-title {
+      margin: auto 2rem auto 10%;
+    }
+
+    .section-title__desc {
+      margin: unset;
+      max-width: unset;
+    }
+
+  }
+
+  @media screen and (min-width: $medium){
+
+    .section-title {
+      margin: auto;
+    }
+
+    .section-title__heading,
+    .section-title__desc {
+      margin-left: calc(33.3333% + 4rem);
+      margin-left: calc(30% + 2rem);
+      max-width: unset;
+    }
+
+  }
+
+  @media screen and (min-width: $large){
+
+    .section-title {
+      margin: unset;
+      display: grid;
+      grid-column-gap: 2rem;
+      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto 1px auto;
+    }
+      .section-title:after {
+        content: '';
+        background-color: #ccc;
+        grid-row: 2;
+        grid-column: 4/10;
+      }
+
+    .section-title__heading {
+      grid-row: 1;
+      grid-column: 6/11;
+      margin-left: unset;
+    }
+    .section-title__desc {
+      grid-column: 3/10;
+      grid-row: 1;
+      margin-left: unset;
+    }
+
+  }
+
+  @media screen and (min-width: $xlarge){
+
+    .section-title {
+      grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
+    }
+
+  }
+
+  @media screen and (min-width: $max-width) {
+
+    .section-title  {
+      grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
+    }
+
+  }
+}
+*/
