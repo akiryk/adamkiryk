@@ -3,55 +3,111 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Adam Kiryk, UX and Product Designer</title>
+  <title>Adam Kiryk, Front End Developer and UI Designer</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/main.css">
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800" rel="stylesheet">
-
   <!-- Load ScrollMagic and Greensock -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineMax.min.js"></script>
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
 
-  <!-- TypeKit embed code -->
   <script>
-  (function(d) {
-    var config = {
-      kitId: 'vdt8eam',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-  </script>
+    WebFontConfig = {
+      google: {
+        families: ['Open Sans:400','Open Sans:400i', 'Open Sans:700', 'Open Sans: 700i']
+      },
+      typekit: {
+        id: 'vdt8eam'
+      }
+    };
 
+    (function(d) {
+          var wf = d.createElement('script'), s = d.scripts[0];
+          wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+          wf.async = true;
+          s.parentNode.insertBefore(wf, s);
+       })(document);
+
+  </script>
 </head>
 <body id="home" class="home-page">
   <a class="visually-hidden" href="#main">Skip to content</a>
-  <main id="main" class="main pagegrid">
-    <div class="navgrid">
-        <nav id="primary-nav" class="navbar">
-          <ul class="navbar__menu">
-            <li class="navbar__menu-item"><a href="#home" class="navbar__menu-link">Home</a></li>
-            <li class="navbar__menu-item"><a href="#skills" class="navbar__menu-link">Skills</a></li>
-            <li class="navbar__menu-item"><a href="#work" class="navbar__menu-link">Work</a></li>
-          </ul>
-        </nav>
-      </div>
+  <nav id="primary-nav" class="navbar">
+    <ul class="navbar__menu">
+      <li class="navbar__menu-item"><a href="#skills" class="navbar__menu-link">Skills</a></li>
+      <li class="navbar__menu-item"><a href="#case-studies" class="navbar__menu-link">Case Studies</a></li>
+      <li class="navbar__menu-item"><a href="#work-examples" class="navbar__menu-link">Work</a></li>
+      <li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">About</a></li>
+    </ul>
+  </nav>
+  <main id="main" class="main">
     <section id="introTrigger" class="panel panel--intro">
-      <div class="intro introgrid">
-        <div id="primaryLogo" class="primary-logo introgrid__logo"><img src="images/logo-blue-yellow.svg" alt=""/></div>
+      <div id="intro" class="intro introgrid fade-in">
+        <div id="primaryLogo" class="primary-logo introgrid__logo display-none">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.3 227.5" >
+            <style type="text/css">
+              .st0{fill:url(#SVGID_1_);}
+              .st1{fill:url(#SVGID_2_);}
+              .st2{fill:#0091C1;}
+              .st3{fill:url(#SVGID_3_);}
+            </style>
+            <defs>
+              <clipPath id="kTopMask">
+                <rect id="mask1" x="223" y="0" width="170" height="230" />
+              </clipPath>
+              <clipPath  id="kBottomMask">
+                <polygon id="mask2" points="279.3,54.8 215.6,118.4 334.7,237.5 393.3,178.8"/>
+              </clipPath>
+              <clipPath id="aLeftMask">
+                <!-- <rect id="mask3" width="400" height="300" /> -->
+                <polygon id="mask3" points="0,225.6 96.7,226.2 225.6,97.3 225.6,0 " />
+              </clipPath>
+              <clipPath id="aRightMask">
+                <rect id="mask4" x="150" y="0" width="80" height="300" fill="rgba(0,0,0,0.25)" />
+              </clipPath>
+            </defs>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="325.6284" y1="67.1081" x2="283.6284" y2="109.1081">
+              <stop  offset="0" style="stop-color:#D1C71D"/>
+              <stop  offset="0.1264" style="stop-color:#CDC21D"/>
+              <stop  offset="0.549" style="stop-color:#C2B71B"/>
+              <stop  offset="1" style="stop-color:#BFB31B"/>
+            </linearGradient>
+            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="113.1107" x2="225.6398" y2="113.1107">
+              <stop  offset="0.5767" style="stop-color:#0091C1"/>
+              <stop  offset="0.8762" style="stop-color:#0070A3"/>
+            </linearGradient>
+            <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="322.3282" y1="130.8078" x2="283.2769" y2="169.859">
+              <stop  offset="0" style="stop-color:#D1C71D"/>
+              <stop  offset="0.1264" style="stop-color:#CDC21D"/>
+              <stop  offset="0.549" style="stop-color:#C2B71B"/>
+              <stop  offset="1" style="stop-color:#BFB31B"/>
+            </linearGradient>
+            <polygon id="kBottom" class="st3" points="274.3,69.8 225.6,118.4 334.7,227.5 383.3,178.8" clip-path="url(#kBottomMask)"/>
+            <polygon id="aLeft" class="st1" points="0,225.6 96.7,226.2 225.6,97.3 225.6,0 " clip-path="url(#aLeftMask)"/>
+            <polygon id="aRight" class="st2" points="225.6,226.5 158.8,226.5 158.8,66.6 225.6,0" clip-path="url(#aRightMask)" />
+            <polygon id="kTop" class="st0" points="274.3,167.1 343.4,98 343.4,0.7 225.6,118.4" clip-path="url(#kTopMask)" />
+          </svg>
+        </div>
         <div id="introContent" class="intro__content">
-          <h1 id="introHeading" class="site-heading tk-serif">Adam Kiryk</h1>
-          <div class="site-subheading tk-serif">UX Designer / Product Designer</div>
+          <div id="introHeading">
+            <h1 class="site-heading tk-serif">Adam Kiryk</h1>
+            <div class="site-subheading tk-serif">Front End Developer / UI Designer </div>
+          </div>
           <div id="introBody" class="intro__body">
-            <p>With over ten years experience building digital products that serve people’s needs, I have a demonstrated ability to produce successful results. My core skills include <a href="#">understanding users</a>, <a href="#">information architecture</a>, <a href="#">visual design</a>, and <a href="#">rapid prototyping</a>.</p>
-            <p>Sound good? I also write and speak clearly about my work. I thrive in a collaborative and multidisciplinary environment. And I’m fluent with HTML, CSS, and JavaScript.</p>
-            <p>Oh, and I love <a href="#">the outdoors</a>.</p>
+            <p>I have over ten years experience designing and building successful, user-centered products.</p>
+            <p>I write smart, maintainable CSS and JavaScript. I’m a skilled visual and user interface designer.  And I’m passionate about creating great user experiences.</p>
+            <p>Sound good? I also write and speak clearly about my work. I thrive in a collaborative environment. And I love learning new things.
+            </p>
+            <p><a href="#skills">Say more...</a></p>
           </div>
         </div>
       </div>
@@ -59,155 +115,200 @@
 
     <section id="skills" class="panel panel--skills">
       <div class="section-title">
-        <h2 class="section-title__heading tk-serif">Skills</h2>
+        <h2 id="skillsTitle" class="section-title__heading section-title__heading--skills tk-serif">Skills</h2>
+
       </div>
       <div class="hp-skills">
         <div class="hp-skills__skill">
-          <h3 class="hp-skills__title">Understanding Users</h3>
-          <div class="hp-skills__desc">As a senior UX and product designer at NPR for over six years, I’ve designed and run user tests and interviews; monitored analytics; and led efforts to optimize our products to meet user needs.</div>
-        </div>
-        <div class="hp-skills__skill">
-          <h3 class="hp-skills__title">Visual Design</h3>
-          <div class="hp-skills__desc">I studied design at California College of the Arts in San Francisco, and I have years of experience creating visual systems that prioritize usability and accessibility. I’m expert in information design and typography. And I’m fluent with Photoshop, Illustrator, and Sketch.</div>
-        </div>
-        <div class="hp-skills__skill">
-           <h3 class="hp-skills__title">Information Architecture</h3>
-           <div class="hp-skills__desc">I create scalable systems that make sense to users — whether for organizing wide-ranging content, implementing consistent labeling, or navigation.</div>
-        </div>
-        <div class="hp-skills__skill">
           <h3 class="hp-skills__title">Front End Development</h3>
-          <div class="hp-skills__desc">I know HTML, CSS, and JavaScript, and I’m experienced creating WordPress and Drupal themes. I was largely self-taught until 2016, when I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program.</div>
+          <div class="hp-skills__desc">In addition to years of real-world, on-the-job training, I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program in 2016. My technology skills include HTML, CSS, and JavaScript; React and Redux; Git; webpack, gulp, and grunt; SASS and LESS.</div>
         </div>
-      </div>
+        <div class="hp-skills__skill">
+          <h3 class="hp-skills__title">UX + UI Design</h3>
+          <div class="hp-skills__desc">I studied interaction design at the <a href="https://www.cca.edu/" target="_blank">California College of the Arts</a> in San Francisco, and have led numerous user experience and visual design projects while at Arnold and NPR.</div>
+        </div>
+        <div class="hp-skills__skill">
+           <h3 class="hp-skills__title">Communication</h3>
+           <div class="hp-skills__desc">I’m a strong writer and public speaker; I'm comfortable explaining my work to clients and stakeholders; and I'm experienced collaborating with colleagues to discuss challenges, resolve conflicts, and work out solutions.</div>
+        </div>
+        </div>
     </section>
 
     <section id="case-studies" class="panel panel--case-studies">
       <div class="section-title">
-        <h2 class="section-title__heading tk-serif">Case Studies</h2>
+        <h2 class="section-title__heading tk-serif">Work Experience</h2>
         <div class="section-title__desc">
-          <p>These case studies show how I approach user experience and product design. Through understanding users, experimenting with potential solutions, and collaborating with teammates and clients, I have a record of building successful products.</p>
+          <p>I worked for <a href="http://www.npr.org" target="_blank">NPR</a> from 2011 to 2017, leading product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at <a href="http://arn.com/ target="_blank">Arnold Worldwide</a>, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
+          <p>The following projects show the range of depth of my experience in design and front end development.</p>
         </div>
       </div>
 
-      <!-- UX Case Studies -->
-      <div class="hp-case-study hp-case-study--ce">
+      <!-- 1. Story Editor -->
+      <div id="case-study-ce" class="hp-case-study hp-case-study--ce">
+        <div class="hp-case-study__number tk-serif">1</div>
         <figure class="hp-case-study__image">
           <img src="images/hp-ce-map.jpg" alt="Map of NPR stations">
           <figcaption class="caption">There are hundreds of NPR stations across the country, some quite small and lacking resources to build or maintain robust digital operations.</figcaption>
         </figure>
         <div class="hp-case-study__copy">
-          <div class="hp-case-study__number tk-serif">1</div>
-          <h2 class="sub-section-heading tk-serif hp-case-study__heading">How can NPR help its member stations increase their digital reach?</h2>
+          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Story Editor for NPR Stations</h2>
           <p class="mt-0 mb-2 tk-serif hp-case-study__desc">
-            I was UX lead on a product designed to make it easier for station editors to create better, more engaging content.
+            I led UX and wrote code for this internally facing web application designed to help member stations create local content for distribution across NPR properties.
           </p>
           <div class="checkmark-list">
             <h3 class="checkmark-list__title">What I Did</h3>
             <ul class="checkmark-list__list">
-              <li class="checkmark-list__item">Defined product objectives.</li>
-              <li class="checkmark-list__item">Designed and carried out a research plan for understanding user needs.</li>
-              <li class="checkmark-list__item">Led a design sprint for generating ideas from a group representing multiple disciplines.</li>
-              <li class="checkmark-list__item">Conducted user tests and interviews; presented findings to stakeholders.</li>
-              <li class="checkmark-list__item">Created wireframes, prototypes, and visual designs.</li>
+              <li class="checkmark-list__item">Created custom components using React.js</li>
+              <li class="checkmark-list__item">Used Redux to manage state.</li>
+              <li class="checkmark-list__item">Researched station needs and created a streamlined visual design.</li>
+              <li class="checkmark-list__item">Led team through a design sprint that helped guide product strategy.</li>
+              <li class="checkmark-list__item">Initiated a living styleguide based on PatternLab.io.</li>
             </ul>
           </div>
-          <a class="btn" href="#">See Details</a>
+          <a class="btn" href="fed-story-editor.html">See Details</a>
         </div>
       </div>
-      <div class="hp-case-study hp-case-study--cp">
-         <div class="hp-case-study__image">
-          <img src="images/hp-cp-devices.jpg" alt="Websites viewed in different devices">
+
+      <!-- 2. Core Publisher -->
+      <div id="case-study-cp" class="hp-case-study hp-case-study--cp">
+        <div class="hp-case-study__number tk-serif">2</div>
+        <div class="hp-case-study__image">
+          <img srcset="images/hp-cp-devices--large.jpg 1099w,
+                images/hp-cp-devices--medium.jpg 600w,
+                images/hp-cp-devices--small.jpg 300w"
+                sizes="(min-width: 50em) 33.3vw,
+                      100vw"
+                src="images/hp-cp-devices--medium"
+                alt="Websites viewed in different devices">
         </div>
         <div class="hp-case-study__copy">
-          <div class="hp-case-study__number tk-serif">2</div>
-          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Create a responsive design for the news platform used by over 180 NPR stations.</h2>
+          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Responsive design for the news platform used by over 180 NPR stations.</h2>
           <p class="mt-0 tk-serif hp-case-study__desc">
-            I led user research, designed information architecture, and created visual design for Core Publisher, a website publishing platform we built to help small and medium-sized NPR stations present and distribute content.
+            I led user research, designed information architecture, and wrote front end code for Core Publisher, a website publishing platform we built to help small and medium-sized NPR stations present and distribute content.
           </p>
           <div class="checkmark-list">
             <h3 class="checkmark-list__title">What I Did</h3>
             <ul class="checkmark-list__list">
               <li class="checkmark-list__item">Researched station and user needs.</li>
-              <li class="checkmark-list__item">Created a responsive design and helped implement it as a Drupal theme.</li>
-              <li class="checkmark-list__item">Designed a system of tools and display options that helped stations engage users and were easy for editors to use.</li>
+              <li class="checkmark-list__item">Designed and built a responsive Drupal theme adopted by over 160 stations.</li>
+              <li class="checkmark-list__item">Created a flexible yet simple system for handling station branding.</li>
+              <li class="checkmark-list__item">Wrote front end code for the home page and story pages.</li>
+              <li class="checkmark-list__item">Iterated on story page design to increase user engagement and meet station needs.</li>
             </ul>
           </div>
           <a class="btn" href="#">See Details</a>
         </div>
       </div>
-      <div class="hp-case-study hp-case-study--didja">
+
+      <!-- 3. Amplify -->
+      <div id="case-study-NPR" class="hp-case-study hp-case-study--npr">
+        <div class="hp-case-study__number tk-serif">3</div>
         <div class="hp-case-study__image">
-          <img src="images/hp-didja-logo.jpg" alt="Logo for Didja Ever campaign">
+          <img src="images/hp-didja-logo.jpg" alt="">
         </div>
         <div class="hp-case-study__copy">
-          <div class="hp-case-study__number tk-serif">3</div>
-          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Get people who’ve never taken a cruise to consider Carnival.</h2>
+          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Amplify</h2>
           <p class="mt-0 tk-serif hp-case-study__desc">
-            I was creative director and art director for key segments of this major marketing initiative aimed at winning new customers.
+            I led the UX, design, and front end development for Amplify, a project aimed at leveraging NPR's relatively huge Facebook presence to benefit member stations by helping them create quality content that we’d post to NPR’s Facebook account.
           </p>
            <div class="checkmark-list">
             <h3 class="checkmark-list__title">What I Did</h3>
             <ul class="checkmark-list__list">
-              <li class="checkmark-list__item">I created and presented campaign ideas to clients.</li>
-              <li class="checkmark-list__item">I developed information architecture and visual design for the campaign’s primary website and other online experiences.</li>
-              <li class="checkmark-list__item">I art directed graphics and illustration for the campaign as a whole.</li>
+              <li class="checkmark-list__item">Played a key role in bringing this project from concept to live site in a matter of weeks.</li>
+              <li class="checkmark-list__item">Created information architecture and design.</li>
+              <li class="checkmark-list__item">Wrote CSS and coded interactive elements with backbone.js.</li>
+              <li class="checkmark-list__item">Helped dozens of stations improve digital news writing skills by providing a forum where they could learn from one another.</li>
             </ul>
           </div>
           <a class="btn" href="#">See Details</a>
         </div>
       </div>
+
+       <!-- 4. Composer -->
+      <div id="case-study-NPR" class="hp-case-study hp-case-study--npr">
+        <div class="hp-case-study__number tk-serif">4</div>
+        <div class="hp-case-study__image">
+          <img src="images/hp-didja-logo.jpg" alt="">
+        </div>
+        <div class="hp-case-study__copy">
+          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Composer</h2>
+          <p class="mt-0 tk-serif hp-case-study__desc">
+            I led the UX, design, and front end development for Amplify, a project aimed at leveraging NPR's relatively huge Facebook presence to benefit member stations by helping them create quality content that we’d post to NPR’s Facebook account.
+          </p>
+           <div class="checkmark-list">
+            <h3 class="checkmark-list__title">What I Did</h3>
+            <ul class="checkmark-list__list">
+              <li class="checkmark-list__item">Played a key role in bringing this project from concept to live site in a matter of weeks.</li>
+              <li class="checkmark-list__item">Created information architecture and design.</li>
+              <li class="checkmark-list__item">Wrote CSS and coded interactive elements with backbone.js.</li>
+              <li class="checkmark-list__item">Helped dozens of stations improve digital news writing skills by providing a forum where they could learn from one another.</li>
+            </ul>
+          </div>
+          <a class="btn" href="#">See Details</a>
+        </div>
+      </div>
+
+       <!-- 5. Streaming Player -->
+      <div id="case-study-NPR" class="hp-case-study hp-case-study--npr">
+        <div class="hp-case-study__number tk-serif">5</div>
+        <div class="hp-case-study__image">
+          <img src="images/hp-didja-logo.jpg" alt="">
+        </div>
+        <div class="hp-case-study__copy">
+          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Streaming Player</h2>
+          <p class="mt-0 tk-serif hp-case-study__desc">
+            I led the UX, design, and front end development for Amplify, a project aimed at leveraging NPR's relatively huge Facebook presence to benefit member stations by helping them create quality content that we’d post to NPR’s Facebook account.
+          </p>
+           <div class="checkmark-list">
+            <h3 class="checkmark-list__title">What I Did</h3>
+            <ul class="checkmark-list__list">
+              <li class="checkmark-list__item">Played a key role in bringing this project from concept to live site in a matter of weeks.</li>
+              <li class="checkmark-list__item">Created information architecture and design.</li>
+              <li class="checkmark-list__item">Wrote CSS and coded interactive elements with backbone.js.</li>
+              <li class="checkmark-list__item">Helped dozens of stations improve digital news writing skills by providing a forum where they could learn from one another.</li>
+            </ul>
+          </div>
+          <a class="btn" href="#">See Details</a>
+        </div>
+      </div>
+
+
+      <!-- 6. Arnold Worldwide -->
+      <div id="case-study-didja" class="hp-case-study hp-case-study--didja">
+        <div class="hp-case-study__number tk-serif">6</div>
+        <div class="hp-case-study__image">
+          <img src="images/hp-didja-logo.jpg" alt="Logo for Didja Ever campaign">
+        </div>
+        <div class="hp-case-study__copy">
+          <h2 class="sub-section-heading tk-serif hp-case-study__heading">Websites and Digital Marketing Campaigns at Arnold Worldwide.</h2>
+          <p class="mt-0 tk-serif hp-case-study__desc">
+            In five years at the ad agency Arnold Worldwide, I created and launched online campaigns and websites for many of our largest clients, including RadioShack, Progressive Insurance, Carnival Cruiselines, and Ocean Spray.
+          </p>
+           <div class="checkmark-list">
+            <h3 class="checkmark-list__title">What I Did</h3>
+            <ul class="checkmark-list__list">
+              <li class="checkmark-list__item">Art directed the “Didja Ever?” campaign for Carnival Cruiselines, including a facebook app where we helped people create and compare lists of things they hoped to do.</li>
+              <li class="checkmark-list__item">Improved performance of Ocean Spray’s website by focusing on content that their consumers cared about.</li>
+              <li class="checkmark-list__item">Created web pages, landing pages, and mini-sites for RadioShack.</li>
+            </ul>
+          </div>
+          <a class="btn" href="#">See Details</a>
+        </div>
+      </div>
+
     </section>
 
-    <section id="work-examples" class="panel panel--work">
-      <div class="section-title">
-        <h2 class="section-title__heading tk-serif">Examples of Work</h2>
-        <div class="section-title__desc">
-          <p>With over ten years experience in the field of user experience and visual design, there are many projects that I’m proud of. Here are snapshots of a few of them.</p>
-        </div>
-      </div>
-          <div class="hp-work">
-            <div class="hp-work__images">
-              <div class="hp-work__image">
-                <img src="images/hp-work-mobileweb.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-npr-nfplus.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-winesmarts.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-oceanspray.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-gronster.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-waterslide.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-carnival-homepage.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-radioshack.jpg" alt="">
-              </div>
-              <div class="hp-work__image">
-                <img src="images/hp-work-pledge-1.jpg" alt="">
-              </div>
-                <a class="btn" href="#">See Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="about" class="panel panel--about">
       <div class="hp-about">
-        <div class="hp-about__image">
-          <img src="images/portrait.jpg" alt="Logo for Didja Ever campaign">
-        </div>
+        <picture class="hp-about__image">
+           <source media="(min-width: 50em)"
+              srcset="images/portrait.jpg" />
+           <source srcset="images/portrait-square.jpg" />
+           <img src="portrait.jpg" alt="Logo for Didja Ever campaign" />
+        </picture>
         <div class="hp-about__contents">
-          <h2 class="sub-section-heading sub-section-heading--about tk-serif">About Me</h2>
-          <p class="text-over-dark">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too. Get in touch&hellip;</p>
+          <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
+          <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too. Get in touch&hellip;</p>
           <ul class="o-horizontal-list">
             <li><a class="hp-about__menu-link" href="#">adamkiryk at gmail</a></li>
             <li><a class="hp-about__menu-link" href="#">adamkiryk on linked in</a></li>

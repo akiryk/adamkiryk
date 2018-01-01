@@ -8,20 +8,34 @@
  */
 
 .hp-work {
-  margin: 2rem 1rem;
+  margin: 0;
 }
 
 .hp-work__images {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-  }
+  margin: 0 1rem 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .hp-work__image {
   transition: all .2s ease-in;
   position: relative;
+  flex: 1 0 calc(33.3333% - 1em);
+  margin-right: .5em;
+  margin-bottom: 1em;
 }
+
+.hp-work__image:nth-of-type(3n){
+  margin-left: .5em;
+  margin-right: 0;
+}
+
+.hp-work__image:nth-of-type(3n-1){
+  flex: 1 0 calc(33.3333% - 2em);
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
 .hp-work__image:hover {
   transform: scale(1.05);
 }
@@ -42,46 +56,76 @@
   opacity: 1;
 }
 
+@supports (display: grid){
+
+  .hp-work__images {
+    @include standard-grid(1rem, 3, 1fr, 1rem);
+  }
+
+  .hp-work__image:nth-of-type(n) {
+    margin: 0;
+  }
+}
+
 @media screen and (min-width: $small)  {
+
   .hp-work {
-    margin: auto 2rem auto 10%;
+    margin: auto;
+    width: 80%;
+  }
+
+  .hp-work__images {
+    margin: 0 0 2rem 0;
+  }
+
+  @supports (display: grid){
+    .hp-work {
+      margin: unset;
+      width: unset;
+      @include standard-grid();
+    }
+    .hp-work__images {
+      grid-column: 2/12;
+      grid-gap: 2rem;
+    }
   }
 }
 
 @media screen and (min-width: $medium) {
 
   .hp-work {
-    display: block;
-    margin: 0;
-    margin-left: calc(33.3333% + 4rem);
+    width: calc(65% - 2rem);
+    margin-left: 30%;
+    max-width: 50rem;
   }
 
-  .hp-work__images {
-    grid-column: 3;
-    grid-gap: 2rem;
+  @supports (display: grid){
+
+    .hp-work {
+      width: unset;
+      margin: 0 2rem 2rem 2rem;
+      max-width: unset;
+    }
+
+    .hp-work__images {
+      grid-column: 4/12;
+    }
   }
 
 }
 
 @media screen and (min-width: $large) {
-  .hp-work {
-    margin-left: 0;
-    display: grid;
-    grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
-    grid-gap: 2rem;
+   @supports (display: grid){
+    .hp-work__images {
+      grid-column: 5/12;
+    }
   }
 }
 
 @media screen and (min-width: $xlarge) {
-
-  .hp-work {
-    grid-template-columns: [aa] 0.5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
-  }
-
-}
-
-@media screen and (min-width: $max-width) {
-  .hp-work {
-    grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
+  @supports (display: grid){
+    .hp-work__images {
+      grid-column: 5/12;
+    }
   }
 }

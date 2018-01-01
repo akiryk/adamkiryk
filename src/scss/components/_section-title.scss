@@ -1,4 +1,4 @@
-/**
+/*
  *
  * Component: Title Bar
  * -----------------------------------------------------------
@@ -9,16 +9,9 @@
 
 .section-title {
   margin: auto 1rem;
+  margin-bottom: 2rem;
   position: relative;
 }
-  .section-title:after {
-    content: '';
-    background-color: #ccc;
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    top: 4rem;
-  }
 
 .section-title__heading {
   color: $red;
@@ -26,175 +19,112 @@
   font-weight: 400;
 }
 
+.section-title__heading--about {
+  color: $light-gray-2;
+  font-size: $font-lg;
+}
+
 .section-title__desc {
   max-width: $p-max;
 }
 
-@supports (display: grid) {
-  @media screen and (min-width: $small){
-    .section-title {
-      margin: auto 2rem auto 10%;
-    }
+@media screen and (min-width: $small){
 
-    .section-title__heading {
-      grid-column: cc;
-      grid-row: 1;
-    }
-
-    .section-title__desc {
-      grid-column: cc;
-      grid-row: 3;
-      margin: unset;
-      max-width: unset;
-    }
-
+  .section-title {
+    max-width: 50em;
+    width: 80%;
+    margin: auto auto 2rem auto;
   }
-
-  @media screen and (min-width: $medium){
-
-    .section-title {
-      margin: auto;
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 100%;
+      background-color: #ccc;
+      height: 1px;
     }
 
-    .section-title__heading,
-    .section-title__desc {
-      margin-left: calc(33.3333% + 4rem);
-      margin-left: calc(30% + 2rem);
-      max-width: unset;
-    }
-
-  }
-
-  @media screen and (min-width: $large){
-
+  @supports (display: grid) {
     .section-title {
+      width: unset;
       margin: unset;
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
+      @include standard-grid();
       grid-template-rows: auto 1px auto;
+      margin-bottom: 1em;
     }
-
       .section-title:after {
         grid-row: 2;
-        grid-column: bb / dd;
-        position: unset;
-        top: unset;
-        width: unset;
-        height: unset;
-      }
-
-    .section-title__heading,
-    .section-title__desc {
-      margin-left: unset;
-    }
-
-  }
-
-  @media screen and (min-width: $xlarge){
-
-    .section-title {
-      grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
-    }
-
-  }
-
-  @media screen and (min-width: $max-width) {
-
-    .section-title  {
-      grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
-    }
-
-  }
-}
-/*
-.section-title {
-  margin: auto 1rem;
-  position: relative;
-}
-
-.section-title__heading {
-  color: $red;
-  font-size: $font-xl;
-  font-weight: 400;
-}
-
-.section-title__desc {
-  max-width: $p-max;
-}
-
-@supports (display: grid) {
-  @media screen and (min-width: $small){
-    .section-title {
-      margin: auto 2rem auto 10%;
-    }
-
-    .section-title__desc {
-      margin: unset;
-      max-width: unset;
-    }
-
-  }
-
-  @media screen and (min-width: $medium){
-
-    .section-title {
-      margin: auto;
-    }
-
-    .section-title__heading,
-    .section-title__desc {
-      margin-left: calc(33.3333% + 4rem);
-      margin-left: calc(30% + 2rem);
-      max-width: unset;
-    }
-
-  }
-
-  @media screen and (min-width: $large){
-
-    .section-title {
-      margin: unset;
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto 1px auto;
-    }
-      .section-title:after {
+        grid-column: 2 / 12;
         content: '';
         background-color: #ccc;
-        grid-row: 2;
-        grid-column: 4/10;
       }
 
     .section-title__heading {
+      grid-column: 2/12;
       grid-row: 1;
-      grid-column: 6/11;
-      margin-left: unset;
     }
+
     .section-title__desc {
-      grid-column: 3/10;
-      grid-row: 1;
-      margin-left: unset;
-    }
-
-  }
-
-  @media screen and (min-width: $xlarge){
-
-    .section-title {
-      grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
-    }
-
-  }
-
-  @media screen and (min-width: $max-width) {
-
-    .section-title  {
-      grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
+      grid-column: 2/12;
+      grid-row: 3;
+      max-width: 50rem;
     }
 
   }
 }
-*/
+
+@media screen and (min-width: $medium){
+
+  .section-title {
+    width: calc(65% - 2rem);
+    margin-left: 30%;
+  }
+
+  @supports (display: grid) {
+    .section-title {
+      width: unset;
+      margin: 0 2rem 1rem 2rem;
+    }
+
+    .section-title__heading,
+    .section-title__desc {
+      grid-column: 4/12;
+    }
+  }
+}
+
+@media screen and (min-width: $large){
+  @supports (display: grid) {
+    .section-title__heading,
+    .section-title__desc {
+      grid-column: 5/12;
+    }
+    .section-title__heading--skills {
+      grid-column: 2/11;
+    }
+  }
+}
+
+@media screen and (min-width: $xlarge){
+  @supports (display: grid) {
+    .section-title__heading,
+    .section-title__desc {
+      grid-column: 5/11;
+    }
+    .section-title__heading--skills {
+      grid-column: 2/11;
+    }
+  }
+}
+
+@media screen and (min-width: $max-width){
+  @supports (display: grid) {
+    .section-title {
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+    .section-title__heading,
+    .section-title__desc {
+      grid-column: 5/12;
+    }
+  }
+}

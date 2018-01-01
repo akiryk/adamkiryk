@@ -1,0 +1,45 @@
+body:after {
+  content: 'tiny';
+  position: fixed;
+  z-index: 99999;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0,0,0,0.6);
+  left: 32px;
+  top: 0;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+@media (min-width: $small){
+  body:after {
+    content: 'small';
+  }
+}
+
+@media (min-width: $medium){
+  body:after {
+    content: 'medium';
+  }
+}
+
+@media (min-width: $large){
+  body:after {
+    content: 'large';
+  }
+}
+
+@media (min-width: $xlarge){
+  body:after {
+    content: 'xlarge';
+  }
+}
+
+
+@media (min-width: $max-width){
+  body:after {
+    content: 'max';
+  }
+}

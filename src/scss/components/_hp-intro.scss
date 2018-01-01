@@ -6,12 +6,9 @@
  *
  */
 
-.intro {
-  margin: auto;
-}
-
 .intro__body {
   font-size: 1.125rem;
+  max-width: $p-max;
 }
 
 .introgrid {
@@ -21,95 +18,133 @@
 
 .primary-logo {
   margin-bottom: 2rem;
+  position: relative;
   width: 35%;
 }
 
 @media screen and (min-width: $small){
 
+  /*
+   * No grid
+   */
   .introgrid {
-    margin: auto 2em auto 10%;
+    margin: auto;
+    width: 80%;
   }
 
-  .primary-logo {
-    margin-bottom: 3rem;
-  }
+  /*
+   * Yes grid
+   */
+  @supports (display: grid) {
+    .introgrid {
+      @include standard-grid();
+      width: unset;
+      grid-template-rows: min-content;
+      transform: translateY(-6vh);
+    }
 
+    .primary-logo {
+      width: unset;
+      margin-right: 0;
+      grid-row: 1;
+      grid-column: 2/6;
+    }
+
+    .intro__content {
+      grid-row: 2;
+      grid-column: 2/13;
+    }
+  }
 }
 
 @media screen and (min-width: $medium){
 
   .introgrid {
-    margin: auto 1em;
-    align-content: center;
-    display: flex;
+    position: relative;
+    margin: unset;
+    width: unset;
   }
 
   .primary-logo {
-    position: static;
-    width: unset;
-    flex: 1 1 30%;
-    margin-right: 2rem;
+    position: absolute;
+    width: 16.75rem;
+    left: calc(30% - 18.75rem);
   }
 
   .intro__content {
-    flex: 1 1 70%;
+    margin-left: 30%;
+    width: calc(65% - 2rem);
+    max-width: 50rem;
+    // flex: 2 1 650px;
   }
 
-  .intro__body {
-    max-width: unset;
-  }
-
-}
-
-@supports (display: grid) {
-  @media screen and (min-width: $large){
-
+  @supports (display: grid) {
     .introgrid {
-      margin: 0;
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
+      @include standard-grid();
       grid-template-rows: auto;
     }
 
     .primary-logo {
-      grid-column: bb;
+      position: unset;
+      width: unset;
+      margin:  unset;
+      grid-column: 1/4;
+    }
+
+    .intro__content {
+      flex: unset;
+      margin-left: unset;
+      width: unset;
       grid-row: 1;
+      grid-column: 4/12;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: $large){
+  @supports (display: grid) {
+    .introgrid {
+      margin: 0;
+      @include standard-grid();
+      grid-template-rows: auto;
+    }
+
+    .primary-logo {
+      grid-row: 1;
+      grid-column: 2/5;
       margin-right: 0;
     }
 
     .intro__content {
-      grid-area: cc;
       grid-row: 1;
+      grid-column: 5/12;
     }
   }
+}
 
-  @media screen and (min-width: $xlarge){
+@media screen and (min-width: $xlarge){
+  @supports (display: grid) {
+    .primary-logo {
+      grid-column: 2/5;
+      margin-right: 0;
+    }
 
-      .introgrid {
-        margin: 0;
-        display: grid;
-        grid-column-gap: 2rem;
-        grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
-        grid-template-rows: auto;
-      }
-      .primary-logo {
-        grid-column: bb;
-        grid-row: 1;
-        margin-right: 0;
-      }
-
-      .intro__content {
-        grid-area: cc;
-        grid-row: 1;
-      }
+    .intro__content {
+      grid-column: 5/11;
+    }
   }
+}
 
-  @media screen and (min-width: $max-width) {
+@media screen and (min-width: $max-width) {
+  @supports (display: grid) {
+    .introgrid {
+      margin: auto;
+    }
 
-      .introgrid {
-        grid-template-columns: [aa] 2fr [bb] 3fr [cc] 6fr [dd] 1fr [ee];
-      }
-
+    .intro__body {
+      padding-right: 2rem;
+    }
   }
 }

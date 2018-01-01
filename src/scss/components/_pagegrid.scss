@@ -6,10 +6,18 @@
  *
  */
 
+
+@media screen and (min-width: $small) {
+  .pagegrid {
+    margin: 0 2em;
+  }
+}
+
 @media screen and (min-width: $medium) {
   @supports (display: grid){
 
     .pagegrid {
+      margin: unset;
       display: grid;
       grid-template-columns:
         [fullbleed-start] minmax(2em, 1fr)

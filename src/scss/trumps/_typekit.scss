@@ -8,10 +8,14 @@
 
 .wf-adobecaslonpro-n4-active {
 
-  .tk-serif,
   p {
     font-family: "adobe-caslon-pro", serif;
+    font-size: $font-md; // 24px
+    line-height: 1.35;
   }
 
+  .tk-serif {
+    font-family: "adobe-caslon-pro", serif;
+  }
 
 }

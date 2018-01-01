@@ -39,6 +39,7 @@
 @import "components/pagegrid";
 @import "components/panel";
 @import "components/section-title";
+@import "components/fade-in";
 
 
 @import "trumps/accessibility";
@@ -46,6 +47,8 @@
 @import "trumps/spacing";
 @import "trumps/layout";
 @import "trumps/typekit";
+@import "trumps/smooth-scrolling";
+@import "trumps/test";
 
 /**
  * Styles for testing and development

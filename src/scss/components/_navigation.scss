@@ -36,14 +36,34 @@
   text-decoration: none;
 }
 
-@supports (display: grid) {
-  .navgrid {
-    grid-column-gap: 2rem;
-    @include grid-12("empty empty empty empty empty nav nav nav nav nav nav nav");
-  }
+@media screen and (min-width: $small){
+  @supports (display: grid) {
+    .navbar {
+      grid-column-gap: 2rem;
+      @include standard-grid();
+    }
 
-  .navbar {
-    grid-area: nav;
-  }
+    .navbar__menu {
+      grid-column: 2/12;
+    }
 
+  }
 }
+
+@media screen and (min-width: $medium){
+  @supports (display: grid) {
+    .navbar__menu {
+      grid-column: 4/12;
+    }
+  }
+}
+
+@media screen and (min-width: $large){
+  @supports (display: grid) {
+    .navbar__menu {
+      grid-column: 5/12;
+    }
+  }
+}
+
+

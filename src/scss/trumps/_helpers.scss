@@ -1,4 +1,12 @@
-.text-over-dark {
+/**
+ *
+ * Trumps: Helpers
+ * -----------------------------------------------
+ *
+ *
+ */
+
+ .text-over-dark {
   color: $light-gray-3;
   -webkit-font-smoothing: unset;
   -mac-osx-font-smoothing: unset;
@@ -6,4 +14,8 @@
 
 .newline {
   display: table;
+}
+
+.display-none {
+  display: none;
 }

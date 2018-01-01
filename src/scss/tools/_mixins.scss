@@ -7,16 +7,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin grid-12($columns) {
-  display: grid;
-  grid-column-gap: 2rem;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-areas: $columns;
-}
-
 @mixin body-copy() {
   @include font-smoothing;
   font-family: $fb-body-font-stack;
-  font-size: $font-md;
-  line-height: 1.35;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+@mixin standard-grid($gap: 2rem, $cols: 12, $col-width: 1fr, $row-gap: 0) {
+  display: grid;
+  grid-column-gap: $gap;
+  grid-row-gap: $row-gap;
+  grid-template-columns: repeat($cols, $col-width);
+  max-width: $wrapper-width-lg;
+  margin-left: $gap;
+  margin-right: $gap;
 }

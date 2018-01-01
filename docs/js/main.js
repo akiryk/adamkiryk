@@ -1,173 +1,254 @@
 'use strict';
+/*
+ * Arguments for ScrollMagic Scene
+ *
+ * @param {element} triggerElement,
+      the optional DOM element that triggers animation
+      defines the start of the scene.
+ * @param {Number} duration,
+      the distance in pixels between start and end of animation or pinning.
+      If used, this number overrides whatever duration is passed to the Tween.
+ * @param {Number} offset,
+      distance from the trigger element (or top of page if no trigger element is specified) and start of animation
+ * @param {Boolean} reverse,
+      reverse the animation on scroll up or not
+ * @param {Number} triggerHook,
+      0-1 percentage from top of page to bottom for where the start is placed once triggerElement enters page. 0=top of page; 1=bottom.
+*/
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var app = {
   scrollController: null,
 
+  /**
+   * Initialize the app
+   *
+   */
   init: function init() {
-    document.getElementById('primaryLogo').classList.add('ready');
-    this.initTweens();
-    // this.initLogoAnimation();
-    this.initScrollMagic();
-    this.initNav();
+    document.getElementById('primaryLogo').classList.remove('display-none');
+    document.getElementById('intro').classList.remove('fade-in');
+    this.animatePrimaryLogo();
+    this.initSmoothScrolling();
+    this.openingAnimations();
+    this.introSection();
+    this.skillsSection();
+    this.caseStudiesSection();
+    this.workSection();
   },
-  initLogoAnimation: function initLogoAnimation() {
-    var _this = this;
 
-    this.container = document.getElementById('primaryLogo');
-    var animData = {
-      container: this.container,
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      path: 'dataFranconia.json'
-    };
 
-    var startAnimation = function startAnimation() {
-      _this.container.classList.add('ready');
-      _this.anim.play();
-    };
-
-    this.anim = bodymovin.loadAnimation(animData);
-    this.anim.addEventListener('DOMLoaded', startAnimation);
+  /**
+   * Opening animations
+   *
+   */
+  openingAnimations: function openingAnimations() {
+    TweenLite.from(primaryLogo, 1.2, { opacity: '0', ease: Power2.easeIn });
+    TweenLite.from('#introHeading .site-heading', 1.2, { x: 150, opacity: '0', ease: Power2.easeOut });
+    TweenLite.from('#introHeading .site-subheading', 1.2, { x: -100, opacity: '0', ease: Power2.easeOut, delay: .25 });
+    TweenLite.from(introHeading, 1, { y: 50, ease: Power2.easeOut, delay: 1.25 });
+    TweenLite.from(introBody, 1, { opacity: '0', y: 50, ease: Power2.easeOut, delay: 1.25 });
   },
-  getLogoOffsetX: function getLogoOffsetX() {
-    var width = window.innerWidth;
-    switch (true) {
-      case width > 1400:
-        return -600;
 
-      case width > 1100:
-        return -550;
 
-      case width > 800:
-        return -550;
+  /**
+   * Animate the logo
+   *
+   */
+  animatePrimaryLogo: function animatePrimaryLogo() {
+    var kTpMask = document.getElementById("mask1"),
+        kBmMask = document.getElementById("mask2"),
+        aLtMask = document.getElementById("mask3"),
+        aRtMask = document.getElementById("mask4"),
+        tl = new TimelineMax();
 
-      default:
-        return 0;
-    }
-  },
-  initTweens: function initTweens() {
-    // const offsetX = this.getLogoOffsetX();
-    // TweenLite.to(primaryLogo, .6, {x: offsetX, delay: 1, ease:Sine.easeInOut})
-    TweenLite.from(primaryLogo, 1, { opacity: '0', x: 400, scale: 0.5, delay: 0.2 });
-    TweenLite.from(introHeading, 2, { opacity: '0', delay: 1 });
-    TweenLite.from(introBody, 1, { opacity: '0', delay: 1.5 });
-  },
-  initIntroNav: function initIntroNav() {
-    var nav = document.querySelectorAll('.intro-nav__menu-link'),
-        navList = Array.apply(null, nav);
+    // Reset all masks so that logo is completely hidden
+    tl.set(aLtMask, { x: -230, y: 230 }).set(aRtMask, { y: -300 }).set(kBmMask, { x: 115, y: 115 }).set(kTpMask, { x: -170 });
 
-    navList.forEach(function (linkElement) {
-      var anchor = linkElement.getAttribute('href');
-      linkElement.addEventListener('click', function (e) {
-        e.preventDefault();
-        TweenMax.to(window, 1, {
-          scrollTo: {
-            y: anchor
-          },
-          ease: Power3.easeOut
-        });
-      });
-    });
+    // Animate masks to reveal logo
+    tl.to(aLtMask, 0.5, { x: 0, y: 0, ease: Power3.easeOut, delay: .5 }).to(aRtMask, 1.0, { y: 0, ease: Power3.easeOut }, "-=.25").to(kBmMask, 0.5, { x: 0, y: 0, ease: Power3.easeOut }, "-=.75").to(kTpMask, 0.5, { x: 0, ease: Power3.easeOut }, "-=.6");
   },
-  initNav: function initNav() {
-    var nav = document.querySelectorAll('.navbar__menu-link'),
-        navList = Array.apply(null, nav);
-    // navHeight = document.getElementById('primaryNav').offsetHeight;
-    navList.forEach(function (linkElement) {
-      var anchor = linkElement.getAttribute('href');
-      linkElement.addEventListener('click', function (e) {
-        console.log();
-        e.preventDefault();
-        TweenMax.to(window, 1, {
-          scrollTo: {
-            y: anchor,
-            offsetY: window.innerHeight / 2.5
-          },
-          ease: Power3.easeOut
-        });
-      });
-    });
-  },
-  playLogoIn: function playLogoIn() {
-    bodymovin.setDirection(1);
-    this.anim.play();
-    // TweenMax.to('#primaryLogo', 0.3, {
-    //   opacity: 1.0,
-    // })
-  },
-  playLogoOut: function playLogoOut() {
-    bodymovin.setDirection(-1);
-    this.anim.play();
-    // this.anim.playSegments([24,60], true);
-    // TweenMax.to('#primaryLogo', 0.2, {
-    //   opacity: 0.0,
-    // })
-  },
-  initScrollMagic: function initScrollMagic() {
-    var _this2 = this;
 
+
+  /**
+   * Intro section animations
+   *
+   */
+  introSection: function introSection() {
     this.scrollController = new ScrollMagic.Controller();
-
-    var introContent = document.getElementById('introContent');
-    var introFadeOut = TweenMax.to(introContent, 0.7, {
+    var introFadeOut = TweenLite.to(intro, .7, {
       opacity: 0.0,
       ease: Linear.easeNone
     });
-    var introScene = new ScrollMagic.Scene({
-      triggerElement: '#introBody',
-      offset: 500
-    }).setTween(introFadeOut).addIndicators().addTo(this.scrollController);
 
-    // const logo = document.getElementById('primaryLogo');
-
-    // const logoScene = new ScrollMagic.Scene({
-    //   triggerElement: '#primaryLogo',
-    //   duration: window.innerHeight,
-    // })
-    //   .setPin(logo, { pushFollowers: false })
-    //   .addTo(this.scrollController)
-    // .on("end", (e) => {
-    //   e.scrollDirection === 'FORWARD' && this.playLogoOut()
-    //   e.scrollDirection === 'REVERSE' && this.playLogoIn()
-    // })
+    this.createScrollMagicScene({
+      trigger: '#introTrigger',
+      tween: introFadeOut,
+      triggerHook: 0,
+      duration: 200,
+      offset: 300,
+      indicators: true
+    });
+  },
 
 
-    var works = document.getElementById('work'),
-        workExamples = Array.apply(null, works.querySelectorAll('.works__item'));
+  /**
+   * Skills section animations
+   *
+   */
+  skillsSection: function skillsSection() {
+    var titleParams = { y: 100, opacity: 0, ease: Power1.easeOut },
+        skillsParams = { y: 100, opacity: 0, ease: Power1.easeOut, delay: .25 };
 
-    workExamples.forEach(function (workItem) {
-      var tween = TweenMax.from(workItem, 0.3, {
-        autoAlpha: 0,
-        scale: 0.5,
-        y: '+=30',
-        x: '+=200',
-        ease: Linear.easeNone
-      });
-      var scene = new ScrollMagic.Scene({
-        triggerElement: workItem,
-        triggerHook: .9
-      }).setTween(tween).addTo(_this2.scrollController);
+    var titleTween = TweenLite.from('#skills .section-title', .5, titleParams),
+        skillsTween = TweenLite.from("#skills .hp-skills", .5, skillsParams);
+    // skillsTween = TweenMax.staggerFrom("#skills .hp-skills__skill", .5, skillsParams, .25);
+
+    this.createScrollMagicScene({ trigger: '#skills', tween: titleTween });
+    this.createScrollMagicScene({ trigger: '#skills', tween: skillsTween });
+  },
+
+
+  /**
+   * Case studies section animations
+   *
+   */
+  caseStudiesSection: function caseStudiesSection() {
+    var _this = this;
+
+    var titleParams = { y: 200, opacity: 0, ease: Power1.easeOut };
+    var titleTween = TweenLite.from('#case-studies .section-title', 1, titleParams);
+
+    var titleScene = new ScrollMagic.Scene({
+      triggerElement: '#case-studies',
+      triggerHook: .5
+    }).setTween(titleTween).addIndicators().addTo(this.scrollController);
+
+    var params = {
+      number: { y: 200, opacity: 0, ease: Power1.easeOut },
+      copy: { y: 300, opacity: 0, ease: Power1.easeOut, delay: .25 },
+      image: { y: 400, opacity: 0, ease: Power1.easeOut, delay: .5 }
+    };
+
+    var createScenes = function createScenes(trigger, _ref) {
+      var number = _ref.number,
+          copy = _ref.copy,
+          image = _ref.image;
+
+      _this.createScrollMagicScene({ trigger: trigger, tween: copy, triggerHook: .75 });
+      _this.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: .75 });
+      _this.createScrollMagicScene({ trigger: trigger, tween: image, triggerHook: .75 });
+    };
+
+    var ceTweens = getTweens(params, '#case-study-ce');
+    var cpTweens = getTweens(params, '#case-study-cp');
+    var didjaTweens = getTweens(params, '#case-study-didja');
+
+    createScenes('#case-study-ce', ceTweens);
+    createScenes('#case-study-cp', cpTweens);
+    createScenes('#case-study-didja', didjaTweens);
+
+    function getTweens(params, el) {
+      var numberTween = TweenLite.from(el + ' .hp-case-study__number', 1, params.number);
+      var copyTween = TweenLite.from(el + ' .hp-case-study__copy', 1, params.copy);
+      var imageTween = TweenLite.from(el + ' .hp-case-study__image', 1, params.image);
+
+      return {
+        number: numberTween,
+        copy: copyTween,
+        image: imageTween
+      };
+    }
+  },
+
+
+  /**
+   * Work section animations
+   *
+   */
+  workSection: function workSection() {
+    var titleParams = { y: 100, opacity: 0, ease: Power1.easeOut },
+        params = { y: 100, opacity: 0, ease: Power1.easeOut, delay: .25 };
+
+    var titleTween = TweenLite.from('#work .section-title', .5, titleParams),
+        workTween = TweenLite.from("#work .hp-work", .5, params);
+    // skillsTween = TweenMax.staggerFrom("#skills .hp-skills__skill", .5, skillsParams, .25);
+
+    this.createScrollMagicScene({ trigger: '#work', tween: titleTween });
+    this.createScrollMagicScene({ trigger: '#work', tween: workTween });
+  },
+
+
+  /**
+   *
+   *
+   */
+  createScrollMagicScene: function createScrollMagicScene(_ref2) {
+    var _ref2$tween = _ref2.tween,
+        tween = _ref2$tween === undefined ? null : _ref2$tween,
+        _ref2$trigger = _ref2.trigger,
+        trigger = _ref2$trigger === undefined ? null : _ref2$trigger,
+        _ref2$triggerHook = _ref2.triggerHook,
+        triggerHook = _ref2$triggerHook === undefined ? 0.5 : _ref2$triggerHook,
+        _ref2$duration = _ref2.duration,
+        duration = _ref2$duration === undefined ? 0 : _ref2$duration,
+        _ref2$offset = _ref2.offset,
+        offset = _ref2$offset === undefined ? 0 : _ref2$offset,
+        _ref2$reverse = _ref2.reverse,
+        reverse = _ref2$reverse === undefined ? true : _ref2$reverse,
+        _ref2$indicators = _ref2.indicators,
+        indicators = _ref2$indicators === undefined ? false : _ref2$indicators;
+
+    var scene = new ScrollMagic.Scene({
+      triggerElement: trigger,
+      triggerHook: triggerHook,
+      duration: duration,
+      offset: offset,
+      reverse: reverse
+    });
+    scene.setTween(tween).addTo(this.scrollController);
+    if (indicators) {
+      scene.addIndicators();
+    }
+    return scene;
+  },
+
+
+  /**
+   * Smooth scrolling
+   *
+   */
+  initSmoothScrolling: function initSmoothScrolling() {
+    // const navLinks = [...document.querySelectorAll('.navbar__menu-link')];
+    var anchors = [].concat(_toConsumableArray(document.querySelectorAll('a'))).filter(function (anchor) {
+      return anchor.getAttribute('href').match(/^#/);
+    });
+    anchors.forEach(function (anchor) {
+      enableSmoothScrolling(anchor);
     });
 
-    /**
-     * Arguments for ScrollMagic Scene
-     *
-     * @param {element} triggerElement,
-          the optional DOM element that triggers animation
-          defines the start of the scene.
-     * @param {Number} duration,
-          the distance in pixels between start and end of animation or pinning.
-          If used, this number overrides whatever duration is passed to the Tween.
-     * @param {Number} offset,
-          distance from the trigger element (or top of page if no trigger element is specified) and start of animation
-     * @param {Boolean} reverse,
-          reverse the animation on scroll up or not
-     * @param {Number} triggerHook,
-          0-1 percentage from top of page to bottom for where the start is placed once triggerElement enters page. 0=top of page; 1=bottom.
-     */
+    function enableSmoothScrolling(anchorLink) {
+      var href = anchorLink.getAttribute('href');
+      anchorLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        setScrollWithFocusTween(href);
+      });
+    }
+
+    //Set focus on the anchor once it's reached for better keyboard navigation.
+    function setScrollWithFocusTween(href) {
+      var dest = document.querySelector(href);
+      dest.classList.add('smooth-scroll-to');
+      dest.setAttribute('tabindex', '-1');
+      TweenLite.to(window, 1, {
+        scrollTo: { y: href },
+        onComplete: function onComplete() {
+          dest.focus();
+        }
+      });
+    }
   }
 };
 
-app.init();
+TweenLite && app.init();
 //# sourceMappingURL=main.js.map

@@ -7,15 +7,13 @@
  *
  */
 
-@supports (display: grid) {
-
   .hp-case-study {
     @include font-smoothing;
-    margin: 8rem 1rem;
+    margin: 4rem 0;
   }
 
   .hp-case-study__heading {
-    font-size: 3.125rem;
+    font-size: 2.5rem;//40px;
   }
 
 
@@ -36,155 +34,226 @@
     display: none;
   }
 
-  @media screen and (min-width: $small) {
+@supports (display: grid) {
+  .hp-case-study {
+    margin: 4rem 1em;
+  }
+}
 
+@media screen and (min-width: $small) {
+
+  .hp-case-study {
+    width: 80%;
+    margin: 2rem auto;
+  }
+
+  @supports (display: grid) {
     .hp-case-study {
-      margin: 8rem 2rem 8rem 10%;
+      width: unset;
+      @include standard-grid();
+      grid-template-rows: auto auto;
     }
 
     .hp-case-study__image {
-      width: 50%;
-    }
-
-  }
-
-  @media screen and (min-width: $medium) {
-
-    .hp-case-study {
-      margin: 30rem 0 25vh 0;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: auto;
-      grid-column-gap: 4rem;
-      padding: 0 2rem;
-    }
-
-    .hp-case-study__desc {
-      max-width: $p-max;
+      margin: unset;
+      grid-row: 2;
+      grid-column: 1/5;
     }
 
     .hp-case-study__copy {
-      grid-column: 2;
-      grid-row: a;
+      width: unset;
+      grid-column: 4/12;
+      grid-row: 2;
+      position: relative;
+    }
+  }
+}
+
+@media screen and (min-width: $medium) {
+
+  .hp-case-study {
+    width: unset;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .hp-case-study__image {
+    flex: 1 1 auto;
+    width: calc(30% - 4rem);
+    margin: 0 1rem 0 2rem;
+  }
+
+  .hp-case-study__copy {
+    width: calc(70% - 2rem);
+    flex: 1 1 auto;
+    margin: 0 2rem 0 1rem;
+  }
+
+  .hp-case-study__desc {
+    max-width: $p-max;
+  }
+
+  .hp-case-study__image .caption {
+    display: block;
+  }
+
+  .hp-case-study__heading {
+    font-size: 3.125rem; //50px
+  }
+
+  .hp-case-study__number {
+    display: block;;
+    font-size: 12rem;
+    color: #eee;
+    margin-bottom: 0;
+    flex: 1 0 100%;
+    padding-left: 30%;
+  }
+
+  @supports (display: grid) {
+
+    .hp-case-study {
+      @include standard-grid();
+    }
+    /*
+     * Case study grid, default
+     */
+    .hp-case-study__copy {
+      width: unset;
+      margin: unset;
+      grid-column: 4/12;
+      grid-row: 2;
       position: relative;
     }
 
     .hp-case-study__image {
-      grid-column: 1;
-      grid-row: b;
+      grid-column: 1/4;
+      grid-row: 2;
       margin: 0;
       width: 100%;
     }
 
     .hp-case-study__number {
-      display: block;
-      position: absolute;
-      top: -1em;
-      font-size: 12rem;
-      color: #eee;
+      width: unset;
+      transform:  unset;
+      padding-left: unset;
+      grid-row: 1;
+      grid-column: 5/12;
+      margin-bottom:-2rem;
     }
 
-    .hp-case-study__image .caption {
-      display: block;
-    }
+    /*
+     * Case study grid, even
+     */
+    .hp-case-study:nth-of-type(odd) {
 
+      .hp-case-study__copy {
+        grid-column: 1/9
+      }
+
+      .hp-case-study__image {
+        grid-column: 9/12;
+      }
+
+      .hp-case-study__number {
+        grid-column: 2/12;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large) {
+  .hp-case-study__number {
+    font-size: 15rem;
   }
 
-  @media screen and (min-width: $large) {
+  .hp-case-study__heading {
+    font-size: 3.75rem;
+  }
 
-    .hp-case-study {
-      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
-      grid-column-gap: 2rem;
-      padding: unset;
+  /*
+   * Case study grid, default
+   */
+  .hp-case-study__image {
+    grid-column: 1/5;
+  }
+
+  .hp-case-study__copy {
+    grid-column: 5/13;
+  }
+
+  .hp-case-study__number {
+    grid-column: 5/13;
+  }
+
+   /*
+   * Case study grid, odd
+   */
+  .hp-case-study:nth-of-type(odd) {
+
+    .hp-case-study__number {
+      grid-column: 2/12;
     }
 
     .hp-case-study__copy {
-      grid-column: cc/dd;
+      grid-column: 2/9
     }
 
     .hp-case-study__image {
-      grid-column: bb/cc;
+      grid-column: 9/13;
     }
-
-    /*
-     * Case study grid, even
-     */
-    .hp-case-study:nth-of-type(odd) {
-
-      grid-template-columns: [aa] 0.5fr [bb] 4fr [cc] 2fr [dd] 0.5fr [ee];
-
-      .hp-case-study__copy {
-        grid-column: bb/cc;
-      }
-
-      .hp-case-study__image {
-        grid-column: cc/dd;
-      }
-    }
-
 
   }
+}
 
-  @media screen and (min-width: $xlarge) {
+@media screen and (min-width: $max-width) {
+  /*
+   * Case study grid, default
+   */
+  .hp-case-study__copy {
+    grid-column: 6/13;
+    grid-row: a;
+    position: relative;
+  }
 
-    .hp-case-study {
-      grid-template-columns: [aa] 0.5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
-    }
+  .hp-case-study__number {
+    grid-column: 6/13;
+  }
 
-    .hp-case-study__heading {
-      font-size: 3.75rem;
+  .hp-case-study__image {
+    grid-column: 1/5;
+    grid-row: b;
+    margin: 0;
+  }
+
+  /*
+   * Case study grid, odd
+   */
+  .hp-case-study:nth-of-type(odd) {
+
+    .hp-case-study__copy {
+      grid-column: 1/8
     }
 
     .hp-case-study__number {
-      font-size: 15rem;
+      grid-column: 1/13;
     }
 
+    .hp-case-study__image {
+      grid-column: 8/13;
+    }
   }
 
-  @media screen and (min-width: $max-width) {
-    /*
-     * Case study grid, default
-     */
-    .hp-case-study,
-    .hp-case-study:nth-of-type(odd) {
-      grid-template-columns: repeat(12, 1fr);
-      grid-column-gap: 2rem;
-    }
-
-    .hp-case-study__copy {
-      grid-column: 6/13;
-      grid-row: a;
-      position: relative;
-    }
-
-    .hp-case-study__image,
-    .hp-case-study:nth-of-type(odd) .hp-case-study__image {
-      grid-column: 1/5;
-      grid-row: b;
-      margin: 0;
-    }
-
-    /*
-     * Case study grid, even
-     */
-    .hp-case-study:nth-of-type(odd) {
-
-      .hp-case-study__copy {
-        grid-column: 1/7
-      }
-
-      .hp-case-study__image {
-        grid-column: 8/13;
-      }
-    }
-
-    .hp-case-study--ce .hp-case-study__image {
-      margin-right: -4rem;
-    }
-
+  /*
+   * Content Editor
+   */
+  .hp-case-study--ce .hp-case-study__image {
+    margin-right: -4rem;
   }
 
 }
+
 
 @supports ((-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white))
   or ((-moz-text-stroke-color: #666)and (-moz-text-fill-color: white)) {

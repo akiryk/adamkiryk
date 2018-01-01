@@ -55,7 +55,7 @@ gulp.task('images', function() {
 gulp.task('html', function() {
   var
     out = folder.build,
-    page = gulp.src(folder.src + 'index.html')
+    page = gulp.src(folder.src + '*.html')
       .pipe(newer(out));
 
   // minify production code
@@ -130,20 +130,9 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('concatJS', function() {
-  return gulp.src(['src/js/vendors/gsap/*.js', 'src/js/main.js'])
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('docs/js/'))
-
-    // gulp.task('scripts', function() {
-    //   return gulp.src(['./lib/file3.js', './lib/file1.js', './lib/file2.js'])
-    //     .pipe(concat('all.js'))
-    //     .pipe(gulp.dest('./dist/'));
-    // });
-})
-
+//'src/js/vendors/gsap/*.js'
 gulp.task('babel', () =>
-  gulp.src('src/js/devScripts.js')
+  gulp.src('src/js/main-devel.js')
     .pipe(sourcemaps.init())
     .pipe(babel({
         presets: ['es2015']

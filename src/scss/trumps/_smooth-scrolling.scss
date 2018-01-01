@@ -1,0 +1,15 @@
+/**
+ *
+ * Trumps: Smooth Scrolling
+ * -----------------------------------------------
+ *
+ * Styles that help smooth scrolling look and work well.
+ *
+ */
+
+// Hide the outline on sections, since it isn't a form and is only
+// given focus for convenience.
+// See: https://css-tricks.com/smooth-scrolling-accessibility/
+.smooth-scroll-to:focus {
+  outline: none;
+}

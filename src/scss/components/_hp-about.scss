@@ -15,23 +15,60 @@
   font-size: 1.125rem;
 }
 
-// About Section
-@supports (display: grid){
+.hp-about__desc {
+  font-size: 20px;
+}
+
+.hp-about__image {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50%;
+  margin: 2rem auto 3rem;
+  max-width: 20em;
+}
+
+.hp-about__contents {
+  margin: 2rem 1rem;
+  max-width: 50rem;
+}
+
+@media screen and (min-width: $small){
 
   .hp-about {
-    display: grid;
-    grid-template-columns: 4fr 1fr 6fr 1fr;
-    align-items: center;
+    // width: 80%;
+    margin: auto;
+    display: flex;
   }
 
   .hp-about__image {
-    grid-column: 1;
-    margin-right: -5rem;
-    margin-left: -4rem;
+    flex: 1 0 35%;
+    width: unset;
+    border-radius: unset;
+    overflow: unset;
+    margin: unset;
+    max-width: unset;
   }
 
   .hp-about__contents {
-    grid-column: 3;
+    flex: 1 0 calc(65% - 2rem);
   }
-}
 
+  @supports (display: grid){
+    .hp-about {
+      @include standard-grid();
+      align-items: center;
+    }
+
+    .hp-about__image {
+      grid-column: 1/6;
+      align-self: end;
+    }
+
+    .hp-about__contents {
+      grid-column: 6/12;
+      margin: unset;
+    }
+  }
+
+}

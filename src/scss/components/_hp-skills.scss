@@ -19,49 +19,76 @@
 
 .hp-skills {
   @include font-smoothing;
-  margin: auto 1rem;
+  margin: auto 1rem 1rem 1rem;
 }
 
 .hp-skills__skill {
   font-size: 1.125rem;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
+  max-width: 40rem;
 }
 
 .hp-skills__title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $sans-serif, sans-serif;
   font-size: 1.125rem;
   line-height: 1.6;
 }
 
 .hp-skills__desc {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $sans-serif, sans-serif;
   line-height: 1.6;
   font-size: 1.125rem;
 }
 
-
-@supports (display: grid) {
-  @media screen and (min-width: $small){
-
+@media screen and (min-width: $small){
+  .hp-skills {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto auto 2rem auto;
+    max-width: 50em;
+  }
+  .hp-skills__skill {
+    flex: 1 0 calc(50% - 1em);
+  }
+  .hp-skills__skill:nth-of-type(even){
+    //margin-left: 1em;
+  }
+  .hp-skills__skill:nth-of-type(odd){
+    //margin-right: 1em;
+  }
+  @supports (display: grid) {
     .hp-skills {
       max-width: unset;
-      margin: auto 2rem auto 10%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 1rem;
-    }
-
-  }
-
-  @media screen and (min-width: $medium){
-
-    .hp-skills {
-      margin-left: calc(30% + 2rem);
-      display: block;
+      width: unset;
+      @include standard-grid();
+      grid-gap: 2rem;
     }
 
     .hp-skills__skill {
-      grid-template-columns: 1fr 1fr;
+      grid-column: 2/10;
+    }
+  }
+
+}
+
+  @media screen and (min-width: $medium){
+    .hp-skills {
+      width: calc(65% - 2em);
+      margin-left: 30%;
+    }
+
+    @supports (display: grid) {
+      .hp-skills {
+        margin-left: unset;
+        width: unset;
+        @include standard-grid();
+      }
+
+      .hp-skills__skill {
+        grid-column: 4/11;
+      }
+
     }
 
   }
@@ -70,36 +97,40 @@
 
     .hp-skills {
       margin: unset;
-      display: grid;
-      grid-column-gap: 2rem;
-      grid-template-columns: [aa] 1em [bb] 2fr [cc] 4fr [dd] 0.25fr [ee];
+      @include standard-grid();
     }
 
-    .hp-skills__skill {
-      grid-column: 3;
-      align-items: baseline;
-    }
 
     .hp-skills__desc {
       line-height: 1.5;
       font-size: 1rem;
     }
 
+    .hp-skills__skill {
+      grid-column: 2/5;
+    }
+
+    .hp-skills__skill:nth-of-type(2n) {
+      grid-column: 5/8;
+    }
+
+    .hp-skills__skill:nth-of-type(3n) {
+      grid-column: 8/11;
+    }
+    // .hp-skills__skill:nth-of-type(even) {
+    //   grid-column: 8/12;
+    // }
+
   }
 
   @media screen and (min-width: $xlarge){
 
-    .hp-skills {
-      grid-template-columns: [aa] .5fr [bb] 2fr [cc] 4fr [dd] 0.5fr [ee];
-    }
+    // .hp-skills__skill {
+    //   grid-column: 5/8;
+    // }
+
+    // .hp-skills__skill:nth-of-type(even) {
+    //   grid-column: 8/11;
+    // }
 
   }
-
-  @media screen and (min-width: $max-width) {
-
-    .hp-skills {
-      grid-template-columns: [aa] 1fr [bb] 4fr [cc] 6fr [dd] 1fr [ee];
-    }
-
-  }
-}
