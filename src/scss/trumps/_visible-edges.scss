@@ -1,0 +1,16 @@
+/**
+ *
+ * Trumps: Visible Edges
+ * -----------------------------------------------
+ *
+ * Use this class to add visible edges to images
+ * or video. Could be border, shadow, or whatever
+ * you decide to make it.
+ *
+ */
+
+.visible-edges,
+.make-edges-visible {
+  // use box-shadow for now
+  @include media-shadow();
+}

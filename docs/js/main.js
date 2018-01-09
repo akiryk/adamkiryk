@@ -26,8 +26,7 @@ var app = {
    *
    */
   init: function init() {
-    document.getElementById('primaryLogo').classList.remove('display-none');
-    document.getElementById('intro').classList.remove('fade-in');
+    document.documentElement.classList.remove('fade-in');
     this.animatePrimaryLogo();
     this.initSmoothScrolling();
     this.openingAnimations();
@@ -43,11 +42,12 @@ var app = {
    *
    */
   openingAnimations: function openingAnimations() {
+    TweenLite.from(primaryNav, 1.2, { opacity: '0', ease: Power2.easeIn, delay: 1 });
     TweenLite.from(primaryLogo, 1.2, { opacity: '0', ease: Power2.easeIn });
     TweenLite.from('#introHeading .site-heading', 1.2, { x: 150, opacity: '0', ease: Power2.easeOut });
     TweenLite.from('#introHeading .site-subheading', 1.2, { x: -100, opacity: '0', ease: Power2.easeOut, delay: .25 });
-    TweenLite.from(introHeading, 1, { y: 50, ease: Power2.easeOut, delay: 1.25 });
-    TweenLite.from(introBody, 1, { opacity: '0', y: 50, ease: Power2.easeOut, delay: 1.25 });
+    TweenLite.from(introHeading, 1.25, { y: 75, ease: Power1.easeOut, delay: 1.25 });
+    TweenLite.from(introBody, 1.25, { opacity: '0', y: 75, ease: Power1.easeOut, delay: 1.25 });
   },
 
 

@@ -1,0 +1,19 @@
+/**
+ *
+ * Component: Video
+ * ---------------------------------------------------------------
+ * Use to wrap video element if you need to use a caption
+ *
+ */
+
+.video {
+  margin-bottom: $space;
+}
+
+.video__media {
+  margin-bottom: $space;
+}
+
+.video__caption {
+  @include caption();
+}

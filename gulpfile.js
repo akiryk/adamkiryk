@@ -147,7 +147,7 @@ gulp.task('watch', ['webserver'], function() {
   livereload.listen();
   gulp.watch('src/scss/**/*.scss', ['compileSASS']);
   gulp.watch('src/js/**/*.js', ['babel']);
-  gulp.watch('src/index.html', ['html'])
+  gulp.watch('src/*.html', ['html'])
 });
 
 gulp.task('default', ['compileSASS', 'babel', 'html', 'watch']);

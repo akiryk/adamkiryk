@@ -13,6 +13,7 @@
   }
 
   .hp-case-study__heading {
+    @include secondary-heading;
     font-size: 2.5rem;//40px;
   }
 
@@ -261,8 +262,8 @@
   .hp-case-study__number {
     color: transparent;
     opacity: 0.5;
-       -moz-text-fill-color: white;
-    -webkit-text-fill-color: white;
+       -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
        -moz-text-stroke-color: $red;
     -webkit-text-stroke-color: $red;
        -moz-text-stroke-width: 1px;

@@ -1,18 +1,42 @@
 # Adam Kiryk Website
 
-This still is still in progress. Latest steps taken were:
+## CSS Conventions
+Use BEM except in a few special cases:
 
-* Basic CSS styling
-* Playing around with scrollmagic.js
-* Used bodymovin.js but didn't love how the animations looked.
+* Accessibility oriented classes, such as classes related to visibility
+* Special classes for handling webfonts (see below)
+* Helper classes can be used as necessary and on a case-by-case basis — e.g. spacing such as mb-2. Use with discretion.
 
-Next steps:
+## Webfont Conventions
+Style fonts on the main BEM class, using fallback fonts instead of webfonts. Style webfonts by using one of the following special classes:
 
-* Finish writing up work examples
-* Create a design for work examples
-* Use the entire width of screen rather than only the center part
-* Create transitions with scrollmagic and greensock (or possibly anime.js)
-* See 'curriculum' on drive for examples of sites that include transitions
-* Check branch. Use master branch to push site live
+* `.ge-sans` for Google sans-serif (in this case, Open Sans)
+* `.ge-sans--bold` for Google sans-serif bold
+* `.tk-serif` for Typekit serif (Caslon)
+* etc. etc.
 
-This site can be viewed [on github pages](https://akiryk.github.io/adamkiryk/).
+This makes it easy for me to style fonts according to whether a webfont has loaded. For example:
+
+``` html
+// index.html
+<html class="wf-opensans-n4-active wf-adobecaslonpro-n4-active">
+<h3 class="heading tk-serif">My Heading</h3>
+<h3 class="subheading ge-sans">Subheading!</h3>
+
+// styles.css
+.heading {
+  font-family: serif;
+}
+
+.subheading {
+  font-family: sans-serif;
+}
+
+.wf-opensans-n4-active .ge-sans {
+  font-family: 'Open Sans';
+}
+
+.wf-adobecaslonpro-n4-active .tk-serif {
+  font-family: 'Adobe Caslon';
+}
+```

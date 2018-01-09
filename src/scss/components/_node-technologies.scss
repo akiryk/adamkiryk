@@ -1,0 +1,19 @@
+/**
+ *
+ * Component: Node Technologies
+ * -----------------------------------------------
+ * A list of technologies on the node page
+ *
+ *
+ */
+
+.node-technologies__title {
+  @include subheading;
+}
+
+.node-technologies__list {
+  @include plain-list;
+   & > li {
+    margin: 0 0 .875rem 0;
+   }
+}

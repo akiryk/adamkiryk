@@ -7,6 +7,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@mixin secondary-heading() {
+  color: $dark-gray-1;
+  font-size: $font-xl;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
 @mixin body-copy() {
   @include font-smoothing;
   font-family: $fb-body-font-stack;
@@ -14,12 +21,44 @@
   line-height: 1.5;
 }
 
-@mixin standard-grid($gap: 2rem, $cols: 12, $col-width: 1fr, $row-gap: 0) {
+@mixin standard-grid($cols: 12, $col-width: 1fr, $column-gap: 2rem, $row-gap: 0, $margins: true) {
   display: grid;
-  grid-column-gap: $gap;
+  grid-column-gap: $column-gap;
   grid-row-gap: $row-gap;
   grid-template-columns: repeat($cols, $col-width);
   max-width: $wrapper-width-lg;
-  margin-left: $gap;
-  margin-right: $gap;
+  @if $margins {
+    margin-left: $column-gap;
+    margin-right: $column-gap;
+  }
+}
+
+@mixin caption() {
+  @include font-smoothing;
+  color: $dark-gray-3;
+  font-size: .875rem; // 14px;
+  font-family: $sans-serif;
+  line-height: 1.5;
+  margin-top: -1rem;
+}
+
+@mixin subheading {
+  @include font-smoothing;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  font-family: $sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+@mixin plain-list {
+  @include font-smoothing;
+  font-size: 18px;
+  padding: 0;
+  margin: 1.75rem 0 0 0;
+  list-style: none;
+  font-family: $sans-serif;
+}
+
+@mixin media-shadow {
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15);
 }

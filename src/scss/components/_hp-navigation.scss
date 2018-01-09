@@ -1,0 +1,82 @@
+/**
+ *
+ * Component: Primary Navigation
+ * -----------------------------------------------
+ * Navigation for site and page
+ *
+ *
+ */
+
+.navbar__menu {
+  @include font-smoothing;
+  align-content: center;
+  display: flex;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-weight: 500;
+  list-style: none;
+  padding: 0;
+  text-shadow: -1px 1px 0px white;
+}
+
+.navbar__menu-item {
+  border-radius: $border-radius;
+  transition: all .25s;
+}
+
+.navbar__menu-item:hover {
+  background-color: rgba(255,255,255,0.5);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+}
+
+.navbar__menu-link {
+  color: #928e58;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: $small){
+
+  @supports (display: grid) {
+    .navbar {
+      grid-column-gap: 2rem;
+      @include standard-grid();
+    }
+
+    .navbar__menu {
+      grid-column: 2/12;
+    }
+
+    .navbar__menu-item:first-of-type {
+      margin-left: .85rem;
+    }
+
+  }
+}
+
+@media screen and (min-width: $medium){
+  @supports (display: grid) {
+    .navbar__menu {
+      grid-column: 4/12;
+    }
+  }
+}
+
+@media screen and (min-width: $large){
+  @supports (display: grid) {
+    .navbar__menu {
+      grid-column: 5/12;
+    }
+  }
+}
+
+@media screen and (min-width: $max-width){
+  @supports (display: grid) {
+    .navbar {
+      margin: auto;
+    }
+  }
+}
+
+

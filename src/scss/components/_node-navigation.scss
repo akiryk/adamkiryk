@@ -1,0 +1,49 @@
+/**
+ *
+ * Component: Node Navigation
+ * -----------------------------------------------
+ * Navigation for internal pages
+ *
+ *
+ */
+
+.node-navigation {
+  @include font-smoothing;
+  display: flex;
+  align-items: baseline;
+  color: $dark-gray-3;
+  margin-top: 1rem;
+}
+
+.node-navigation__logo {
+  flex: 0 0 4rem;
+  margin-right: 1.25rem;
+}
+.node-navigation__name {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.125rem;
+  flex: auto;
+}
+
+.node-navigation__title {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+@media screen and (min-width: $small){
+  // @supports (display: grid) {
+  //   .node-navigation {
+  //     grid-column-gap: 2rem;
+  //     @include standard-grid();
+  //     align-items: flex-end;
+  //     margin-bottom: 2rem;
+  //   }
+  //   .node-navigation__logo {
+  //     grid-column: 2;
+  //   }
+  //   .node-navigation__name {
+  //     grid-column: 2 / 5;
+  //   }
+  // }
+}

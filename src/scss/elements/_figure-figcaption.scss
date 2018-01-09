@@ -6,13 +6,10 @@
  *
  */
 
-figure > img {
-  margin-bottom: 2rem;
+figure {
+  margin: 0 0 $space 0;
 }
 
 figcaption {
-  color: $dark-gray-3;
-  font-size: .875rem; // 14px;
-  font-family: $sans-serif;
-  line-height: 1.5;
+  @include caption();
 }

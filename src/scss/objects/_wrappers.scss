@@ -8,8 +8,8 @@
 
 .o-wrapper {
   @include clearfix();
-  padding-right: $global-spacing-unit;
-  padding-left:  $global-spacing-unit;
+  padding-right: $space;
+  padding-left:  $space;
   margin-right: auto;
   margin-left:  auto;
 }

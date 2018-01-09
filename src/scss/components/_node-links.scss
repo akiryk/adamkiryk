@@ -1,0 +1,19 @@
+/**
+ *
+ * Component: Node Links
+ * -----------------------------------------------
+ * A list of links to example websites
+ *
+ *
+ */
+
+.node-links__title {
+  @include subheading;
+}
+
+.node-links__list {
+  @include plain-list;
+   & > li {
+    margin: 0 0 .875rem 0;
+   }
+}

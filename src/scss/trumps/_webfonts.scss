@@ -1,0 +1,45 @@
+/**
+ *
+ * Typekit rules
+ *
+ * Use these web fonts if Typekit fonts have loaded.
+ *
+ */
+
+.wf-adobecaslonpro-n4-active {
+
+  p {
+    font-family: "adobe-caslon-pro", serif;
+    font-size: $font-md; // 24px
+    line-height: 1.35;
+  }
+
+  .tk-serif,
+  .tk-serif li,
+  .tk-serif a {
+    font-family: "adobe-caslon-pro", serif;
+  }
+
+}
+
+/**
+ * Google Fonts
+ *
+ */
+.wf-opensans-n7-active {
+  .ge-sans--bold,
+  .ge-sans--bold a,
+  .ge-sans--bold li {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+  }
+}
+
+.wf-opensans-n4-active {
+  .ge-sans,
+  .ge-sans a,
+  .ge-sans li {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+}
