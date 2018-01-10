@@ -112,7 +112,7 @@
 
       <div class="node-full">
         <div class="video">
-          <video class="video__media visible-edges" src="media/videos/fed-story-editor-filters.mp4" autoplay loop poster="media/node-content-editor/list-audio-filter_lg-2303.jpg">
+          <video class="video__media visible-edges" data-src="media/videos/fed-story-editor-filters.mp4" muted loop poster="media/node-content-editor/list-audio-filter_lg-2303.jpg">
             <!-- In event of no video support, now image -->
             <img src="media/node-content-editor/list-audio-filter_lg-2303.jpg" />
           </video>
@@ -127,21 +127,19 @@
       </div>
 
       <div class="node-full">
-        <figure class="ml-auto mr-auto">
+        <figure>
           <img srcset="media/node-content-editor/audio-bubble_lg-1144.jpg 1144w,
                  media/node-content-editor/audio-bubble_sm-1144.jpg 640w"
                   sizes="(max-width: 320px) 280px,
                 (max-width: 480px) 440px,
                 1144px"
-         src="media/node-content-editor/audio-bubble_lg-1144.jpg"
-         alt="Content Editor with audio player"
-         >
+         src="media/node-content-editor/audio-bubble_lg-1144.jpg" alt="Content Editor with audio player">
          <figcaption>Screen grab of the content editor with a story being composed.</figcaption>
         </figure>
       </div>
       <div class="node-body">
         <div class="video">
-          <video class="video__media visible-edges" src="media/videos/fed-story-editor-audio.mp4" muted autoplay loop poster="media/node-content-editor/audio-poster.jpg">
+          <video class="video__media visible-edges" data-src="media/videos/fed-story-editor-audio.mp4" muted loop poster="media/node-content-editor/audio-poster.jpg">
             <!-- In event of no video support, now image -->
             <img src="media/node-content-editor/audio-poster.jpg" />
           </video>
@@ -169,5 +167,6 @@
       </div>
     </div>
   </div>
+  <script src="js/lazyload.js"></script>
 </body>
 </html>

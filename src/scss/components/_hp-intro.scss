@@ -9,6 +9,11 @@
 .intro__body {
   font-size: 1.125rem;
   max-width: $p-max;
+  position: relative;
+}
+
+.intro__heading {
+  position: relative;
 }
 
 .introgrid {

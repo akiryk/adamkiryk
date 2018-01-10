@@ -118,8 +118,8 @@
 
 @media screen and (min-width: $max-width){
   @supports (display: grid) {
-    .section-title__heading--case-studies,
-    .section-title__desc--case-studies {
+    .section-title__heading--work-experience,
+    .section-title__desc--work-experience {
       grid-column: 6/12;
     }
   }

@@ -8,7 +8,7 @@
  */
 
 .panel {
-  min-height: 100vh;
+  // min-height: 100vh;
   display: grid;
   align-content: center;
   padding: 4rem calc((100vw - 100em) / 2) 2rem calc((100vw - 100em) / 2);
@@ -18,12 +18,14 @@
 //   background-color: #f7f5ed;
 // }
 
-.panel--case-studies {
+.panel--work-experience {
   overflow: hidden;
 }
 
 @supports (display: grid) {
   .panel--intro {
+    align-content: flex-end;
+    min-height: 65vh;
     padding: 0;
   }
 }
@@ -42,7 +44,7 @@
 
 @media screen and (min-height: 42.5em) and (min-width: $medium) {
 
-  .panel--case-studies {
+  .panel--work-experience {
     padding-top: 30vh;
   }
 
@@ -59,5 +61,5 @@
 .panel--about {
   background-color: black;
   min-height: unset;
-  padding: 0 calc( (100% - 1640px) / 2 );
+  padding: 3rem calc( (100% - 1640px) / 2 ) 0;
 }

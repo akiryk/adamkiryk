@@ -1,67 +1,67 @@
 /**
  *
- * Component: Home Page Case Study
+ * Component: Home Page Project
  * -----------------------------------------------
- * Home page case study sub-sections
+ * Home page work project sub-sections
  *
  *
  */
 
-  .hp-case-study {
+  .hp-project {
     @include font-smoothing;
     margin: 4rem 0;
   }
 
-  .hp-case-study__heading {
+  .hp-project__heading {
     @include secondary-heading;
     font-size: 2.5rem;//40px;
   }
 
 
-  .hp-case-study--ce .hp-case-study__number {
+  .hp-project--ce .hp-project__number {
     margin-left: -1rem;
   }
 
-  .hp-case-study__image {
+  .hp-project__image {
     margin: 2rem auto;
     width: 75%;
   }
 
-  .hp-case-study__image .caption {
+  .hp-project__image .caption {
     display: none;
   }
 
-  .hp-case-study__number {
+  .hp-project__number {
     display: none;
   }
 
 @supports (display: grid) {
-  .hp-case-study {
+  .hp-project {
     margin: 4rem 1em;
   }
 }
 
 @media screen and (min-width: $small) {
 
-  .hp-case-study {
+  .hp-project {
     width: 80%;
     margin: 2rem auto;
   }
 
   @supports (display: grid) {
-    .hp-case-study {
+    .hp-project {
       width: unset;
       @include standard-grid();
       grid-template-rows: auto auto;
     }
 
-    .hp-case-study__image {
+    .hp-project__image {
       margin: unset;
       grid-row: 2;
       grid-column: 1/5;
     }
 
-    .hp-case-study__copy {
+    .hp-project__copy {
       width: unset;
       grid-column: 4/12;
       grid-row: 2;
@@ -72,38 +72,38 @@
 
 @media screen and (min-width: $medium) {
 
-  .hp-case-study {
+  .hp-project {
     width: unset;
     display: flex;
     flex-wrap: wrap;
     position: relative;
   }
 
-  .hp-case-study__image {
+  .hp-project__image {
     flex: 1 1 auto;
     width: calc(30% - 4rem);
     margin: 0 1rem 0 2rem;
   }
 
-  .hp-case-study__copy {
+  .hp-project__copy {
     width: calc(70% - 2rem);
     flex: 1 1 auto;
     margin: 0 2rem 0 1rem;
   }
 
-  .hp-case-study__desc {
+  .hp-project__desc {
     max-width: $p-max;
   }
 
-  .hp-case-study__image .caption {
+  .hp-project__image .caption {
     display: block;
   }
 
-  .hp-case-study__heading {
+  .hp-project__heading {
     font-size: 3.125rem; //50px
   }
 
-  .hp-case-study__number {
+  .hp-project__number {
     display: block;;
     font-size: 12rem;
     color: #eee;
@@ -114,13 +114,13 @@
 
   @supports (display: grid) {
 
-    .hp-case-study {
+    .hp-project {
       @include standard-grid();
     }
     /*
      * Case study grid, default
      */
-    .hp-case-study__copy {
+    .hp-project__copy {
       width: unset;
       margin: unset;
       grid-column: 4/12;
@@ -128,14 +128,14 @@
       position: relative;
     }
 
-    .hp-case-study__image {
+    .hp-project__image {
       grid-column: 1/4;
       grid-row: 2;
       margin: 0;
       width: 100%;
     }
 
-    .hp-case-study__number {
+    .hp-project__number {
       width: unset;
       transform:  unset;
       padding-left: unset;
@@ -147,17 +147,17 @@
     /*
      * Case study grid, even
      */
-    .hp-case-study:nth-of-type(odd) {
+    .hp-project:nth-of-type(odd) {
 
-      .hp-case-study__copy {
+      .hp-project__copy {
         grid-column: 1/9
       }
 
-      .hp-case-study__image {
+      .hp-project__image {
         grid-column: 9/12;
       }
 
-      .hp-case-study__number {
+      .hp-project__number {
         grid-column: 2/12;
       }
     }
@@ -165,43 +165,43 @@
 }
 
 @media screen and (min-width: $large) {
-  .hp-case-study__number {
+  .hp-project__number {
     font-size: 15rem;
   }
 
-  .hp-case-study__heading {
+  .hp-project__heading {
     font-size: 3.75rem;
   }
 
   /*
    * Case study grid, default
    */
-  .hp-case-study__image {
+  .hp-project__image {
     grid-column: 1/5;
   }
 
-  .hp-case-study__copy {
+  .hp-project__copy {
     grid-column: 5/13;
   }
 
-  .hp-case-study__number {
+  .hp-project__number {
     grid-column: 5/13;
   }
 
    /*
    * Case study grid, odd
    */
-  .hp-case-study:nth-of-type(odd) {
+  .hp-project:nth-of-type(odd) {
 
-    .hp-case-study__number {
+    .hp-project__number {
       grid-column: 2/12;
     }
 
-    .hp-case-study__copy {
+    .hp-project__copy {
       grid-column: 2/9
     }
 
-    .hp-case-study__image {
+    .hp-project__image {
       grid-column: 9/13;
     }
 
@@ -212,17 +212,17 @@
   /*
    * Case study grid, default
    */
-  .hp-case-study__copy {
+  .hp-project__copy {
     grid-column: 6/13;
     grid-row: a;
     position: relative;
   }
 
-  .hp-case-study__number {
+  .hp-project__number {
     grid-column: 6/13;
   }
 
-  .hp-case-study__image {
+  .hp-project__image {
     grid-column: 1/5;
     grid-row: b;
     margin: 0;
@@ -231,17 +231,17 @@
   /*
    * Case study grid, odd
    */
-  .hp-case-study:nth-of-type(odd) {
+  .hp-project:nth-of-type(odd) {
 
-    .hp-case-study__copy {
+    .hp-project__copy {
       grid-column: 1/8
     }
 
-    .hp-case-study__number {
+    .hp-project__number {
       grid-column: 1/13;
     }
 
-    .hp-case-study__image {
+    .hp-project__image {
       grid-column: 8/13;
     }
   }
@@ -249,7 +249,7 @@
   /*
    * Content Editor
    */
-  .hp-case-study--ce .hp-case-study__image {
+  .hp-project--ce .hp-project__image {
     margin-right: -4rem;
   }
 
@@ -259,7 +259,7 @@
 @supports ((-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white))
   or ((-moz-text-stroke-color: #666)and (-moz-text-fill-color: white)) {
 
-  .hp-case-study__number {
+  .hp-project__number {
     color: transparent;
     opacity: 0.5;
        -moz-text-fill-color: transparent;

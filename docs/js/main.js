@@ -21,10 +21,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var app = {
   scrollController: null,
 
-  /**
-   * Initialize the app
-   *
-   */
   init: function init() {
     document.documentElement.classList.remove('fade-in');
     this.animatePrimaryLogo();
@@ -32,29 +28,17 @@ var app = {
     this.openingAnimations();
     this.introSection();
     this.skillsSection();
-    this.caseStudiesSection();
-    this.workSection();
+    this.workExperienceTitle();
+    this.projectsSection();
   },
-
-
-  /**
-   * Opening animations
-   *
-   */
   openingAnimations: function openingAnimations() {
-    TweenLite.from(primaryNav, 1.2, { opacity: '0', ease: Power2.easeIn, delay: 1 });
-    TweenLite.from(primaryLogo, 1.2, { opacity: '0', ease: Power2.easeIn });
-    TweenLite.from('#introHeading .site-heading', 1.2, { x: 150, opacity: '0', ease: Power2.easeOut });
-    TweenLite.from('#introHeading .site-subheading', 1.2, { x: -100, opacity: '0', ease: Power2.easeOut, delay: .25 });
-    TweenLite.from(introHeading, 1.25, { y: 75, ease: Power1.easeOut, delay: 1.25 });
-    TweenLite.from(introBody, 1.25, { opacity: '0', y: 75, ease: Power1.easeOut, delay: 1.25 });
+    TweenMax.from(primaryNav, 1.2, { opacity: '0', ease: Power2.easeIn, delay: 1 });
+    TweenMax.from(primaryLogo, 1.2, { opacity: '0', ease: Power2.easeIn });
+    TweenMax.from('#introHeading .site-heading', 1.2, { left: 150, opacity: '0', ease: Power2.easeOut });
+    TweenMax.from('#introHeading .site-subheading', 1.2, { left: -100, opacity: '0', ease: Power2.easeOut, delay: .25 });
+    TweenMax.from(introHeading, 1.25, { top: 75, ease: Power1.easeOut, delay: 1.25 });
+    TweenMax.from(introBody, 1.25, { opacity: '0', top: 75, ease: Power1.easeOut, delay: 1.25 });
   },
-
-
-  /**
-   * Animate the logo
-   *
-   */
   animatePrimaryLogo: function animatePrimaryLogo() {
     var kTpMask = document.getElementById("mask1"),
         kBmMask = document.getElementById("mask2"),
@@ -76,7 +60,7 @@ var app = {
    */
   introSection: function introSection() {
     this.scrollController = new ScrollMagic.Controller();
-    var introFadeOut = TweenLite.to(intro, .7, {
+    var introFadeOut = TweenMax.to(intro, .7, {
       opacity: 0.0,
       ease: Linear.easeNone
     });
@@ -87,7 +71,7 @@ var app = {
       triggerHook: 0,
       duration: 200,
       offset: 300,
-      indicators: true
+      indicators: false
     });
   },
 
@@ -97,11 +81,11 @@ var app = {
    *
    */
   skillsSection: function skillsSection() {
-    var titleParams = { y: 100, opacity: 0, ease: Power1.easeOut },
-        skillsParams = { y: 100, opacity: 0, ease: Power1.easeOut, delay: .25 };
+    var titleParams = { top: 100, opacity: 0, ease: Power1.easeOut },
+        skillsParams = { top: 200, opacity: 0, ease: Power1.easeOut, delay: .25 };
 
-    var titleTween = TweenLite.from('#skills .section-title', .5, titleParams),
-        skillsTween = TweenLite.from("#skills .hp-skills", .5, skillsParams);
+    var titleTween = TweenMax.from('#skills-title', .5, titleParams),
+        skillsTween = TweenMax.from('#skills-list', .5, skillsParams);
     // skillsTween = TweenMax.staggerFrom("#skills .hp-skills__skill", .5, skillsParams, .25);
 
     this.createScrollMagicScene({ trigger: '#skills', tween: titleTween });
@@ -110,48 +94,60 @@ var app = {
 
 
   /**
-   * Case studies section animations
+   * Animate the work experience title section
+   */
+  workExperienceTitle: function workExperienceTitle() {
+    var titleParams = { top: 200, opacity: 0, ease: Power1.easeOut };
+    var titleTween = TweenMax.from('#work-experience-title', 1, titleParams);
+    this.createScrollMagicScene({ trigger: '#work-experience', tween: titleTween });
+  },
+
+
+  /**
+   * Handle animations for the project sections
+   * There are several projects, and each one has three elements to animate.
    *
    */
-  caseStudiesSection: function caseStudiesSection() {
-    var _this = this;
-
-    var titleParams = { y: 200, opacity: 0, ease: Power1.easeOut };
-    var titleTween = TweenLite.from('#case-studies .section-title', 1, titleParams);
-
-    var titleScene = new ScrollMagic.Scene({
-      triggerElement: '#case-studies',
-      triggerHook: .5
-    }).setTween(titleTween).addIndicators().addTo(this.scrollController);
-
+  projectsSection: function projectsSection() {
     var params = {
-      number: { y: 200, opacity: 0, ease: Power1.easeOut },
-      copy: { y: 300, opacity: 0, ease: Power1.easeOut, delay: .25 },
-      image: { y: 400, opacity: 0, ease: Power1.easeOut, delay: .5 }
+      // number: {transform: 'translateY(200px)', opacity: 0, ease:Power1.easeOut },
+      // copy: { transform: 'translateY(300px)', opacity: 0, ease:Power1.easeOut, delay:.25 },
+      // image: { transform: 'translateY(400px)', opacity: 0, ease:Power1.easeOut, delay: .5 }
+      number: { top: 200, opacity: 0, ease: Power1.easeOut },
+      copy: { top: 300, opacity: 0, ease: Power1.easeOut, delay: .25 },
+      image: { top: 400, opacity: 0, ease: Power1.easeOut, delay: .5 }
     };
 
-    var createScenes = function createScenes(trigger, _ref) {
+    var projectsArray = [].concat(_toConsumableArray(document.querySelectorAll('.hp-project')));
+
+    projectsArray.forEach(function (project) {
+      var id = '#' + project.getAttribute('id'),
+          tweens = getTweens(params, id);
+      createProjectScenes(id, tweens);
+    });
+
+    // Each project requires three distinct Scenes, one each for
+    // the number, the copy, and the image.
+    function createProjectScenes(trigger, _ref) {
       var number = _ref.number,
           copy = _ref.copy,
           image = _ref.image;
 
-      _this.createScrollMagicScene({ trigger: trigger, tween: copy, triggerHook: .75 });
-      _this.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: .75 });
-      _this.createScrollMagicScene({ trigger: trigger, tween: image, triggerHook: .75 });
-    };
+      app.createScrollMagicScene({ trigger: trigger, tween: copy, triggerHook: .75 });
+      app.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: .75 });
+      app.createScrollMagicScene({ trigger: trigger, tween: image, triggerHook: .75 });
+    }
 
-    var ceTweens = getTweens(params, '#case-study-ce');
-    var cpTweens = getTweens(params, '#case-study-cp');
-    var didjaTweens = getTweens(params, '#case-study-didja');
-
-    createScenes('#case-study-ce', ceTweens);
-    createScenes('#case-study-cp', cpTweens);
-    createScenes('#case-study-didja', didjaTweens);
-
+    /**
+     * Get tweens for the work sections
+     * @param {object} params, the GSAP tween parameters for number, copy, and image
+     * @param {DOM element} el, the containing div for the work project.
+     * @return {object} an object containing three GSAP tweens for number, copy, and image
+     */
     function getTweens(params, el) {
-      var numberTween = TweenLite.from(el + ' .hp-case-study__number', 1, params.number);
-      var copyTween = TweenLite.from(el + ' .hp-case-study__copy', 1, params.copy);
-      var imageTween = TweenLite.from(el + ' .hp-case-study__image', 1, params.image);
+      var numberTween = TweenMax.from(el + ' .hp-project__number', 1, params.number);
+      var copyTween = TweenMax.from(el + ' .hp-project__copy', 1, params.copy);
+      var imageTween = TweenMax.from(el + ' .hp-project__image', 1, params.image);
 
       return {
         number: numberTween,
@@ -160,29 +156,6 @@ var app = {
       };
     }
   },
-
-
-  /**
-   * Work section animations
-   *
-   */
-  workSection: function workSection() {
-    var titleParams = { y: 100, opacity: 0, ease: Power1.easeOut },
-        params = { y: 100, opacity: 0, ease: Power1.easeOut, delay: .25 };
-
-    var titleTween = TweenLite.from('#work .section-title', .5, titleParams),
-        workTween = TweenLite.from("#work .hp-work", .5, params);
-    // skillsTween = TweenMax.staggerFrom("#skills .hp-skills__skill", .5, skillsParams, .25);
-
-    this.createScrollMagicScene({ trigger: '#work', tween: titleTween });
-    this.createScrollMagicScene({ trigger: '#work', tween: workTween });
-  },
-
-
-  /**
-   *
-   *
-   */
   createScrollMagicScene: function createScrollMagicScene(_ref2) {
     var _ref2$tween = _ref2.tween,
         tween = _ref2$tween === undefined ? null : _ref2$tween,
@@ -219,7 +192,6 @@ var app = {
    *
    */
   initSmoothScrolling: function initSmoothScrolling() {
-    // const navLinks = [...document.querySelectorAll('.navbar__menu-link')];
     var anchors = [].concat(_toConsumableArray(document.querySelectorAll('a'))).filter(function (anchor) {
       return anchor.getAttribute('href').match(/^#/);
     });
@@ -240,7 +212,7 @@ var app = {
       var dest = document.querySelector(href);
       dest.classList.add('smooth-scroll-to');
       dest.setAttribute('tabindex', '-1');
-      TweenLite.to(window, 1, {
+      TweenMax.to(window, 1, {
         scrollTo: { y: href },
         onComplete: function onComplete() {
           dest.focus();
@@ -250,5 +222,5 @@ var app = {
   }
 };
 
-TweenLite && app.init();
+TweenMax && app.init();
 //# sourceMappingURL=main.js.map

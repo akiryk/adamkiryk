@@ -9,18 +9,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/main.css">
-  <!-- Load ScrollMagic and Greensock -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenLite.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineMax.min.js"></script>
-<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/easing/EasePack.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
-
+  <style>
+    #xyz {
+      position: relative;
+    }
+  </style>
   <script>
+    // loadJS: From @scottjehl, Filament Group, Inc.
+    (function(w){var loadJS=function(src,cb){"use strict";var ref=w.document.getElementsByTagName("script")[0];var script=w.document.createElement("script");script.src=src;script.async=true;ref.parentNode.insertBefore(script,ref);if(cb&&typeof cb==="function"){script.onload=cb}return script};if(typeof module!=="undefined"){module.exports=loadJS}else{w.loadJS=loadJS}})(typeof global!=="undefined"?global:this);
+
+    if (window.matchMedia("(min-width: 800px)").matches) {
+      loadJS("js/animations.min.js", () => {
+        loadJS("js/main.js");
+      });
+    }
+
+    // Web font loader, Google
     WebFontConfig = {
       google: {
         families: ['Open Sans:400','Open Sans:400i', 'Open Sans:700', 'Open Sans: 700i']
@@ -44,7 +48,7 @@
   <nav id="primaryNav" class="navbar">
     <ul class="navbar__menu">
       <li class="navbar__menu-item"><a href="#skills" class="navbar__menu-link">Skills</a></li>
-      <li class="navbar__menu-item"><a href="#case-studies" class="navbar__menu-link">Work Experience</a></li>
+      <li class="navbar__menu-item"><a href="#work-experience" class="navbar__menu-link">Work Experience</a></li>
       <li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">About</a></li>
     </ul>
   </nav>
@@ -97,7 +101,7 @@
           </svg>
         </div>
         <div id="introContent" class="intro__content">
-          <div id="introHeading">
+          <div id="introHeading" class="intro__heading">
             <h1 class="site-heading tk-serif">Adam Kiryk</h1>
             <div class="site-subheading tk-serif">Front End Developer / UI Designer </div>
           </div>
@@ -112,11 +116,10 @@
     </section>
 
     <section id="skills" class="panel panel--skills">
-      <div class="section-title">
+      <div id="skills-title" class="section-title">
         <h2 id="skillsTitle" class="section-title__heading section-title__heading--skills tk-serif">Skills</h2>
-
       </div>
-      <div class="hp-skills">
+      <div id="skills-list" class="hp-skills">
         <div class="hp-skills__skill">
           <h3 class="hp-skills__title ge-sans--bold">Front End Development</h3>
           <div class="hp-skills__desc ge-sans">In addition to years of real-world, on-the-job training, I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program in 2016. My technology skills include HTML, CSS, JavaScript, and PHP; React and Redux; Git; webpack, gulp, and grunt; SASS and LESS. I've long been interested in animation and data visualization, using tools like d3.js and GSAP.</div>
@@ -132,25 +135,28 @@
         </div>
     </section>
 
-    <section id="case-studies" class="panel panel--case-studies">
-      <div class="section-title">
-        <h2 class="section-title__heading section-title__heading--case-studies tk-serif">Work Experience</h2>
-        <div class="section-title__desc section-title__desc--case-studies">
-          <p>I worked for <a href="http://www.npr.org" target="_blank">NPR</a> from 2011 to 2017, leading product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at <a href="http://arn.com/ target="_blank">Arnold Worldwide</a>, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
+    <!-- Projects, aka "work-experience" -->
+    <section id="work-experience" class="panel panel--work-experience">
+      <div id="work-experience-title" class="section-title">
+        <h2 class="section-title__heading section-title__heading--work-experience tk-serif">Work Experience</h2>
+        <div class="section-title__desc section-title__desc--work-experience">
+          <p>I worked for <a href="http://www.npr.org" target="_blank">NPR</a> from 2011 to 2017, leading product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at <a href="http://arn.com/" target="_blank">Arnold Worldwide</a>, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
           <p>The following projects show the breadth and depth of my experience in design and front end development.</p>
         </div>
       </div>
 
       <!-- 1. Story Editor -->
-      <div id="case-study-ce" class="hp-case-study hp-case-study--ce">
-        <div class="hp-case-study__number tk-serif">1</div>
-        <figure class="hp-case-study__image">
-          <img src="media/hp/hp-ce-map.jpg" alt="Map of NPR stations">
+      <div id="project-ce" class="hp-project hp-project--ce">
+        <div class="hp-project__number tk-serif">1</div>
+        <figure class="hp-project__image">
+          <a href="fed-story-editor.html">
+            <img src="media/hp/hp-ce-map.jpg" alt="Map of NPR stations">
+          </a>
           <figcaption class="caption">There are hundreds of NPR stations across the country, some quite small and lacking resources to build or maintain robust digital operations.</figcaption>
         </figure>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Story Editor for NPR Stations</h2>
-          <p class="mt-0 mb-2 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Story Editor for NPR Stations</h2>
+          <p class="mt-0 mb-2 tk-serif hp-project__desc">
             I wrote JavaScript and CSS for this internally facing web application designed to help member stations create local content for distribution across NPR properties.
           </p>
           <div class="checkmark-list">
@@ -168,20 +174,23 @@
       </div>
 
       <!-- 2. Core Publisher -->
-      <div id="case-study-cp" class="hp-case-study hp-case-study--cp">
-        <div class="hp-case-study__number tk-serif">2</div>
-        <div class="hp-case-study__image">
-          <img srcset="media/hp/hp-cp-devices--large.jpg 1099w,
-                media/hp/hp-cp-devices--medium.jpg 600w,
-                media/hp/hp-cp-devices--small.jpg 300w"
-                sizes="(min-width: 50em) 33.3vw,
-                      100vw"
-                src="media/hp/hp-cp-devices--medium"
-                alt="Websites viewed in different devices">
+      <div id="project-cp" class="hp-project hp-project--cp">
+        <div class="hp-project__number tk-serif">2</div>
+        <div class="hp-project__image">
+          <a href="fed-core-publisher.html">
+            <img srcset="media/hp/hp-cp-devices--large.jpg 1099w,
+              media/hp/hp-cp-devices--medium.jpg 600w,
+              media/hp/hp-cp-devices--small.jpg 300w"
+              sizes="(min-width: 50em) 33.3vw,
+                    100vw"
+              src="media/hp/hp-cp-devices--medium"
+              alt="Websites viewed in different devices">
+          </a>
+
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Responsive design for a news platform used by over 180 NPR stations.</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Responsive design for a news platform used by over 180 NPR stations.</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
             I led user research, designed information architecture, and wrote front end code for Core Publisher, a website publishing platform for small and medium-sized NPR stations.
           </p>
           <div class="checkmark-list">
@@ -199,14 +208,21 @@
       </div>
 
       <!-- 3. Community Calendar -->
-      <div id="case-study-NPR" class="hp-case-study hp-case-study--npr">
-        <div class="hp-case-study__number tk-serif">3</div>
-        <div class="hp-case-study__image">
-          <img src="media/hp/hp-calendar_lg-2026.jpg" alt="">
+      <div id="project-calendar" class="hp-project hp-project--npr">
+        <div class="hp-project__number tk-serif">3</div>
+        <div class="hp-project__image">
+          <a href="fed-calendar.html">
+            <img srcset="media/hp/hp-calendar_lg-2026.jpg 2026w,
+                         media/hp/hp-calendar_md-1024.jpg 1024w,
+                         media/hp/hp-calendar_sm-486.jpg 486w"
+                  sizes="(min-width: 800px) 486px, 563px"
+                  src="media/hp/hp-calendar_md-1024.jpg"
+                 alt="">
+          </a>
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Community Calendar</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Community Calendar</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
             Using this site, members of the public can submit events to their local radio station; administrators can edit and publish those events; and anyone can browse the listings.
           </p>
            <div class="checkmark-list">
@@ -222,14 +238,16 @@
       </div>
 
        <!-- 4. Composer -->
-      <div id="case-study-NPR" class="hp-case-study hp-case-study--npr">
-        <div class="hp-case-study__number tk-serif">4</div>
-        <div class="hp-case-study__image">
-          <img src="media/hp/hp-composer.jpg" alt="">
+      <div id="project-composer" class="hp-project hp-project--npr">
+        <div class="hp-project__number tk-serif">4</div>
+        <div class="hp-project__image">
+           <a href="fed-composer.html">
+            <img src="media/hp/hp-composer.jpg" alt="">
+          </a>
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Composer</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Composer</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
             An internal web application to help NPR member stations track the songs they play in order to meet licensing requirements.
           </p>
            <div class="checkmark-list">
@@ -245,17 +263,19 @@
       </div>
 
        <!-- 5. Streaming Player -->
-      <div id="case-study-player" class="hp-case-study hp-case-study--player">
-        <div class="hp-case-study__number tk-serif">5</div>
-        <div class="hp-case-study__image">
-          <img srcset="media/hp/nhpr-devices_lg-949.jpg 949w,
+      <div id="project-player" class="hp-project hp-project--player">
+        <div class="hp-project__number tk-serif">5</div>
+        <div class="hp-project__image">
+          <a href="fed-player.html">
+            <img srcset="media/hp/nhpr-devices_lg-949.jpg 949w,
                        media/hp/nhpr-devices_sm-486.jpg 486w",
                sizes ="(min-width: 1600px) 486px, 564px"
                src="media/hp/nhpr-devices_lg-949.jpg" alt="">
+          </a>
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Streaming Player</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Streaming Player</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
             A responsive mini-site for finding and playing live streams and on-demand audio.
           </p>
            <div class="checkmark-list">
@@ -271,14 +291,16 @@
       </div>
 
        <!-- 6. Mobile Web -->
-      <div id="case-study-mobile-web" class="hp-case-study hp-case-study--mobile-web">
-        <div class="hp-case-study__number tk-serif">6</div>
-        <div class="hp-case-study__image">
-          <img src="media/hp/hp-mobile-web-phones.jpg" alt="">
+      <div id="project-mobile-web" class="hp-project hp-project--mobile-web">
+        <div class="hp-project__number tk-serif">6</div>
+        <div class="hp-project__image">
+          <a href="fed-mobile.html">
+            <img src="media/hp/hp-mobile-web-phones.jpg" alt="">
+          </a>
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Mobile Web</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Mobile Web</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
              Before NPR released a <a href="fed-core-publisher.html">responsive news platform</a> for member stations, we created a mobile-only news website.
            <div class="checkmark-list">
             <h3 class="checkmark-list__title">What I Did</h3>
@@ -293,14 +315,16 @@
       </div>
 
       <!-- 6. Arnold Worldwide -->
-      <div id="case-study-arnold" class="hp-case-study hp-case-study--arnold">
-        <div class="hp-case-study__number tk-serif">6</div>
-        <div class="hp-case-study__image">
-          <img src="media/hp/hp-didja-logo.jpg" alt="Logo for Didja Ever campaign">
+      <div id="project-arnold" class="hp-project hp-project--arnold">
+        <div class="hp-project__number tk-serif">7</div>
+        <div class="hp-project__image">
+          <a href="fed-arnold.html">
+            <img src="media/hp/hp-didja-logo.jpg" alt="Logo for Didja Ever campaign">
+          </a>
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Websites and Digital Marketing Campaigns at Arnold Worldwide.</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Websites and Digital Marketing Campaigns at Arnold Worldwide.</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
             In five years at the ad agency Arnold Worldwide, I created and launched online campaigns and websites for many of our largest clients, including RadioShack, Progressive Insurance, Carnival Cruiselines, and Ocean Spray.
           </p>
            <div class="checkmark-list">
@@ -311,30 +335,31 @@
               <li class="checkmark-list__item">Created web pages, landing pages, and mini-sites for RadioShack.</li>
             </ul>
           </div>
-          <a class="btn" href="#">See Details</a>
+          <a class="btn" href="fed-arnold.html">See Details</a>
         </div>
       </div>
 
         <!-- 8. Research 2 Action -->
-      <div id="case-study-r2a" class="hp-case-study hp-case-study--r2a">
-        <div class="hp-case-study__number tk-serif">8</div>
-        <div class="hp-case-study__image">
-          <img src="media/hp/hp-r2a.jpg" alt="Research to Action home page">
+      <div id="project-r2a" class="hp-project hp-project--r2a">
+        <div class="hp-project__number tk-serif">8</div>
+        <div class="hp-project__image">
+          <a href="http://research2action.net/" target="_blank">
+            <img src="media/hp/hp-r2a.jpg" alt="Research to Action home page">
+          </a>
         </div>
-        <div class="hp-case-study__copy">
-          <h2 class="tk-serif hp-case-study__heading">Research To Action Youth Project.</h2>
-          <p class="mt-0 tk-serif hp-case-study__desc">
-            In five years at the ad agency Arnold Worldwide, I created and launched online campaigns and websites for many of our largest clients, including RadioShack, Progressive Insurance, Carnival Cruiselines, and Ocean Spray.
+        <div class="hp-project__copy">
+          <h2 class="tk-serif hp-project__heading">Research To Action Youth Project.</h2>
+          <p class="mt-0 tk-serif hp-project__desc">
+            Responsive website for a nonprofit youth organization.
           </p>
            <div class="checkmark-list">
             <h3 class="checkmark-list__title">What I Did</h3>
             <ul class="checkmark-list__list">
-              <li class="checkmark-list__item">Art directed the “Didja Ever?” campaign for Carnival Cruiselines, including a facebook app where we helped people create and compare lists of things they hoped to do.</li>
-              <li class="checkmark-list__item">Improved performance of Ocean Spray’s website by focusing on content that their consumers cared about.</li>
-              <li class="checkmark-list__item">Created web pages, landing pages, and mini-sites for RadioShack.</li>
+              <li class="checkmark-list__item">Designed and created illustrations for a custom WordPress theme.</li>
+              <li class="checkmark-list__item">Built a custom WordPress theme with semantic HTML, PHP, CSS, and JavaScript.</li>
             </ul>
           </div>
-          <a class="btn" href="#">See Details</a>
+          <a class="btn btn--plain" href="http://research2action.net/" target="_blank">Visit The Site</a>
         </div>
       </div>
 
@@ -350,16 +375,10 @@
         </picture>
         <div class="hp-about__contents">
           <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
-          <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too. Get in touch&hellip;</p>
-          <ul class="o-horizontal-list">
-            <li><a class="hp-about__menu-link" href="#">adamkiryk at gmail</a></li>
-            <li><a class="hp-about__menu-link" href="#">adamkiryk on linked in</a></li>
-            <li><a class="hp-about__menu-link" href="#">resume</a></li>
-          </ul>
+          <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
         </div>
       </div>
     </section>
   </main>
-  <script src="js/main.js"></script>
 </body>
 </html>

@@ -132,16 +132,30 @@ gulp.task('webserver', function() {
 
 //'src/js/vendors/gsap/*.js'
 gulp.task('babel', () =>
-  gulp.src('src/js/main-devel.js')
+  gulp.src(['src/js/main.js', 'src/js/lazyload.js'])
     .pipe(sourcemaps.init())
     .pipe(babel({
         presets: ['es2015']
     }))
-    .pipe(concat('main.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('docs/js/'))
     .pipe(livereload())
 );
+
+/**
+ * Compile animation related scripts
+ */
+gulp.task('compileAnimationScripts', function() {
+  gulp.src([
+    'src/js/vendors/gsap/TimelineMax.min.js',
+    'src/js/vendors/gsap/TweenMax.min.js',
+    'src/js/vendors/gsap/ScrollToPlugin.min.js',
+    'src/js/vendors/ScrollMagic/ScrollMagic.min.js',
+    'src/js/vendors/ScrollMagic/animation.gsap.min.js'
+    ])
+    .pipe(concat('animations.min.js'))
+    .pipe(gulp.dest('docs/js/'))
+});
 
 gulp.task('watch', ['webserver'], function() {
   livereload.listen();

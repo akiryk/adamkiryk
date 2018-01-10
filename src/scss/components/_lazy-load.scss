@@ -1,0 +1,18 @@
+/**
+ *
+ * Component: Lazy Load
+ * -----------------------------------------------
+ *
+ * Video or image files that are being lazy loaded
+ * should start out invisible, then fade in on load.
+ *
+ */
+
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}

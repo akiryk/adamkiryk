@@ -13,5 +13,9 @@
 
 .o-horizontal-list > li {
   display: inline-block;
-  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.o-horizontal-list > li:first-of-type {
+  margin-left: 0;
 }
