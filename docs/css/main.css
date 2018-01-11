@@ -741,7 +741,7 @@ video {
   overflow: hidden;
   position: absolute; }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 87.5em) {
   .checkmark-list {
     max-width: 50rem; } }
 
@@ -768,11 +768,11 @@ video {
   margin-bottom: 2rem;
   position: relative; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .site-subheading {
     font-size: 1.5rem; } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   .site-heading {
     font-size: 4.5rem; }
   .site-subheading {
@@ -796,19 +796,11 @@ video {
 .hp-about__desc {
   font-size: 20px; }
 
-.hp-about__image {
-  display: block;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 50%;
-  margin: 2rem auto 3rem;
-  max-width: 20em; }
-
 .hp-about__contents {
   margin: 2rem 1rem;
   max-width: 50rem; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .hp-about {
     margin: auto;
     display: -webkit-box;
@@ -840,12 +832,22 @@ video {
           -ms-flex-align: center;
               align-items: center; }
     .hp-about__image {
-      grid-column: 1/6;
+      grid-column: 1/5;
       -ms-flex-item-align: end;
           align-self: end; }
     .hp-about__contents {
-      grid-column: 6/12;
+      grid-column: 5/13;
       margin: unset; } } }
+
+@media screen and (min-width: 66.25em) {
+  @supports (display: grid) {
+    .hp-about__contents {
+      grid-column: 5/12; } } }
+
+@media screen and (min-width: 106.25em) {
+  @supports (display: grid) {
+    .hp-about__contents {
+      grid-column: 6/11; } } }
 
 /**
  *
@@ -886,7 +888,7 @@ video {
   .hp-project {
     margin: 0 1em 4rem 1em; } }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .hp-project {
     width: 80%;
     margin: 2rem auto; }
@@ -911,7 +913,7 @@ video {
       grid-row: 2;
       position: relative; } } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   /********************************************
    --------------------------------------------
             Medium breakpoint, no grid
@@ -998,7 +1000,7 @@ video {
     .hp-project:nth-of-type(odd) .hp-project__image {
       grid-column: 9/13; } } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   .hp-project__number {
     font-size: 15rem; }
   .hp-project__heading {
@@ -1083,7 +1085,7 @@ video {
   position: relative;
   width: 35%; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   /*
    * No grid
    */
@@ -1120,7 +1122,7 @@ video {
       grid-row: 2;
       grid-column: 3/11; } } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   /**
    * NO GRID
    */
@@ -1163,7 +1165,7 @@ video {
       grid-row: 1;
       grid-column: 4/12; } } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   @supports (display: grid) {
     .introgrid {
       margin: 0;
@@ -1183,7 +1185,7 @@ video {
       grid-row: 1;
       grid-column: 5/12; } } }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 87.5em) {
   @supports (display: grid) {
     .intro__content {
       grid-column: 5/11; } } }
@@ -1237,7 +1239,7 @@ video {
   padding: 0.5rem 1rem;
   text-decoration: none; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   @supports (display: grid) {
     .navbar {
       grid-column-gap: 2rem;
@@ -1251,12 +1253,12 @@ video {
     .navbar__menu {
       grid-column: 3/12; } } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   @supports (display: grid) {
     .navbar__menu {
       grid-column: 4/12; } } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   @supports (display: grid) {
     .navbar__menu {
       grid-column: 5/12; } } }
@@ -1283,7 +1285,10 @@ video {
   margin-bottom: 2rem; }
 
 .panel--about {
-  padding: 4rem calc((100vw - 100em) / 2) 2rem calc((100vw - 100em) / 2); }
+  background-color: black;
+  min-height: unset;
+  padding: 0 calc( (100% - 1640px) / 2) 0;
+  margin-bottom: 0; }
 
 @supports (display: grid) {
   .panel--intro {
@@ -1291,28 +1296,22 @@ video {
         align-content: flex-end;
     padding: 0; } }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .panel {
     padding-top: 4rem;
     padding-bottom: 4rem;
     margin-bottom: unset; }
+  .panel--intro {
+    min-height: 65vh; }
+  .panel--about {
+    padding: 2rem 0; } }
+
+@media screen and (min-height: 42.5em) and (min-width: 66.25em) {
+  .panel--work {
+    padding-top: 8rem; }
   .panel--about {
     padding-top: 3rem;
-    padding-bottom: 0; }
-  .panel--intro {
-    min-height: 65vh; } }
-
-@media screen and (min-height: 42.5em) and (min-width: 1060px) {
-  .panel--work {
-    padding-top: 8rem; } }
-
-/**
- * About Panel
- */
-.panel--about {
-  background-color: black;
-  min-height: unset;
-  padding: 3rem calc( (100% - 1640px) / 2) 0; }
+    padding-bottom: 0; } }
 
 /*
  *
@@ -1339,7 +1338,7 @@ video {
 .section-title__desc {
   max-width: 50rem; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .section-title {
     max-width: 50em;
     width: 80%;
@@ -1383,7 +1382,7 @@ video {
       grid-row: 3;
       max-width: 50rem; } } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   .section-title {
     width: calc(65% - 2rem);
     margin-left: 30%; }
@@ -1399,7 +1398,7 @@ video {
     .section-title:after {
       grid-column: 4 / 13; } } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   @supports (display: grid) {
     .section-title__heading,
     .section-title__desc {
@@ -1407,7 +1406,7 @@ video {
     .section-title:after {
       grid-column: 5 / 13; } } }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 87.5em) {
   @supports (display: grid) {
     .section-title__heading,
     .section-title__desc {
@@ -1471,7 +1470,7 @@ video {
   line-height: 1.5;
   font-size: 1.5rem; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .hp-skills {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1503,7 +1502,7 @@ video {
     .hp-skills__skill {
       grid-column: 3/11; } } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   .hp-skills {
     width: calc(65% - 2em);
     margin-left: 30%; }
@@ -1523,11 +1522,11 @@ video {
     .hp-skills__skill {
       grid-column: 4/12; } } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   .hp-skills__skill {
     grid-column: 5/12; } }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 87.5em) {
   .hp-skills__skill {
     grid-column: 5/11;
     margin: 2rem 0; } }
@@ -1612,7 +1611,7 @@ video {
   .hp-work__image:nth-of-type(n) {
     margin: 0; } }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
   .hp-work {
     margin: auto;
     width: 80%; }
@@ -1633,7 +1632,7 @@ video {
       grid-column: 2/12;
       grid-gap: 2rem; } } }
 
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 66.25em) {
   /**
    * NO GRID
    */
@@ -1652,12 +1651,12 @@ video {
     .hp-work__images {
       grid-column: 4/12; } } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   @supports (display: grid) {
     .hp-work__images {
       grid-column: 5/12; } } }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 87.5em) {
   @supports (display: grid) {
     .hp-work__images {
       grid-column: 5/12; } } }
@@ -1750,7 +1749,7 @@ video {
   font-weight: 400;
   margin-bottom: 2rem; }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   .node-heading {
     margin-top: 2rem; } }
 
@@ -1847,7 +1846,7 @@ video {
     grid-row: 3;
     grid-column: 2; } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
   @supports (display: grid) {
     .node-page__content {
       display: grid;
@@ -1999,7 +1998,7 @@ video {
 .display-none {
   display: none; }
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 66.25em) {
   .hide-small {
     display: none; } }
 

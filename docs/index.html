@@ -360,15 +360,17 @@
     <section id="about" class="panel panel--about">
       <div class="hp-about">
         <picture class="hp-about__image">
-           <source media="(min-width: 50em)"
+           <source media="(min-width: 66.25rem)"
               srcset="media/portrait.jpg" />
+            <source media="(max-width: 799px)"
+              srcset="media/portrait-wide_lg-1200.jpg 1200w,
+                      media/portrait-wide_sm-640.jpg 640w" />
            <source srcset="media/portrait-square.jpg" />
            <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
         </picture>
         <div class="hp-about__contents">
           <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
-          <p class="text-over-dark hp-about__desc">I worked for <a href="http://www.npr.org" target="_blank">NPR</a> from 2011 to 2017, leading product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at <a href="http://arn.com/" target="_blank">Arnold Worldwide</a>, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
-          <p class="text-over-dark hp-about__desc">Something else? I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
+          <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
         </div>
       </div>
     </section>

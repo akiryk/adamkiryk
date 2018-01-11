@@ -13,8 +13,16 @@
   margin-bottom: 2rem;
 }
 
+// .panel--about {
+//   padding: 0 calc((100vw - 100em) / 2) 2rem calc((100vw - 100em) / 2);
+//   margin-bottom: 0;
+// }
+
 .panel--about {
-  padding: 4rem calc((100vw - 100em) / 2) 2rem calc((100vw - 100em) / 2);
+  background-color: black;
+  min-height: unset;
+  padding: 0 calc( (100% - 1640px) / 2 ) 0;
+  margin-bottom: 0;
 }
 
 @supports (display: grid) {
@@ -31,13 +39,13 @@
     padding-bottom: 4rem;
     margin-bottom: unset;
   }
-  .panel--about {
-    padding-top: 3rem;
-    padding-bottom: 0;
-  }
 
   .panel--intro {
     min-height: 65vh;
+  }
+
+  .panel--about {
+    padding: 2rem 0;
   }
 }
 
@@ -47,14 +55,9 @@
     padding-top: 8rem;
   }
 
-}
+  .panel--about {
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
 
-/**
- * About Panel
- */
-
-.panel--about {
-  background-color: black;
-  min-height: unset;
-  padding: 3rem calc( (100% - 1640px) / 2 ) 0;
 }
