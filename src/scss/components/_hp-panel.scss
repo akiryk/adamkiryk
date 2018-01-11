@@ -35,13 +35,13 @@
     padding-top: 3rem;
     padding-bottom: 0;
   }
-}
-
-@media screen and (min-height: 42.5em) and (min-width: $medium) {
 
   .panel--intro {
     min-height: 65vh;
   }
+}
+
+@media screen and (min-height: 42.5em) and (min-width: $medium) {
 
   .panel--work {
     padding-top: 8rem;

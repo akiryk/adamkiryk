@@ -23,7 +23,7 @@
   }
 
   .hp-project__image {
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
     width: 75%;
     position: relative;
   }
@@ -39,7 +39,7 @@
 
 @supports (display: grid) {
   .hp-project {
-    margin: 4rem 1em;
+    margin: 0 1em 4rem 1em;
   }
 }
 

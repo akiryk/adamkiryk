@@ -14,6 +14,7 @@
 
 .intro__heading {
   position: relative;
+  text-align: center;
 }
 
 .introgrid {
@@ -22,7 +23,7 @@
 }
 
 .primary-logo {
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   position: relative;
   width: 35%;
 }
@@ -37,6 +38,16 @@
     width: 80%;
   }
 
+  .intro__heading {
+    text-align: unset;
+  }
+
+  .primary-logo {
+    width: unset;
+    margin: unset;
+    margin-bottom: 2rem;
+  }
+
   /*
    * Yes grid
    */
@@ -49,8 +60,6 @@
     }
 
     .primary-logo {
-      width: unset;
-      margin-right: 0;
       grid-row: 1;
       grid-column: 3/6;
     }

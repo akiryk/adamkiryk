@@ -107,7 +107,7 @@ const app = {
   workExperienceTitle() {
     const titleParams = { top: 200, opacity: 0, ease:Power1.easeOut };
     const titleTween = TweenMax.from('#work-experience-title', 1, titleParams);
-    this.createScrollMagicScene({trigger: '#work-experience', tween: titleTween, triggerHook: .75, indicators: true});
+    this.createScrollMagicScene({trigger: '#work-experience', tween: titleTween, triggerHook: .75, indicators: false});
   },
 
   /**
@@ -135,7 +135,7 @@ const app = {
     function createProjectScenes(trigger, {number, copy, image}){
       const hook = .80;
       app.createScrollMagicScene({trigger: trigger, tween: copy, triggerHook: hook});
-      app.createScrollMagicScene({trigger: trigger, tween: number, triggerHook: hook, indicators: true});
+      app.createScrollMagicScene({trigger: trigger, tween: number, triggerHook: hook, indicators: false});
       app.createScrollMagicScene({trigger: trigger, tween: image, triggerHook: hook});
     }
 

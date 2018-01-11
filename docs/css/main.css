@@ -871,7 +871,7 @@ video {
   margin-left: -1rem; }
 
 .hp-project__image {
-  margin: 2rem auto;
+  margin: 0 auto 2rem auto;
   width: 75%;
   position: relative; }
 
@@ -884,7 +884,7 @@ video {
 
 @supports (display: grid) {
   .hp-project {
-    margin: 4rem 1em; } }
+    margin: 0 1em 4rem 1em; } }
 
 @media screen and (min-width: 800px) {
   .hp-project {
@@ -1071,14 +1071,15 @@ video {
   position: relative; }
 
 .intro__heading {
-  position: relative; }
+  position: relative;
+  text-align: center; }
 
 .introgrid {
   display: block;
   margin: auto 1em; }
 
 .primary-logo {
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   position: relative;
   width: 35%; }
 
@@ -1089,6 +1090,12 @@ video {
   .introgrid {
     margin: auto;
     width: 80%; }
+  .intro__heading {
+    text-align: unset; }
+  .primary-logo {
+    width: unset;
+    margin: unset;
+    margin-bottom: 2rem; }
   /*
    * Yes grid
    */
@@ -1107,8 +1114,6 @@ video {
       -webkit-transform: translateY(-6vh);
               transform: translateY(-6vh); }
     .primary-logo {
-      width: unset;
-      margin-right: 0;
       grid-row: 1;
       grid-column: 3/6; }
     .intro__content {
@@ -1293,11 +1298,11 @@ video {
     margin-bottom: unset; }
   .panel--about {
     padding-top: 3rem;
-    padding-bottom: 0; } }
+    padding-bottom: 0; }
+  .panel--intro {
+    min-height: 65vh; } }
 
 @media screen and (min-height: 42.5em) and (min-width: 1060px) {
-  .panel--intro {
-    min-height: 65vh; }
   .panel--work {
     padding-top: 8rem; } }
 
@@ -1994,6 +1999,10 @@ video {
 .display-none {
   display: none; }
 
+@media screen and (max-width: 1060px) {
+  .hide-small {
+    display: none; } }
+
 .mt-0 {
   margin-top: 0 !important; }
 
@@ -2087,40 +2096,6 @@ video {
  */
 .smooth-scroll-to:focus {
   outline: none; }
-
-body:after {
-  content: 'tiny';
-  position: fixed;
-  z-index: 99999;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.6);
-  left: 32px;
-  top: 0;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  pointer-events: none; }
-
-@media (min-width: 800px) {
-  body:after {
-    content: 'small'; } }
-
-@media (min-width: 1060px) {
-  body:after {
-    content: 'medium'; } }
-
-@media (min-width: 1200px) {
-  body:after {
-    content: 'large'; } }
-
-@media (min-width: 1400px) {
-  body:after {
-    content: 'xlarge'; } }
-
-@media (min-width: 106.25em) {
-  body:after {
-    content: 'max'; } }
 
 /**
  * Styles for testing and development

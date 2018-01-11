@@ -101,7 +101,7 @@ var app = {
   workExperienceTitle: function workExperienceTitle() {
     var titleParams = { top: 200, opacity: 0, ease: Power1.easeOut };
     var titleTween = TweenMax.from('#work-experience-title', 1, titleParams);
-    this.createScrollMagicScene({ trigger: '#work-experience', tween: titleTween, triggerHook: .75, indicators: true });
+    this.createScrollMagicScene({ trigger: '#work-experience', tween: titleTween, triggerHook: .75, indicators: false });
   },
 
 
@@ -134,7 +134,7 @@ var app = {
 
       var hook = .80;
       app.createScrollMagicScene({ trigger: trigger, tween: copy, triggerHook: hook });
-      app.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: hook, indicators: true });
+      app.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: hook, indicators: false });
       app.createScrollMagicScene({ trigger: trigger, tween: image, triggerHook: hook });
     }
 
