@@ -92,13 +92,18 @@
 }
 
 @media screen and (min-width: $medium) {
-
+  /**
+   * NO GRID
+   */
   .hp-work {
     width: calc(65% - 2rem);
     margin-left: 30%;
     max-width: 50rem;
   }
 
+  /**
+   * YES GRID
+   */
   @supports (display: grid){
 
     .hp-work {

@@ -9,11 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/main.css">
-  <style>
-    #xyz {
-      position: relative;
-    }
-  </style>
+
   <script>
     // loadJS: From @scottjehl, Filament Group, Inc.
     (function(w){var loadJS=function(src,cb){"use strict";var ref=w.document.getElementsByTagName("script")[0];var script=w.document.createElement("script");script.src=src;script.async=true;ref.parentNode.insertBefore(script,ref);if(cb&&typeof cb==="function"){script.onload=cb}return script};if(typeof module!=="undefined"){module.exports=loadJS}else{w.loadJS=loadJS}})(typeof global!=="undefined"?global:this);
@@ -48,7 +44,7 @@
   <nav id="primaryNav" class="navbar">
     <ul class="navbar__menu">
       <li class="navbar__menu-item"><a href="#skills" class="navbar__menu-link">Skills</a></li>
-      <li class="navbar__menu-item"><a href="#work-experience" class="navbar__menu-link">Work Experience</a></li>
+      <li class="navbar__menu-item"><a href="#work-experience" class="navbar__menu-link">Work Examples</a></li>
       <li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">About</a></li>
     </ul>
   </nav>
@@ -116,33 +112,29 @@
     </section>
 
     <section id="skills" class="panel panel--skills">
-      <div id="skills-title" class="section-title">
+      <div id="skills-title" class="section-title section-title--skills">
         <h2 id="skillsTitle" class="section-title__heading section-title__heading--skills tk-serif">Skills</h2>
       </div>
       <div id="skills-list" class="hp-skills">
         <div class="hp-skills__skill">
-          <h3 class="hp-skills__title ge-sans--bold">Front End Development</h3>
-          <div class="hp-skills__desc ge-sans">In addition to years of real-world, on-the-job training, I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program in 2016. My technology skills include HTML, CSS, JavaScript, and PHP; React and Redux; Git; webpack, gulp, and grunt; SASS and LESS. I've long been interested in animation and data visualization, using tools like d3.js and GSAP.</div>
+          <h3 class="hp-skills__title tk-serif">Front End Development</h3>
+          <div class="hp-skills__desc tk-serif">In addition to years of real-world, on-the-job training, I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program in 2016. My technology skills include HTML, CSS, JavaScript, and PHP; React and Redux; Git; webpack, gulp, and grunt; SASS and LESS. I've long been interested in animation and data visualization, using tools like d3.js and GSAP.</div>
         </div>
         <div class="hp-skills__skill">
-          <h3 class="hp-skills__title ge-sans--bold">UX + UI Design</h3>
-          <div class="hp-skills__desc ge-sans">I studied interaction design at the <a href="https://www.cca.edu/" target="_blank">California College of the Arts</a> in San Francisco, and have led numerous user experience and visual design projects while at Arnold and NPR.</div>
+          <h3 class="hp-skills__title tk-serif">UX + UI Design</h3>
+          <div class="hp-skills__desc tk-serif">I studied interaction design at the <a href="https://www.cca.edu/" target="_blank">California College of the Arts</a> in San Francisco, and have led numerous user experience and visual design projects while at Arnold and NPR.</div>
         </div>
         <div class="hp-skills__skill">
-           <h3 class="hp-skills__title ge-sans--bold">Communication</h3>
-           <div class="hp-skills__desc ge-sans">I’m a strong writer and public speaker; I'm comfortable explaining my work to clients and stakeholders; and I'm experienced collaborating with colleagues to discuss challenges, resolve conflicts, and work out solutions.</div>
+           <h3 class="hp-skills__title tk-serif">Communication</h3>
+           <div class="hp-skills__desc tk-serif">I’m a strong writer and public speaker; I'm comfortable explaining my work to clients and stakeholders; and I'm experienced collaborating with colleagues to discuss challenges, resolve conflicts, and work out solutions.</div>
         </div>
         </div>
     </section>
 
     <!-- Projects, aka "work-experience" -->
     <section id="work-experience" class="panel panel--work-experience">
-      <div id="work-experience-title" class="section-title">
-        <h2 class="section-title__heading section-title__heading--work-experience tk-serif">Work Experience</h2>
-        <div class="section-title__desc section-title__desc--work-experience">
-          <p>I worked for <a href="http://www.npr.org" target="_blank">NPR</a> from 2011 to 2017, leading product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at <a href="http://arn.com/" target="_blank">Arnold Worldwide</a>, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
-          <p>The following projects show the breadth and depth of my experience in design and front end development.</p>
-        </div>
+      <div id="work-experience-title" class="section-title section-title--work">
+        <h2 class="section-title__heading section-title__heading--work-experience tk-serif">Work Examples</h2>
       </div>
 
       <!-- 1. Story Editor -->
@@ -375,7 +367,8 @@
         </picture>
         <div class="hp-about__contents">
           <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
-          <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
+          <p class="text-over-dark hp-about__desc">I worked for <a href="http://www.npr.org" target="_blank">NPR</a> from 2011 to 2017, leading product design, user experience, and front end development on websites and web applications used by NPR member stations. Before that, I worked at <a href="http://arn.com/" target="_blank">Arnold Worldwide</a>, where I created websites and digital campaigns for brands like Progressive Insurance, RadioShack, and Ocean Spray.</p>
+          <p class="text-over-dark hp-about__desc">Something else? I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
         </div>
       </div>
     </section>

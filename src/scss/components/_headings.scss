@@ -9,7 +9,7 @@
 
 .site-heading {
   color: $font-color;
-  font-size: $font-xxl;
+  font-size: $font-lg; //$font-xxl;
   font-weight: 400;
   position: relative;
 }
@@ -17,9 +17,25 @@
 .site-subheading {
   @include font-smoothing;
   color: $dark-gray-3;
-  font-size: $font-lg;
+  font-size: $font-md;
   font-style: italic;
   margin-bottom: 2rem;
   position: relative;
+}
+
+@media screen and (min-width: $small) {
+  .site-subheading {
+    font-size: $font-md;
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .site-heading {
+    font-size: $font-xxl;
+  }
+
+  .site-subheading {
+    font-size: $font-lg;
+  }
 }
 

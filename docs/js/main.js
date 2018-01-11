@@ -16,6 +16,8 @@
       0-1 percentage from top of page to bottom for where the start is placed once triggerElement enters page. 0=top of page; 1=bottom.
 */
 
+/*! ScrollMagic v2.0.5 | (c) 2015 Jan Paepke (@janpaepke) | license & info: http://scrollmagic.io */
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var app = {
@@ -99,7 +101,7 @@ var app = {
   workExperienceTitle: function workExperienceTitle() {
     var titleParams = { top: 200, opacity: 0, ease: Power1.easeOut };
     var titleTween = TweenMax.from('#work-experience-title', 1, titleParams);
-    this.createScrollMagicScene({ trigger: '#work-experience', tween: titleTween });
+    this.createScrollMagicScene({ trigger: '#work-experience', tween: titleTween, triggerHook: .75, indicators: true });
   },
 
 
@@ -110,12 +112,9 @@ var app = {
    */
   projectsSection: function projectsSection() {
     var params = {
-      // number: {transform: 'translateY(200px)', opacity: 0, ease:Power1.easeOut },
-      // copy: { transform: 'translateY(300px)', opacity: 0, ease:Power1.easeOut, delay:.25 },
-      // image: { transform: 'translateY(400px)', opacity: 0, ease:Power1.easeOut, delay: .5 }
       number: { top: 200, opacity: 0, ease: Power1.easeOut },
-      copy: { top: 300, opacity: 0, ease: Power1.easeOut, delay: .25 },
-      image: { top: 400, opacity: 0, ease: Power1.easeOut, delay: .5 }
+      copy: { top: 300, opacity: 0, ease: Power1.easeOut, delay: .33 },
+      image: { top: 300, opacity: 0, ease: Power1.easeOut, delay: .75 }
     };
 
     var projectsArray = [].concat(_toConsumableArray(document.querySelectorAll('.hp-project')));
@@ -133,9 +132,10 @@ var app = {
           copy = _ref.copy,
           image = _ref.image;
 
-      app.createScrollMagicScene({ trigger: trigger, tween: copy, triggerHook: .75 });
-      app.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: .75 });
-      app.createScrollMagicScene({ trigger: trigger, tween: image, triggerHook: .75 });
+      var hook = .80;
+      app.createScrollMagicScene({ trigger: trigger, tween: copy, triggerHook: hook });
+      app.createScrollMagicScene({ trigger: trigger, tween: number, triggerHook: hook, indicators: true });
+      app.createScrollMagicScene({ trigger: trigger, tween: image, triggerHook: hook });
     }
 
     /**

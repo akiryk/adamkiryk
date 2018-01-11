@@ -16,6 +16,8 @@
       0-1 percentage from top of page to bottom for where the start is placed once triggerElement enters page. 0=top of page; 1=bottom.
 */
 
+/*! ScrollMagic v2.0.5 | (c) 2015 Jan Paepke (@janpaepke) | license & info: http://scrollmagic.io */
+
 const app = {
   scrollController: null,
 
@@ -105,7 +107,7 @@ const app = {
   workExperienceTitle() {
     const titleParams = { top: 200, opacity: 0, ease:Power1.easeOut };
     const titleTween = TweenMax.from('#work-experience-title', 1, titleParams);
-    this.createScrollMagicScene({trigger: '#work-experience', tween: titleTween});
+    this.createScrollMagicScene({trigger: '#work-experience', tween: titleTween, triggerHook: .75, indicators: true});
   },
 
   /**
@@ -115,12 +117,9 @@ const app = {
    */
   projectsSection() {
     const params = {
-      // number: {transform: 'translateY(200px)', opacity: 0, ease:Power1.easeOut },
-      // copy: { transform: 'translateY(300px)', opacity: 0, ease:Power1.easeOut, delay:.25 },
-      // image: { transform: 'translateY(400px)', opacity: 0, ease:Power1.easeOut, delay: .5 }
       number: {top: 200, opacity: 0, ease:Power1.easeOut },
-      copy: { top: 300, opacity: 0, ease:Power1.easeOut, delay:.25 },
-      image: { top: 400, opacity: 0, ease:Power1.easeOut, delay: .5 }
+      copy: { top: 300, opacity: 0, ease:Power1.easeOut, delay:.33 },
+      image: { top: 300, opacity: 0, ease:Power1.easeOut, delay: .75 }
     }
 
     const projectsArray = [...document.querySelectorAll('.hp-project')];
@@ -134,9 +133,10 @@ const app = {
     // Each project requires three distinct Scenes, one each for
     // the number, the copy, and the image.
     function createProjectScenes(trigger, {number, copy, image}){
-      app.createScrollMagicScene({trigger: trigger, tween: copy, triggerHook: .75});
-      app.createScrollMagicScene({trigger: trigger, tween: number, triggerHook: .75});
-      app.createScrollMagicScene({trigger: trigger, tween: image, triggerHook: .75});
+      const hook = .80;
+      app.createScrollMagicScene({trigger: trigger, tween: copy, triggerHook: hook});
+      app.createScrollMagicScene({trigger: trigger, tween: number, triggerHook: hook, indicators: true});
+      app.createScrollMagicScene({trigger: trigger, tween: image, triggerHook: hook});
     }
 
     /**

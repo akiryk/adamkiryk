@@ -25,6 +25,7 @@
   .hp-project__image {
     margin: 2rem auto;
     width: 75%;
+    position: relative;
   }
 
   .hp-project__image .caption {
@@ -33,6 +34,7 @@
 
   .hp-project__number {
     display: none;
+    position: relative;
   }
 
 @supports (display: grid) {
@@ -58,12 +60,12 @@
     .hp-project__image {
       margin: unset;
       grid-row: 2;
-      grid-column: 1/5;
+      grid-column: 1/6;
     }
 
     .hp-project__copy {
       width: unset;
-      grid-column: 4/12;
+      grid-column: 5/13;
       grid-row: 2;
       position: relative;
     }
@@ -72,6 +74,11 @@
 
 @media screen and (min-width: $medium) {
 
+  /********************************************
+   --------------------------------------------
+            Medium breakpoint, no grid
+   --------------------------------------------
+   ********************************************/
   .hp-project {
     width: unset;
     display: flex;
@@ -112,6 +119,11 @@
     padding-left: 30%;
   }
 
+  /********************************************
+   ++++++++++++++++++++++++++++++++++++++++++++
+            Medium breakpoint, yes grid
+   ++++++++++++++++++++++++++++++++++++++++++++
+   ********************************************/
   @supports (display: grid) {
 
     .hp-project {
@@ -140,31 +152,31 @@
       transform:  unset;
       padding-left: unset;
       grid-row: 1;
-      grid-column: 5/12;
+      grid-column: 4/12;
       margin-bottom:-2rem;
     }
 
     /*
-     * Case study grid, even
+     * Case study grid, odd
      */
     .hp-project:nth-of-type(odd) {
+      .hp-project__number {
+        grid-column: 1/12;
+      }
 
       .hp-project__copy {
         grid-column: 1/9
       }
 
       .hp-project__image {
-        grid-column: 9/12;
-      }
-
-      .hp-project__number {
-        grid-column: 2/12;
+        grid-column: 9/13;
       }
     }
   }
 }
 
 @media screen and (min-width: $large) {
+
   .hp-project__number {
     font-size: 15rem;
   }
@@ -173,26 +185,19 @@
     font-size: 3.75rem;
   }
 
-  /*
-   * Case study grid, default
-   */
+  .hp-project__number {
+    grid-column: 5/12;
+  }
+
+  .hp-project__copy {
+    grid-column: 5/12
+  }
+
   .hp-project__image {
     grid-column: 1/5;
   }
 
-  .hp-project__copy {
-    grid-column: 5/13;
-  }
-
-  .hp-project__number {
-    grid-column: 5/13;
-  }
-
-   /*
-   * Case study grid, odd
-   */
   .hp-project:nth-of-type(odd) {
-
     .hp-project__number {
       grid-column: 2/12;
     }
@@ -204,11 +209,16 @@
     .hp-project__image {
       grid-column: 9/13;
     }
-
   }
+
 }
 
 @media screen and (min-width: $max-width) {
+
+  .hp-project {
+    margin: 0 auto 8rem auto;
+  }
+
   /*
    * Case study grid, default
    */
@@ -234,7 +244,7 @@
   .hp-project:nth-of-type(odd) {
 
     .hp-project__copy {
-      grid-column: 1/8
+      grid-column: 1/7
     }
 
     .hp-project__number {

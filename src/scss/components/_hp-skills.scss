@@ -26,19 +26,22 @@
 .hp-skills__skill {
   font-size: 1.125rem;
   margin-bottom: 2rem;
-  max-width: 40rem;
+  // max-width: 40rem;
 }
 
 .hp-skills__title {
+  color: $dark-gray-3;
   font-family: $sans-serif, sans-serif;
-  font-size: 1.125rem;
+  font-size: $font-md;
+  font-weight: 400;
+  font-style: italic;
   line-height: 1.6;
 }
 
 .hp-skills__desc {
-  font-family: $sans-serif, sans-serif;
-  line-height: 1.6;
-  font-size: 1.125rem;
+  // font-family: $sans-serif, sans-serif;
+  @include body-copy;
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: $small){
@@ -52,12 +55,11 @@
   .hp-skills__skill {
     flex: 1 0 calc(50% - 1em);
   }
-  .hp-skills__skill:nth-of-type(even){
-    //margin-left: 1em;
+  .hp-skills__title {
+    color: $dark-gray-3;
+    font-size: $font-md;
   }
-  .hp-skills__skill:nth-of-type(odd){
-    //margin-right: 1em;
-  }
+
   @supports (display: grid) {
     .hp-skills {
       max-width: unset;
@@ -67,16 +69,21 @@
     }
 
     .hp-skills__skill {
-      grid-column: 2/10;
+      grid-column: 3/11;
     }
   }
 
 }
 
   @media screen and (min-width: $medium){
+
     .hp-skills {
       width: calc(65% - 2em);
       margin-left: 30%;
+    }
+
+    .hp-skills__title {
+      font-size: $font-lg;
     }
 
     @supports (display: grid) {
@@ -87,7 +94,7 @@
       }
 
       .hp-skills__skill {
-        grid-column: 4/11;
+        grid-column: 4/12;
       }
 
     }
@@ -96,42 +103,29 @@
 
   @media screen and (min-width: $large){
 
-    .hp-skills {
-      margin: unset;
-      @include standard-grid();
-    }
-
-
-    .hp-skills__desc {
-      line-height: 1.5;
-      font-size: 1rem;
-    }
-
     .hp-skills__skill {
-      grid-column: 2/5;
+      grid-column: 5/12;
     }
-
-    .hp-skills__skill:nth-of-type(2n) {
-      grid-column: 5/8;
-    }
-
-    .hp-skills__skill:nth-of-type(3n) {
-      grid-column: 8/11;
-    }
-    // .hp-skills__skill:nth-of-type(even) {
-    //   grid-column: 8/12;
-    // }
-
   }
 
   @media screen and (min-width: $xlarge){
 
-    // .hp-skills__skill {
-    //   grid-column: 5/8;
-    // }
+    .hp-skills__skill {
+      grid-column: 5/11;
+      margin: 2rem 0;
+    }
+  }
 
-    // .hp-skills__skill:nth-of-type(even) {
-    //   grid-column: 8/11;
-    // }
+  @media screen and (min-width: $max-width){
+
+    .hp-skills {
+      margin: auto;
+      max-width: $wrapper-width-lg;
+      width: 100%;
+    }
+
+    .hp-skills__skill {
+      grid-column: 6/12;
+    }
 
   }

@@ -8,24 +8,18 @@
  */
 
 .panel {
-  // min-height: 100vh;
   display: grid;
   align-content: center;
-  padding: 4rem calc((100vw - 100em) / 2) 2rem calc((100vw - 100em) / 2);
+  margin-bottom: 2rem;
 }
 
-// .panel:nth-of-type(even){
-//   background-color: #f7f5ed;
-// }
-
-.panel--work-experience {
-  overflow: hidden;
+.panel--about {
+  padding: 4rem calc((100vw - 100em) / 2) 2rem calc((100vw - 100em) / 2);
 }
 
 @supports (display: grid) {
   .panel--intro {
     align-content: flex-end;
-    min-height: 65vh;
     padding: 0;
   }
 }
@@ -35,6 +29,7 @@
   .panel {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    margin-bottom: unset;
   }
   .panel--about {
     padding-top: 3rem;
@@ -44,8 +39,8 @@
 
 @media screen and (min-height: 42.5em) and (min-width: $medium) {
 
-  .panel--work-experience {
-    padding-top: 30vh;
+  .panel--intro {
+    min-height: 65vh;
   }
 
   .panel--work {

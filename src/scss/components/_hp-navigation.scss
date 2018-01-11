@@ -22,6 +22,7 @@
 .navbar__menu-item {
   border-radius: $border-radius;
   transition: all .25s;
+  margin: 0;
 }
 
 .navbar__menu-item:hover {
@@ -45,11 +46,7 @@
     }
 
     .navbar__menu {
-      grid-column: 2/12;
-    }
-
-    .navbar__menu-item:first-of-type {
-      margin-left: -.85rem;
+      grid-column: 3/12;
     }
 
   }
@@ -75,6 +72,9 @@
   @supports (display: grid) {
     .navbar {
       margin: auto;
+    }
+    .navbar__menu {
+      grid-column: 6/12;
     }
   }
 }
