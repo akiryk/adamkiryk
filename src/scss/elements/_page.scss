@@ -25,11 +25,7 @@ body {
 }
 
 @media screen and (min-width: 680px) and (max-width: 799px) {
-  body {
+  .main {
     margin: 0 1rem;
-  }
-  .panel--about {
-    margin-left: -1rem;
-    margin-right: -1rem;
   }
 }
