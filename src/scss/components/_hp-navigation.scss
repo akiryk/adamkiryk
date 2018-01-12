@@ -7,6 +7,11 @@
  *
  */
 
+// Hide navigation on small screens, it's not really necessary
+.navbar {
+  opacity: 0;
+}
+
 .navbar__menu {
   @include font-smoothing;
   align-content: center;
@@ -38,6 +43,10 @@
 }
 
 @media screen and (min-width: $small){
+
+  .navbar {
+    opacity: 1.0;
+  }
 
   @supports (display: grid) {
     .navbar {

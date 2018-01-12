@@ -11,6 +11,8 @@
   margin: auto 1rem;
   margin-bottom: 1rem;
   position: relative;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
 }
 
 .section-title__heading {
@@ -34,6 +36,8 @@
     max-width: 50em;
     width: 80%;
     margin: auto auto 2rem auto;
+    padding-bottom: unset;
+    border-bottom: unset;
   }
     .section-title:after {
       content: '';

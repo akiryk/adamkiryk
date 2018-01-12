@@ -23,3 +23,13 @@ body {
   color: $font-color;
   font-family: $fb-body-font-stack;
 }
+
+@media screen and (min-width: 680px) and (max-width: 799px) {
+  body {
+    margin: 0 1rem;
+  }
+  .panel--about {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
