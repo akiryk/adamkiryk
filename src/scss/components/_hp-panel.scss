@@ -40,24 +40,23 @@
     margin-bottom: unset;
   }
 
-  .panel--intro {
-    min-height: 65vh;
-  }
-
   .panel--about {
     padding: 2rem 0;
   }
 }
 
-@media screen and (min-height: 42.5em) and (min-width: $medium) {
-
-  .panel--work {
-    padding-top: 8rem;
+@media screen and (min-height: 42.5em) and (min-width: $small) {
+  .panel--intro {
+    min-height: 65vh;
   }
-
   .panel--about {
     padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: $medium) {
+  .panel--about {
     padding-bottom: 0;
   }
-
 }

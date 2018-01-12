@@ -1127,9 +1127,7 @@ video {
       margin-right: 2rem;
       width: unset;
       grid-template-rows: -webkit-min-content;
-      grid-template-rows: min-content;
-      -webkit-transform: translateY(-6vh);
-              transform: translateY(-6vh); }
+      grid-template-rows: min-content; }
     .primary-logo {
       grid-row: 1;
       grid-column: 3/6; }
@@ -1328,16 +1326,18 @@ video {
     padding-top: 4rem;
     padding-bottom: 4rem;
     margin-bottom: unset; }
-  .panel--intro {
-    min-height: 65vh; }
   .panel--about {
     padding: 2rem 0; } }
 
-@media screen and (min-height: 42.5em) and (min-width: 66.25em) {
-  .panel--work {
-    padding-top: 8rem; }
+@media screen and (min-height: 42.5em) and (min-width: 50em) {
+  .panel--intro {
+    min-height: 65vh; }
   .panel--about {
     padding-top: 3rem;
+    padding-bottom: 3rem; } }
+
+@media screen and (min-width: 66.25em) {
+  .panel--about {
     padding-bottom: 0; } }
 
 /*
