@@ -150,10 +150,9 @@ gulp.task('compileAnimationScripts', function() {
     'src/js/vendors/gsap/TimelineMax.min.js',
     'src/js/vendors/gsap/TweenMax.min.js',
     'src/js/vendors/gsap/ScrollToPlugin.min.js',
-    'src/js/vendors/ScrollMagic/ScrollMagic.min.js',
-    'src/js/vendors/ScrollMagic/animation.gsap.min.js'
+    'src/js/vendors/aos.js',
     ])
-    .pipe(concat('animations.min.js'))
+    .pipe(concat('aosgsap.min.js'))
     .pipe(gulp.dest('docs/js/'))
 });
 

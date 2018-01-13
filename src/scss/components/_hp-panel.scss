@@ -13,10 +13,13 @@
   margin-bottom: 2rem;
 }
 
-.no-scroll-js .panel--intro {
-  // margin-bottom: 15vh;
-  min-height: 90vh;
-}
+// .no-scroll-js .panel--intro {
+//   margin-bottom: 15vh;
+// }
+
+// .yes-scroll-js .panel--intro {
+//   min-height: 90vh;
+// }
 
 .panel--about {
   background-color: black;
@@ -58,5 +61,8 @@
 @media screen and (min-width: $medium) {
   .panel--about {
     padding-bottom: 0;
+  }
+  .panel--intro {
+    min-height: 100vh;
   }
 }
