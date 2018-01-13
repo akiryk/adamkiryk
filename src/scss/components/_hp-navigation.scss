@@ -9,6 +9,7 @@
 
 .navbar {
   background-color: rgba(0,0,0,0.05);
+  display: flex;
   margin-bottom: 2rem;
 }
 
@@ -26,7 +27,6 @@
 }
 
 .navbar__menu-item {
-  // border-radius: $border-radius;
   transition: all .25s;
   margin: 0;
 }
@@ -46,19 +46,17 @@
 @media screen and (min-width: $small){
 
   .navbar {
-    background-color: unset;
+    justify-content: center;
     margin-bottom: unset;
-    margin-top: .5rem;
   }
   .navbar__menu-item {
     margin-right: .5rem;
   }
-  .navbar__menu-link {
-    padding: 0.25rem 1rem;
-  }
 
   @supports (display: grid) {
     .navbar {
+      background-color: unset;
+      margin-top: .5rem;
       grid-column-gap: 2rem;
       @include standard-grid();
     }
@@ -67,6 +65,9 @@
       grid-column: 3/12;
     }
 
+    .navbar__menu-link {
+      padding: 0.25rem 1rem;
+    }
   }
 }
 

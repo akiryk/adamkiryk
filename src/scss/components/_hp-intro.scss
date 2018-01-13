@@ -43,7 +43,6 @@
   }
 
   .primary-logo {
-    width: unset;
     margin: unset;
     margin-bottom: 2rem;
   }
@@ -56,10 +55,10 @@
       @include standard-grid();
       width: unset;
       grid-template-rows: min-content;
-      // transform: translateY(-6vh);
     }
 
     .primary-logo {
+      width: unset;
       grid-row: 1;
       grid-column: 3/6;
     }

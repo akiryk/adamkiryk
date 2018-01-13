@@ -24,7 +24,7 @@ var app = {
   scrollController: null,
 
   init: function init() {
-    document.documentElement.classList.remove('fade-in');
+    document.documentElement.classList.replace('no-scroll-js', 'yes-scroll-js');
     this.animatePrimaryLogo();
     this.initSmoothScrolling();
     this.openingAnimations();

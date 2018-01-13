@@ -53,6 +53,10 @@
     margin: 2rem auto;
   }
 
+  .hp-project__copy {
+    position: relative;
+  }
+
   @supports (display: grid) {
     .hp-project {
       width: unset;
@@ -70,7 +74,6 @@
       width: unset;
       grid-column: 5/13;
       grid-row: 2;
-      position: relative;
     }
   }
 }
@@ -91,12 +94,12 @@
 
   .hp-project__image {
     flex: 1 1 auto;
-    width: calc(30% - 4rem);
+    width: calc(25% - 4rem);
     margin: 0 1rem 0 2rem;
   }
 
   .hp-project__copy {
-    width: calc(70% - 2rem);
+    width: calc(65% - 2rem);
     flex: 1 1 auto;
     margin: 0 2rem 0 1rem;
   }
@@ -188,29 +191,31 @@
     font-size: 3.75rem;
   }
 
-  .hp-project__number {
-    grid-column: 5/12;
-  }
-
-  .hp-project__copy {
-    grid-column: 5/12
-  }
-
-  .hp-project__image {
-    grid-column: 1/5;
-  }
-
-  .hp-project:nth-of-type(odd) {
+  @supports (display: grid) {
     .hp-project__number {
-      grid-column: 2/12;
+      grid-column: 5/12;
     }
 
     .hp-project__copy {
-      grid-column: 2/9
+      grid-column: 5/12
     }
 
     .hp-project__image {
-      grid-column: 9/13;
+      grid-column: 1/5;
+    }
+
+    .hp-project:nth-of-type(odd) {
+      .hp-project__number {
+        grid-column: 2/12;
+      }
+
+      .hp-project__copy {
+        grid-column: 2/9
+      }
+
+      .hp-project__image {
+        grid-column: 9/13;
+      }
     }
   }
 
@@ -222,6 +227,7 @@
     margin: 0 auto 8rem auto;
   }
 
+  @supports (display: grid) {
   /*
    * Case study grid, default
    */
@@ -257,6 +263,7 @@
     .hp-project__image {
       grid-column: 8/13;
     }
+  }
   }
 
   /*

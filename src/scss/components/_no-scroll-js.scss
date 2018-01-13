@@ -1,19 +1,23 @@
 /**
  *
- * Component: Fade In
+ * Component: Scroll or No Scroll
  * -----------------------------------------------
  *
- * Use CSS animation to fade in an element
+ * Do different things depending on whether scroll scripts have loaded.
  *
  */
 
-.fade-in {
+.no-scroll-js {
   opacity: 0;
   animation-name: fadein;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: .5s;
+}
+
+.no-scroll-js .scroll-js-only {
+  display: none;
 }
 
 @keyframes fadein {
