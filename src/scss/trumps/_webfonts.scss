@@ -15,7 +15,21 @@
   }
 
   .hp-skills__desc {
+    font-size: 1.5rem;
     line-height: 1.35;
+  }
+
+  .hp-project__number {
+    line-height: unset;
+  }
+
+  .hp-skills__title {
+    color: $dark-gray-3;
+    font-family: $serif, serif;
+    font-size: $font-md;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
   }
 
   .tk-serif,
@@ -24,6 +38,12 @@
     font-family: "adobe-caslon-pro", serif;
   }
 
+}
+
+@media screen and (min-width: $medium){
+  .wf-adobecaslonpro-n4-active .hp-skills__title {
+    font-size: $font-md;
+  }
 }
 
 /**

@@ -11,7 +11,7 @@ const app = {
   scrollController: null,
 
   init() {
-    document.documentElement.classList.replace('no-scroll-js', 'yes-scroll-js');
+    document.documentElement.classList.replace('no-js', 'yes-js');
     AOS.init();
     this.animatePrimaryLogo();
     this.initSmoothScrolling();
@@ -69,5 +69,4 @@ const app = {
   }
 
 }
-
 app.init();

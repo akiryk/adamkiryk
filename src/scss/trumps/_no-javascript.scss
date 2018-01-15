@@ -1,0 +1,36 @@
+// .no-js {
+
+//   [data-aos^=fade][data-aos^=fade] {
+//     opacity: 1 !important;
+//   }
+
+//   [data-aos=fade-left],
+//   [data-aos=fade-right],
+//   [data-aos=fade-up],
+//   [data-aos=fade-down] {
+//     transform: unset !important;
+//   }
+
+// }
+
+.no-js {
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+.no-js .scroll-js-only {
+  display: none;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

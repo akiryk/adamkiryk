@@ -13,7 +13,7 @@ var app = {
   scrollController: null,
 
   init: function init() {
-    document.documentElement.classList.replace('no-scroll-js', 'yes-scroll-js');
+    document.documentElement.classList.replace('no-js', 'yes-js');
     AOS.init();
     this.animatePrimaryLogo();
     this.initSmoothScrolling();
@@ -67,6 +67,5 @@ var app = {
     }
   }
 };
-
 app.init();
 //# sourceMappingURL=main.js.map

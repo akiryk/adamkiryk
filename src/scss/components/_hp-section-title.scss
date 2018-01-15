@@ -61,22 +61,22 @@
     }
       .section-title:after {
         grid-row: 2;
-        grid-column: 5 / 13;
+        grid-column: 4 / 13;
         content: '';
         background-color: #ccc;
       }
 
       .section-title--skills:after {
-        grid-column: 3 / 11;
+        grid-column: 2 / 12;
       }
 
     .section-title__heading {
-      grid-column: 5/12;
+      grid-column: 4/12;
       grid-row: 1;
     }
 
     .section-title__heading--skills {
-      grid-column: 3/8;
+      grid-column: 2/9;
       grid-row: 1;
     }
 
@@ -98,6 +98,10 @@
 
   .section-title__heading {
     font-size: $font-xl;
+  }
+
+  .section-title__heading--about {
+    font-size: $font-lg;
   }
 
   @supports (display: grid) {
@@ -123,6 +127,11 @@
     .section-title__desc {
       grid-column: 5/12;
     }
+
+    .section-title__heading--about {
+      font-size: $font-xl;
+    }
+
 
     .section-title:after {
       grid-column: 5 / 13;

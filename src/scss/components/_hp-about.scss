@@ -64,8 +64,19 @@
 
 @media screen and (min-width: $medium){
   @supports (display: grid){
+    .hp-about__image {
+      grid-column: 1/6;
+    }
     .hp-about__contents {
-      grid-column: 5/12;
+      grid-column: 6/13;
+    }
+  }
+}
+
+@media screen and (min-width: $large){
+  @supports (display: grid){
+    .hp-about__contents {
+      grid-column: 6/12;
     }
   }
 }
@@ -76,8 +87,11 @@
     margin-right: auto;
   }
   @supports (display: grid){
+    .hp-about__image {
+      grid-column: 2/6;
+    }
     .hp-about__contents {
-      grid-column: 6/11;
+      grid-column: 6/12;
     }
   }
 }
