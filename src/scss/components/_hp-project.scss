@@ -17,11 +17,6 @@
     font-size: 2.5rem;//40px;
   }
 
-
-  .hp-project--ce .hp-project__number {
-    margin-left: -1rem;
-  }
-
   .hp-project__image {
     margin: 2rem auto 2rem auto;
     position: relative;
@@ -36,13 +31,26 @@
   }
 
   .hp-project__number {
-    display: none;
-    position: relative;
+    color: #eee;
+    display: block;;
+    flex: 1 0 100%;
+    font-size: 6rem;
+    font-family: serif;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding-left: 30%;
+    text-align: center;
   }
 
 @supports (display: grid) {
   .hp-project {
     margin: 0 1em 4rem 1em;
+  }
+  .hp-project__number {
+    padding-left: unset;
+    grid-row: 1;
+    grid-column: 4/12;
+    margin-bottom:-2rem;
   }
 }
 
@@ -58,14 +66,12 @@
   }
 
   .hp-project__number {
-    display: block;;
     font-size: 8rem;
-    color: #eee;
-    margin-bottom: 0;
-    flex: 1 0 100%;
-    padding-left: 30%;
-    font-family: serif;
-    line-height: 1.5;
+    text-align: left;
+  }
+
+  .hp-project--ce .hp-project__number {
+    margin-left: -1rem;
   }
 
   @supports (display: grid) {
@@ -73,15 +79,6 @@
       width: unset;
       @include standard-grid();
       grid-template-rows: auto auto;
-    }
-
-    .hp-project__number {
-      width: unset;
-      transform:  unset;
-      padding-left: unset;
-      grid-row: 1;
-      grid-column: 4/12;
-      margin-bottom:-2rem;
     }
 
     .hp-project__image {
