@@ -30,8 +30,8 @@
   </script>
 </head>
 <body id="home">
-  <div class="node-page">
-    <nav class="node-page__head node-navigation">
+  <div class="node">
+    <nav class="node-navigation">
       <div class="node-navigation__logo">
         <a href="index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.3 227.5" >
@@ -68,24 +68,22 @@
         <a href="index.html">Adam Kiryk</a>, <span class="node-navigation__title ge-sans">Front End Developer / UI Designer</span>
       </div>
     </nav>
-    <div  class="node-page__content">
-      <div class="node-heading">
-        <h1 class="node-heading__title tk-serif">Websites and Digital Marketing Campaigns at Arnold Worldwide</h1>
-        <figure class="node-heading__hero">
+    <div  class="node__content">
+      <div class="node__full">
+        <h1 class="node__title tk-serif">Websites and Digital Marketing Campaigns at Arnold Worldwide</h1>
+        <figure class="node__hero">
           <img src="media/node-arnold/twitter_lg-1366.jpg" alt="">
           <figcaption class="ge-sans">Add something.</figcaption>
         </figure>
       </div>
 
-      <div class="node-body">
-        <h3 class="node-body__title ge-sans--bold">Background</h3>
+      <div class="node__body">
+        <h3 class="node__subtitle ge-sans--bold">Background</h3>
         <p>NPR created this web application so stations could create and publish content directly into a single API — enabling stations to more easily share stories with one another and giving them greater flexibility to display content on websites or apps of their choosing.</p>
         <p>I led front end development on two of the application’s components, one for finding, filtering, and sorting stories, the other for playing a story’s primary audio.</p>
-        <div class="node-body__callout-title tk-serif">A Flexible System of Branding</div>
-        <p>Managers need to edit, approve, and publish several stories a day, but finding the stories on their docket isn’t always easy. Often, they don’t have enough information — perhaps just the author’s name or a few keywords — so they waste time searching.</p>
-
-        <h3 class="node-body__title">Primary Audio</h3>
-        <div class="node-body__callout-title tk-serif">A Flexible System of Branding</div>
+      </div>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">Carnival Cruise Line Campaign</h3>
         <p>Editors told us they wanted an easy way to listen to the primary audio associated with a story, so I designed a clear and economical user interface and created a React component to meet the need.</p>
 
         <figure>
@@ -94,7 +92,7 @@
         </figure>
       </div>
 
-      <div class="node-full">
+      <div class="node__full">
         <div class="node-gallery">
           <figure class="node-gallery__2up">
             <img src="media/node-arnold/fb-2_md-667.jpg" alt="">
@@ -107,45 +105,40 @@
         </div>
       </div>
 
-      <div class="node-body">
-        <figure>
-          <img src="media/node-arnold/fun1_sm-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
-        </figure>
-        <figure>
-          <img src="media/node-arnold/fun2_sm-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
-        </figure>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">OceanSpray</h3>
+
         <figure>
           <img src="media/node-arnold/oceanspray_md-807.jpg" alt="" class="visible-edges">
           <figcaption class="ge-sans">Something here...</figcaption>
         </figure>
-
-         <figure>
-          <img src="media/node-arnold/radioshack-gift-guide_md-807.jpg" alt="" class="visible-edges">
-          <figcaption class="ge-sans">Something here...</figcaption>
-        </figure>
+      </div>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">RadioShack</h3>
+       <figure>
+        <img src="media/node-arnold/radioshack-gift-guide_md-807.jpg" alt="" class="visible-edges">
+        <figcaption class="ge-sans">Something here...</figcaption>
+      </figure>
       </div>
     </div>
   </div>
-  <div id="footer" class="panel panel--about">
+  <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 50em)"
+         <source media="(min-width: 66.25rem)"
             srcset="media/portrait.jpg" />
+          <source media="(max-width: 799px)"
+            srcset="media/portrait-wide_lg-1200.jpg 1200w,
+                    media/portrait-wide_sm-640.jpg 640w" />
          <source srcset="media/portrait-square.jpg" />
          <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
-        <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too. Get in touch&hellip;</p>
-        <ul class="o-horizontal-list">
-          <li><a class="hp-about__menu-link" href="#">adamkiryk at gmail</a></li>
-          <li><a class="hp-about__menu-link" href="#">adamkiryk on linked in</a></li>
-          <li><a class="hp-about__menu-link" href="#">resume</a></li>
-        </ul>
+        <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
+        <a class="return-to-top__link" href="#home">Return to top</a><a class="return-to-top__link" href="index.html">Back to home</a>
       </div>
     </div>
-  </div>
+  </footer>
 </body>
 </html>

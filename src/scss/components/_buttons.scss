@@ -15,10 +15,12 @@
   font-weight: 400;
   letter-spacing: .5px;
   padding: 10px 16px;
+  transition: box-shadow .25s;
 }
 
 .btn:hover {
   box-shadow: 0 0 0 6px #e4eaec;
+  color: $blue;
 }
 
 @media screen and (max-width: $small){

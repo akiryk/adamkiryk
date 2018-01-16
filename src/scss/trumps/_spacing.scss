@@ -29,3 +29,9 @@
 .mr-auto {
   margin-right: auto !important;
 }
+
+@media screen and (max-width: $small){
+  .mb-2 {
+    margin-bottom: 1rem !important;
+  }
+}

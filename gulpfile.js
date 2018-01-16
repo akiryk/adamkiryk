@@ -97,8 +97,10 @@ gulp.task('compileSASS', function() {
     autoprefixer({ browsers: ['last 2 versions', '> 2%'] }),
     //cssnano,
   ];
-
-  return gulp.src(folder.src + 'scss/main.scss')
+  return gulp.src([
+    folder.src + 'scss/main.scss',
+    folder.src + 'scss/no-aos.scss'
+    ])
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'nested',

@@ -7,11 +7,3 @@
  *
  */
 
-.node-body__title {
-  @include subheading;
-}
-
-.node-body__callout-title {
-  @include font-smoothing;
-  font-size: 2.25rem; //36px;
-}

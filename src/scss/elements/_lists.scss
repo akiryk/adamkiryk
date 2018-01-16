@@ -6,8 +6,15 @@
  *
  */
 
+@media screen and (max-width: $small){
+  ul, ol {
+    padding-left: 0;
+  }
+}
+
 ul, ol {
   @include body-copy;
+  margin-bottom: 2rem;
 }
 
 li {

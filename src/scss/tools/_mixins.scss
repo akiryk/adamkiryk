@@ -7,13 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin secondary-heading() {
-  color: $dark-gray-1;
-  font-size: $font-xl;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
 @mixin body-copy() {
   @include font-smoothing;
   font-family: $fb-body-font-stack;
@@ -41,19 +34,32 @@
   line-height: 1.5;
 }
 
-@mixin subheading {
+/**
+ * Medium sized headings.
+ */
+@mixin heading-two() {
+  color: $dark-gray-1;
+  font-size: $font-xl;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Uppercase headings used on project pages
+ */
+@mixin heading-three() {
   @include font-smoothing;
   text-transform: uppercase;
   font-size: 1.125rem;
   font-family: $sans-serif;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 @mixin plain-list {
   @include font-smoothing;
   font-size: 18px;
   padding: 0;
-  margin: 1.75rem 0 0 0;
+  margin: 0;
   list-style: none;
   font-family: $sans-serif;
 }

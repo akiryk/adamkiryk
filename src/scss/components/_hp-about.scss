@@ -24,6 +24,23 @@
   max-width: 50rem;
 }
 
+.return-to-top__link {
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-right: 1px solid #555;
+  transition: color .25s;
+}
+
+.return-to-top__link:last-of-type{
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.return-to-top__link:hover {
+  color: #ddd;
+}
+
 @media screen and (min-width: $small){
 
   .hp-about {
