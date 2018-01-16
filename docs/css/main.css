@@ -1764,14 +1764,6 @@ video {
 
 /**
  *
- * Component: Node Body
- * -----------------------------------------------
- * The body copy section of a node page
- *
- *
- */
-/**
- *
  * Component: Node Gallery
  * -----------------------------------------------
  *
@@ -3265,40 +3257,6 @@ video {
     opacity: 0; }
   to {
     opacity: 1; } }
-
-body:after {
-  content: 'tiny';
-  position: fixed;
-  z-index: 99999;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.6);
-  left: 32px;
-  top: 0;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  pointer-events: none; }
-
-@media (min-width: 50em) {
-  body:after {
-    content: 'small'; } }
-
-@media (min-width: 60em) {
-  body:after {
-    content: 'medium'; } }
-
-@media (min-width: 75em) {
-  body:after {
-    content: 'large'; } }
-
-@media (min-width: 87.5em) {
-  body:after {
-    content: 'xlarge'; } }
-
-@media (min-width: 106.25em) {
-  body:after {
-    content: 'max'; } }
 
 /**
  * Styles for testing and development
