@@ -7,11 +7,16 @@
  */
 
 .video {
-  margin-bottom: $space;
+  width: fit-content;
+  margin: 0 auto $space auto;
 }
 
 .video__media {
   margin-bottom: $space;
+}
+
+.video > .video__media {
+  margin-bottom: 1em;
 }
 
 .video__caption {

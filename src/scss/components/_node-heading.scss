@@ -7,20 +7,16 @@
  *
  */
 
-.node-heading {
-
-}
-
-.node-heading__title {
+.node__title {
   @include font-smoothing;
   color: $red;
-  font-size: $font-xl;
+  font-size: $font-lg;
   font-weight: 400;
   margin-bottom: $space;
 }
 
 @media screen and (min-width: $large) {
-  .node-heading {
-    margin-top: 2rem;
+  .node__title {
+    font-size: $font-xl;
   }
 }

@@ -1,23 +1,28 @@
 /**
  *
- * Component: Node Links
+ * Component: Node Side
  * -----------------------------------------------
- * A list of links to example websites
+ * Sidebar on node pages
  *
  *
  */
 
-.node-links {
+.node__side {
+  margin-bottom: 1px;
   background: #eee;
   padding: 1em;
+}
+
+.node__side--last,
+.node__side--only {
   margin-bottom: 2em;
 }
 
-.node-links__title {
+.node__side-title {
   @include heading-three;
 }
 
-.node-links__list {
+.node__side-list {
   @include plain-list;
   display: flex;
   flex-wrap: wrap;
@@ -33,21 +38,23 @@
 }
 
 @media screen and (min-width: $small){
-  .node-links {
+  .node__side {
     background: unset;
     padding: unset;
     margin-bottom: 2em;
   }
-  .node-links__title {
+  .node__side-title {
     margin-bottom: .875em;
   }
-  .node-links__list {
+  .node__side-list {
     flex-direction: column;
-    & > li {
-      margin: 0 1em .875em 0;
-    }
-    & > li:after {
-      content: '';
-    }
+  }
+  .node__side-list {
+   & > li {
+    margin: 0 1em .875em 0;
+   }
+   & > li:after {
+    content: '';
+   }
   }
 }

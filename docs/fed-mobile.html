@@ -30,8 +30,8 @@
   </script>
 </head>
 <body id="home">
-  <div class="node-page">
-    <nav class="node-page__head node-navigation">
+  <div class="node">
+    <nav class="node-navigation">
       <div class="node-navigation__logo">
         <a href="index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 383.3 227.5" >
@@ -68,13 +68,13 @@
         <a href="index.html">Adam Kiryk</a>, <span class="node-navigation__title ge-sans">Front End Developer / UI Designer</span>
       </div>
     </nav>
-    <div  class="node-page__content">
-      <div class="node-heading">
-        <h1 class="node-heading__title tk-serif">Mobile Web for NPR Stations</h1>
+    <div  class="node__content">
+      <div class="node__full">
+        <h1 class="node__title tk-serif">Mobile Web for NPR Stations</h1>
       </div>
-      <div class="node-technologies">
-        <h3 class="node-technologies__title ge-sans--bold">Key Technologies</h3>
-        <ul class="node-technologies__list ge-sans">
+      <div class="node__side node__side--first node__side--only">
+        <h3 class="node__side-title ge-sans--bold">Key Technologies</h3>
+        <ul class="node__side-list ge-sans">
           <li>CSS/Sass</li>
           <li>JavaScript</li>
           <li>jQuery</li>
@@ -82,8 +82,8 @@
         </ul>
       </div>
 
-      <div class="node-body">
-        <h3 class="node-body__title ge-sans--bold">Background</h3>
+      <div class="node__body">
+        <h3 class="node__subtitle ge-sans--bold">Background</h3>
         <p>Needs copy write copy lorem ipsum dolor sit amet, consectetur adipisicing elit. Est culpa incidunt accusamus dolorum provident ad omnis at vitae ut autem officia maiores impedit, necessitatibus sequi, enim beatae voluptatibus consequuntur ex.</p>
         <figure class="node-gallery--body__2up">
           <img src="media/node-mobile/twoscreens_md-807.jpg" alt="">
@@ -102,7 +102,7 @@
           </figure>
         </div>
       </div>
-      <div class="node-full">
+      <div class="node__full">
         <div class="node-gallery">
           <figure class="node-gallery__2up">
             <img src="media/node-mobile/wireframe-home_sm-667.jpg" alt="">
@@ -114,7 +114,7 @@
           </figure>
         </div>
       </div>
-      <div class="node-body">
+      <div class="node__body">
         <div class="video">
           <video class="video__media" data-src="media/videos/fed-mobile-story-animation.mp4" loop poster="media/node-content-editor/audio-poster.jpg">
             <!-- In event of no video support, now image -->
@@ -133,25 +133,24 @@
       </div>
     </div>
   </div>
-  <div id="footer" class="panel panel--about">
+  <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 50em)"
+         <source media="(min-width: 66.25rem)"
             srcset="media/portrait.jpg" />
+          <source media="(max-width: 799px)"
+            srcset="media/portrait-wide_lg-1200.jpg 1200w,
+                    media/portrait-wide_sm-640.jpg 640w" />
          <source srcset="media/portrait-square.jpg" />
          <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
-        <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too. Get in touch&hellip;</p>
-        <ul class="o-horizontal-list">
-          <li><a class="hp-about__menu-link" href="#">adamkiryk at gmail</a></li>
-          <li><a class="hp-about__menu-link" href="#">adamkiryk on linked in</a></li>
-          <li><a class="hp-about__menu-link" href="#">resume</a></li>
-        </ul>
+        <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
+        <a class="return-to-top__link" href="#home">Return to top</a><a class="return-to-top__link" href="index.html">Back to home</a>
       </div>
     </div>
-  </div>
+  </footer>
   <script src="js/lazyload.js"></script>
 </body>
 </html>

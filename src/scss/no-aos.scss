@@ -1,6 +1,7 @@
 [data-aos^=fade][data-aos^=fade],
 [data-aos^=zoom][data-aos^=zoom] {
-  opacity: 1; }
+  opacity: 1;
+}
 
 [data-aos=fade-left],
 [data-aos=fade-right],
@@ -8,6 +9,5 @@
 [data-aos=fade-down],
 [data-aos=zoom-in-up] {
   -webkit-transform: unset;
-  transform: unset; }
-
-/*# sourceMappingURL=no-aos.css.map */
+  transform: unset;
+}

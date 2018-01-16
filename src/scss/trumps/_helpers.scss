@@ -20,6 +20,10 @@
   display: none;
 }
 
+.quiet {
+  color: #888;
+}
+
 @media screen and (max-width: $medium) {
   .hide-small {
     display: none;

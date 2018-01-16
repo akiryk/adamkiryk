@@ -10,9 +10,9 @@
 .node-navigation {
   @include font-smoothing;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   color: $dark-gray-3;
-  margin-top: 1rem;
+  margin: 1em 1em 2em 1em;
 }
 
 .node-navigation__logo {
@@ -22,28 +22,26 @@
 .node-navigation__name {
   font-family: Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1em;
   flex: auto;
+  line-height: 1.4;
 }
 
 .node-navigation__title {
   font-family: Helvetica, sans-serif;
   font-weight: 400;
+  display: block;
 }
 
 @media screen and (min-width: $small){
-  // @supports (display: grid) {
-  //   .node-navigation {
-  //     grid-column-gap: 2rem;
-  //     @include standard-grid();
-  //     align-items: flex-end;
-  //     margin-bottom: 2rem;
-  //   }
-  //   .node-navigation__logo {
-  //     grid-column: 2;
-  //   }
-  //   .node-navigation__name {
-  //     grid-column: 2 / 5;
-  //   }
-  // }
+  .node-navigation {
+    margin: 1em 2em 4em 2em;
+    align-items: baseline;
+  }
+  .node-navigation__name {
+    font-size: 1.125em;
+  }
+  .node-navigation__title {
+    display: inline;
+  }
 }
