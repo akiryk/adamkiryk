@@ -7,7 +7,9 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
   <link rel="stylesheet" href="css/main.css">
 
   <script>
@@ -94,7 +96,7 @@
       </div>
 
       <div class="node__body node__body--first">
-        <h3 class="node__subtitle ge-sans--bold">Background</h3>
+        <h3 class="node__subtitle">Background</h3>
         <p>NPR created this web application so stations could create and publish content directly into a single API — enabling stations to more easily share stories with one another and giving them greater flexibility to display content on websites or apps of their choosing.</p>
 
         <p>I led front end development on two of the application’s components, one for finding, filtering, and sorting stories, the other for playing a story’s primary audio.</p>
@@ -116,13 +118,20 @@
             <!-- In event of no video support, now image -->
             <img src="media/node-content-editor/list-audio-filter_lg-2303.jpg" />
           </video>
-          <div class="video__caption">This screen capture shows filters being enabled and disabled.</div>
+          <div class="video__caption">It's easy for editors to enable/disable filters — and to see which are currently active.</div>
         </div>
       </div>
 
-      <div class="node__body">
-        <h3 class="node__subtitle">Primary Audio</h3>
-        <p>Editors told us they wanted an easy way to listen to the primary audio associated with a story, so I designed a clear and economical user interface and created a React component to meet the need.</p>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">Managing A Story's Primary Audio</h3>
+         <p>Editors told us they wanted an easy way to listen to the primary audio associated with a story, so I designed a clear and economical user interface and created a React component to meet the need.</p>
+        <div class="video">
+          <video class="video__media visible-edges" data-src="media/videos/fed-story-editor-audio.mp4" muted loop poster="media/node-content-editor/audio-poster.jpg">
+            <!-- In event of no video support, now image -->
+            <img src="media/node-content-editor/audio-poster.jpg" />
+          </video>
+          <div class="video__caption">A zoomed-in portion of the audio player.</div>
+        </div>
         <p>The component, which wraps the HTML audio element, enables our application to render only the functionality that editors need and lets us create a custom design to fit with our brand.</p>
       </div>
 
@@ -135,30 +144,33 @@
                         1144px"
                src="media/node-content-editor/editor_lg-1144.jpg"
                alt="content editor screenshot">
-          <figcaption>Something here...</figcaption>
+          <figcaption>When creating and editing a story, it's easy for editors to see whether a primary audio file has already been uploaded; to preview it; and to edit or replace it.</figcaption>
         </figure>
-      </div>
-      <div class="node__body">
-        <div class="video">
-          <video class="video__media visible-edges" data-src="media/videos/fed-story-editor-audio.mp4" muted loop poster="media/node-content-editor/audio-poster.jpg">
-            <!-- In event of no video support, now image -->
-            <img src="media/node-content-editor/audio-poster.jpg" />
-          </video>
-          <div class="video__caption">This screen capture shows filters being enabled and disabled.</div>
-        </div>
       </div>
     </div>
   </div>
   <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 66.25rem)"
-            srcset="media/portrait.jpg" />
-          <source media="(max-width: 799px)"
-            srcset="media/portrait-wide_lg-1200.jpg 1200w,
-                    media/portrait-wide_sm-640.jpg 640w" />
-         <source srcset="media/portrait-square.jpg" />
-         <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
+        <source
+          media="(min-width: 1060px)"
+          srcset="media/portrait.jpg 1541w,
+                  media/portrait_1312.jpg 1312w,
+                  media/portrait_656.jpg 656w"
+          sizes="656px"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset="media/portrait-square_780.jpg 780w,
+                    media/portrait-square_390.jpg 390w"
+          sizes="390px"
+        />
+        <source
+          srcset="media/portrait-wide_1568.jpg 1568w,
+                  media/portrait-wide_784.jpg 784w"
+          sizes="784px"
+        />
+        <img class="mb-0" src="portrait_656.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>

@@ -8,6 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+
   <link rel="stylesheet" href="css/main.css">
 
   <script>
@@ -74,9 +78,9 @@
         <div class="node-gallery mb-2">
           <div class="node-gallery__2up">
             <img srcset="media/node-core-publisher/kuow-home_lg-2150.jpg 2150w,
-                         media/node-core-publisher/kuow-home_md-1024.jpg 1024w,
-                         media/node-core-publisher/kuow-home_sm-640.jpg 640w"
-                 sizes=""
+                         media/node-core-publisher/kuow-home_1544.jpg 1544w,
+                         media/node-core-publisher/kuow-home_772.jpg 772w"
+                 sizes="772px"
                  src="media/node-core-publisher/kuow-home_md-1024.jpg"
                  alt="Home page of KUOW.org"
                  class="make-edges-visible">
@@ -85,7 +89,7 @@
             <img srcset="media/node-core-publisher/kuow-family-skyping_lg-2150.jpg 2150w,
                          media/node-core-publisher/kuow-family-skyping_md-1024.jpg 1024w,
                          media/node-core-publisher/kuow-family-skyping_sm-640.jpg 640w"
-                 sizes=""
+                 sizes="772px"
                  src="media/node-core-publisher/kuow-family-skyping_md-1024.jpg"
                  alt="Story page of KUOW.org"
                  class="make-edges-visible">
@@ -105,22 +109,22 @@
       <div class="node__side node__side--last">
         <h3 class="node__side-title ge-sans--bold">Example Sites</h3>
         <ul class="node__side-list ge-sans">
-          <li><a href="http://kut.org" target="_blank">KUT, Austin</a></li>
-          <li><a href="http://iowapublicradio.org/" target="_blank">Iowa Public Radio</a></li>
-          <li><a href="http://kuow.org/post/hyderabad-india-seattles-tech-sister-east" target="_blank">KUOW Story</a></li>
-          <li><a href="http://kalw.org/post/spot-excavating-ancient-curse-words" target="_blank">KALW Story</a></li>
+          <li><a href="http://kut.org" target="_blank">KUT Home Page</a></li>
+          <li><a href="http://iowapublicradio.org/" target="_blank">Iowa Public Radio Home Page</a></li>
+          <li><a href="http://kuow.org/post/hyderabad-india-seattles-tech-sister-east" target="_blank">KUOW Story Page</a></li>
+          <li><a href="http://kalw.org/post/spot-excavating-ancient-curse-words" target="_blank">KALW Story Page</a></li>
         </ul>
       </div>
 
       <div class="node__body node__body--first">
-        <h3 class="node__subtitle ge-sans--bold">Background</h3>
+        <h3 class="node__subtitle tk-serif">Background</h3>
         <p>A few years before we started work on the <a href="fed-story-editor.html">story editor</a>, NPR had a different challenge. Hundreds of small to mid-sized stations managed their websites using a custom Drupal platform that NPR built and maintained. The platform, Core Publisher, worked well in many respects, but it used an outmoded, fixed-width design that didn’t display well on mobile devices.
         </p>
 
         <p>It was obvious we needed to make the websites responsive. And we needed to update the backend as well to give stations new ways to present content. As always, we had to do it in a way that would satisfy a wide range of stations, each with different content strategies, priorities, and levels of digital experience.</p>
       </div>
       <div class="node__body node__body--example">
-        <h3 class="node__subtitle"><span class="quiet">Example:</span> A Flexible System of Branding</h3>
+        <h3 class="node__subtitle"><span class="node__subtitle--lead-in">Example</span> A Flexible System of Branding</h3>
         <p>Until this redesign project, NPR dedicated its own resources to managing station website branding. We had a couple of designers who created and modified logos, chose fonts and colors, and sometimes created unique illustrations. To the extent it was free to stations, they loved it — but it was financially unsustainable for NPR.</p>
         <p>Stations were willing to give up the benefit of custom design services, but their websites would still need to reflect their brand guidelines. Our challenge was to design a system that a) our small team could build quickly and b) stations could learn to maintain with minimal support.</p>
         <p>I proposed that we keep branding very simple at first, with a header stations could customize in a few key ways, and our advisory group agreed. However, a few complications soon emerged: </p>
@@ -130,14 +134,28 @@
           <li>Some stations were co-branded with universities, potentially requiring two or more logos.</li>
           <li>Some stations had very long taglines and others had none — there wasn’t a common pattern.</li>
         </ul>
-        <img src="media/node-core-publisher/headers_2081.png" alt="">
+        <img src="" alt="">
+        <figure>
+          <img
+            scrset="media/node-core-publisher/headers_1368.jpg 1368w,
+                    media/node-core-publisher/headers_684.jpg"
+            sizes="684px"
+            src="media/node-core-publisher/headers_684.jpg"
+            alt="Headers for public radio station brands">
+          <figcaption>Different public radio stations have different branding needs — wide or narrow logos; with or without taglines; colorful or largely white. Our header admin tool needed to be able to meet all of these needs.</figcaption>
+        </figure>
         <p>These factors made it difficult to design a system that would work for everybody. But not impossible. Based on experiments I did using HTML and CSS, I created a header template that would accommodate any shape of logo and all lengths of tagline without breaking a standard template.</p>
         <p>To create and maintain their headers, station administrators logged into a simple form where they could upload or switch logos, enter tagline text, and select custom colors. I designed the system to be very forgiving. If an admin uploaded a very large image, it would be scaled down. If they forgot to customize text or color on the “Donate” button, we provided smart defaults.</p>
         <p>Ultimately, more than 180 stations created custom, responsive headers for their sites. In the past, that accomplishment would have required NPR to allocate hundreds of hours of designer and front end developer resources to consult with stations, create logos and illustrations, and implement designs using custom CSS. With our new system, stations were able to do it on their own with minimal support from NPR.</p>
-        <img src="media/node-core-publisher/admin-header-config.png" alt="">
+        <img
+          srcset="media/node-core-publisher/admin-header-config_1088.jpg 1088w,
+                  media/node-core-publisher/admin-header-config_684.jpg 684w"
+          sizes="684px"
+          src="media/node-core-publisher/admin-header-config_684.jpg"
+          alt="Admin header configuration tool">
       </div>
       <div class="node__body node__body--example">
-        <h3 class="node__subtitle"><span class="quiet">Example:</span> Story Page</h3>
+        <h3 class="node__subtitle"><span class="node__subtitle--lead-in">Example</span> Story Page</h3>
         <p>The story page is the foundation of station websites. It’s the biggest draw for new users. People who see story pages are more likely to return to the site compared to those who don’t. And users are more likely to share story pages on social media than other types of station content.</p>
         <p>We wanted to get story pages right. </p>
       </div>
@@ -152,32 +170,63 @@
           <li>Less is more — remove unnecessary content and functionality whenever possible.</li>
           <li>Optimize for audio — it should be easy for users to find and play, and it should work on any device.</li>
           <li>Find friendly and unobtrusive ways to keep users engaged.</li>
-          <li>Give editors flextibility in handling layout, but keep it simple.</li>
+          <li>Give editors flexibility in handling layout, but keep it simple.</li>
         </ul>
 
-        <img src="media/node-core-publisher/phone-screens_lg-1902.jpg" class="" alt="">
-        <p>As we started sketching ideas and showing our thinking to the advisory group, tension emerged regarding the sidebar. I argued we should consider removing it in light of our commitment to white space — and because it was arguably unnecessary content. </p>
+        <img
+          srcset="media/node-core-publisher/phone-screens_1544.jpg 1544w,
+                  media/node-core-publisher/phone-screens_684.jpg 684w"
+          sizes="684px"
+          src="media/node-core-publisher/phone-screens_684.jpg" class="" alt="Example screenshot of a Core Publisher news site on a smartphone.">
+        <p>As we started sketching ideas and showing our thinking to the advisory group, tension emerged regarding the sidebar. I argued we should consider removing it in light of our commitment to highlighting the most important content. </p>
 
         <p>In contrast, station managers tended to like the sidebar because they could use it to satisfy a range of their constituents. Treating the sidebar as a “junk drawer,” they could use it for ads, pledge drive promotions, program announcements, links to other stories, almost anything they wanted — seemingly at no cost. </p>
 
-        <p>But we’d found there was a cost. Our research showed people came to story pages because they wanted the story, and our analytics supported this — almost nobody clicked on links and promotions in the sidebar. Moreover, user testing showed that some people were confused or distracted by elements in the sidebar. It seemed like a bad user experience. </p>
+        <p>But we’d found there was a cost to this "junk drawer" approach. Our research showed people came to story pages because they wanted the story, and our analytics supported this — almost nobody clicked on links and promotions in the sidebar. Moreover, user testing showed that some people were confused or distracted by elements in the sidebar. It seemed like a bad user experience. </p>
 
-        <p>Ads vs. Underwriting?</p>
-        <img src="media/node-core-publisher/ad_lg-1465.jpg" alt="" class="make-edges-visible">
-        <p>We couldn’t change a requirement that story pages accommodate business messages paid for by sponsors. I explored options to replace standard display ads with something that would fit better with the character of public radio. It led to interesting conversations — how might a public radio station handle underwriting on its website in a way that felt more inline with underwriting announced on-air? In the end, business decided the answer: we needed to include standard display ads.
+        <p>Ultimately, most stations were convinced by our point of view, and those that weren’t came around when they tested our initial designs and heard good feedback from their users.
         </p>
-        <p>Ultimately, most stations were convinced by our point of view, and those that weren’t came around when they tested our design and heard good feedback from their users.
-        </p>
-        <p>Other than a few ads, the template focused exclusively on the story’s content. This gave editors the full width of the page to work with, and enabled us to provide options so they could create a variety of layouts and more immersive stories. [Show some examples]
-        </p>
-        <p>Sidebar on typography</p>
-        <p>We took typography very seriously, exploring a number of fonts that would feel friendly, modern, and serious – and we limited our search to fonts that met a high level of readability. Further, we experimented with font size, line-spacing, paragraph width, and color to optimize the reading experience.
-        </p>
-        <p>Subsequent user testing and feedback from station editors validated our approach. Users responded positively to the ample white space and readability. Editors liked having more control over the layout of their stories, taking advantage of it right away, and several stories created with the new layout quickly became some of the highest trafficked in the network.
+        <p>In the end, we created a template that focused on the story’s content. Other than providing space for a few ads — a critical business need — the template gave editors the full width of the page to work with, and enabled us to provide options so they could create a variety of layouts and more immersive stories.
         </p>
       </div>
+      <div class="node__full">
+        <div class="node-gallery">
+          <figure class="node-gallery__2up mb-4">
+            <img
+              srcset="media/node-core-publisher/story1_lg-1175.jpg 1175w,
+                      media/node-core-publisher/story1_md-772.jpg 772w"
+              sizes="772px"
+              src=   "media/node-core-publisher/story1_md-772.jpg"
+              alt="An example story page, showing mainly text"
+              class="visible-edges">
+              <figcaption>This story page, from KBIA, shows how the removal of the sidebar provides a clean, open, and readable experience. </figcaption>
+          </figure>
+          <figure class="node-gallery__2up">
+            <img
+              srcset="media/node-core-publisher/story2_lg-1175.jpg 1175w,
+                      media/node-core-publisher/story2_md-772.jpg 772w"
+              sizes="772px"
+              src=   "media/node-core-publisher/story2_md-772.jpg"
+              alt="Another example story page, showing mainly text"
+              class="visible-edges">
+          </figure>
+        </div>
+      </div>
+      <div class="node__body">
+        <figure>
+          <img
+            srcset="media/node-core-publisher/story-sidebar_lg-1062.jpg 1062w,
+                    media/node-core-publisher/story-sidebar_md-772.jpg 772w,
+                    media/node-core-publisher/story-sidebar_sm-684.jpg 684w"
+            src="media/node-core-publisher/story-sidebar_md-772.jpg"
+            sizes="684px"
+            alt=""
+            class="visible-edges">
+          <figcaption>Eventually, we provided an alternative layout with a sidebar that stations could enable or disable on a case-by-case basis. The sidebar could be particularly helpful when stations ran three or more ads, as Vermont Public Radio tends to do. </figcaption>
+        </figure>
+      </div>
       <div class="node__body node__body--example">
-        <h3 class="node__subtitle"><span class="quiet">Example:</span> Homepage</h3>
+        <h3 class="node__subtitle"><span class="node__subtitle--lead-in">Example</span> Homepage</h3>
         <p>NPR understood that member station homepages were becoming much less critical to user engagement. More and more visitors — following social media links or organic search results — came straight to the content they wanted. So NPR didn’t want to spend a lot of resources creating an elaborate homepage management system.</p>
 
         <p>But station managers and administrators wouldn’t be satisfied with a homepage that was too limited, seeing it as an important reflection of their station’s brand. They wanted a range of tools for promoting stories, programs, events, and pledge drives.</p>
@@ -192,10 +241,53 @@
           <li>Help users find what they’re looking for.</li>
         </ul>
         <p>To handle these requirements, I designed a simple and flexible system based on regions and blocks. There were three regions, each with its own characteristics, and stations could use them in various combinations to create different layouts for different purposes.</p>
-
+      </div>
+      <div class="node__full">
+        <div class="node-gallery">
+          <figure class="node-gallery__2up mb-4">
+            <img
+              srcset="media/node-core-publisher/hp-iowa_lg-2119.jpg 2119w,
+                      media/node-core-publisher/hp-iowa_md-1544.jpg 1544w,
+                      media/node-core-publisher/hp-iowa_772.jpg 772w"
+              sizes= "(min-width: 1640px) 772px,
+                      (max-width: 800px) 344px,
+                      684px"
+              src=   "media/node-core-publisher/hp-iowa_772.jpg"
+              alt=""
+              class="visible-edges">
+              <figcaption>This screenshot of Iowa Public Radio's home page features a three-stories news block and a smaller block for stories from NPR.</figcaption>
+          </figure>
+          <figure class="node-gallery__2up">
+            <img
+              srcset="media/node-core-publisher/hp-kut_lg-2119.jpg 2119w,
+                      media/node-core-publisher/hp-kut_md-1544.jpg 1544w,
+                      media/node-core-publisher/hp-kut_772.jpg 772w"
+              sizes= "(min-width: 1640px) 772px,
+                      (max-width: 800px) 344px,
+                      684px"
+              src=   "media/node-core-publisher/hp-kut_772.jpg"
+              alt=""
+              class="visible-edges">
+              <figcaption>KUT's home page has a one-story news block for promoting an especially big story; a promotional block for the Book Concierge; and a the same type of block for stories from NPR as Iowa uses.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="node__body">
         <p>To populate the regions with content, stations could choose from a small selection of ready-made blocks, such as a river of news or a display ad, or they could create a custom block. A custom block was a special content type we designed and built, and we offered it in a few flavors optimized for different use cases.</p>
 
         <p>For example, we created the curated news block so an editor could hand pick a small number of stories and place them where they wanted. We made the promotional block for displaying non-news messages — typically, things like pledge drives, new programs, or upcoming events. The category block was optimized for automatically listing the latest headlines from a particular category, like “Business” or “Arts.”</p>
+
+        <figure>
+          <img
+            srcset="media/node-core-publisher/block-settings_lg-1368.jpg 1368w,
+                    media/node-core-publisher/block-settings_md-752.jpg 752w,
+                    media/node-core-publisher/block-settings_sm-684.jpg 685w"
+            src="media/node-core-publisher/block-settings_sm-684.jpg"
+            sizes="(min-width: 800px) 684px, 752px"
+            alt=""
+            class="visible-edges">
+          <figcaption>The backend provided a way for station editors to select different types of home page promotional units for meeting different needs.</figcaption>
+        </figure>
 
         <p>Using this combination of regions and blocks, the homepage satisfied stations, end-users, and NPR. Stations can use layouts that suit their needs, and present content that suits their capabilities. User testing indicated the homepage worked well for existing and new visitors. And NPR was happy to provide stations with a product requiring little maintenance.</p>
 
@@ -205,18 +297,30 @@
   <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 66.25rem)"
-            srcset="media/portrait.jpg" />
-          <source media="(max-width: 799px)"
-            srcset="media/portrait-wide_lg-1200.jpg 1200w,
-                    media/portrait-wide_sm-640.jpg 640w" />
-         <source srcset="media/portrait-square.jpg" />
-         <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
+        <source
+          media="(min-width: 1060px)"
+          srcset="media/portrait.jpg 1541w,
+                  media/portrait_1312.jpg 1312w,
+                  media/portrait_656.jpg 656w"
+          sizes="656px"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset="media/portrait-square_780.jpg 780w,
+                    media/portrait-square_390.jpg 390w"
+          sizes="390px"
+        />
+        <source
+          srcset="media/portrait-wide_1568.jpg 1568w,
+                  media/portrait-wide_784.jpg 784w"
+          sizes="784px"
+        />
+        <img class="mb-0" src="portrait_656.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
         <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
-        <a class="return-to-top__link" href="#home">Return to top</a> : <a class="return-to-top__link" href="index.html">Back to home</a>
+        <a class="return-to-top__link" href="#home">Return to top</a><a class="return-to-top__link" href="index.html">Back to home</a>
       </div>
     </div>
   </footer>

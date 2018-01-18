@@ -7,7 +7,9 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
   <link rel="stylesheet" href="css/main.css">
 
   <script>
@@ -83,52 +85,37 @@
       </div>
 
       <div class="node__body">
-        <h3 class="node__subtitle ge-sans--bold">Background</h3>
-        <p>Needs copy write copy lorem ipsum dolor sit amet, consectetur adipisicing elit. Est culpa incidunt accusamus dolorum provident ad omnis at vitae ut autem officia maiores impedit, necessitatibus sequi, enim beatae voluptatibus consequuntur ex.</p>
+        <h3 class="node__subtitle">Background</h3>
+        <p>Before NPR decided to embark on a responsive redesign for our member stations' web platform (see the <a href="fed-core-publisher.html">Core Publisher project</a>), we created a mobile-only version. In a few weeks, I designed and helped develop a clean, usable mobile-optimized site that elevated the listening experience while still respecting the large amount of text content that was present throughout the sites.</p>
+        <p><strong>Ultimately, nearly a hundred stations adopted our mobile theme</strong>.</p>
         <figure class="node-gallery--body__2up">
           <img src="media/node-mobile/twoscreens_md-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
+          <figcaption class="ge-sans">Home pages for two radio station mobile sites.</figcaption>
         </figure>
-        <p>Needs copy write copy lorem ipsum dolor sit amet, consectetur adipisicing elit. Est culpa incidunt accusamus dolorum provident ad omnis at vitae ut autem officia maiores impedit, necessitatibus sequi, enim beatae voluptatibus consequuntur ex.</p>
-        <p>Needs copy write copy lorem ipsum dolor sit amet, consectetur adipisicing elit. Est culpa incidunt accusamus dolorum provident ad omnis at vitae ut autem officia maiores impedit, necessitatibus sequi, enim beatae voluptatibus consequuntur ex.</p>
+        <p>I worked with another developer to create a custom Drupal theme using JavaScript, PHP, and CSS. We made it responsive — a first for NPR at the time — and, while it was only optimized for small screens at first, the pieces were in place for us to design for large screen sizes if business goals changed.</p>
+
+      </div>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">Listening</h3>
+        <p>We wanted to make listening prominent, and enable users to easily find and listen to a station's primary live stream (many stations have several, sometimes many). On the other hand, we didn't want to make the experience <em>only</em> about listening — because stations have lots of other content. After some trial and error working with real-world public radio listeners, we settled on a clear, prominent button, "Listen Live," followed by a stream of posts.</p>
         <div class="node-gallery--body">
           <figure class="node-gallery--body__2up">
             <img src="media/node-mobile/player-closed_md-667.jpg" alt="">
-            <figcaption class="ge-sans">Something here...</figcaption>
+            <figcaption class="ge-sans">Although stations might have multiple streams, they would select one to be the primary stream — in this case, it's KUT One.</figcaption>
           </figure>
           <figure class="node-gallery--body__2up">
             <img src="media/node-mobile/player-open_md-667.jpg" alt="">
-            <figcaption class="ge-sans">Something here...</figcaption>
+            <figcaption class="ge-sans">The site exposes other streams (if there are any) when a user clicks play — or if the user clicks the down icon beside the primary stream.</figcaption>
           </figure>
         </div>
       </div>
-      <div class="node__full">
-        <div class="node-gallery">
-          <figure class="node-gallery__2up">
-            <img src="media/node-mobile/wireframe-home_sm-667.jpg" alt="">
-            <figcaption class="ge-sans">Something here...</figcaption>
-          </figure>
-          <figure class="node-gallery__2up">
-            <img src="media/node-mobile/wireframe-post_sm-667.jpg" alt="">
-            <figcaption class="ge-sans">Something here...</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="node__body">
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">Story Pages</h3>
+        <p>We built story pages to accommodate all of the content that station editors put into stories, ensuring that text, pictures, videos, and inline audio worked well. The video below demonstrates the flow of a typical story, ending with related stories from the site to encourage continued discovery. </p>
         <div class="video">
-          <video class="video__media" data-src="media/videos/fed-mobile-story-animation.mp4" loop poster="media/node-content-editor/audio-poster.jpg">
-            <!-- In event of no video support, now image -->
-            <img src="media/node-content-editor/audio-poster.jpg" />
+          <video class="video__media" data-src="media/videos/fed-mobile-story-animation.mp4" loop>
+            <img src="media/node-mobile/story-page-phone-389.jpg" />
           </video>
-          <div class="video__caption">This screen capture shows filters being enabled and disabled.</div>
-        </div>
-      </div>
-      <div class="video">
-          <video class="video__media" data-src="media/videos/fed-story-editor-audio.mp4" muted loop poster="media/node-content-editor/audio-poster.jpg">
-            <!-- In event of no video support, now image -->
-            <img src="media/node-content-editor/audio-poster.jpg" />
-          </video>
-          <div class="video__caption">This screen capture shows filters being enabled and disabled.</div>
         </div>
       </div>
     </div>
@@ -136,13 +123,25 @@
   <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 66.25rem)"
-            srcset="media/portrait.jpg" />
-          <source media="(max-width: 799px)"
-            srcset="media/portrait-wide_lg-1200.jpg 1200w,
-                    media/portrait-wide_sm-640.jpg 640w" />
-         <source srcset="media/portrait-square.jpg" />
-         <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
+        <source
+          media="(min-width: 1060px)"
+          srcset="media/portrait.jpg 1541w,
+                  media/portrait_1312.jpg 1312w,
+                  media/portrait_656.jpg 656w"
+          sizes="656px"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset="media/portrait-square_780.jpg 780w,
+                    media/portrait-square_390.jpg 390w"
+          sizes="390px"
+        />
+        <source
+          srcset="media/portrait-wide_1568.jpg 1568w,
+                  media/portrait-wide_784.jpg 784w"
+          sizes="784px"
+        />
+        <img class="mb-0" src="portrait_656.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>

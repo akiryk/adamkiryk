@@ -103,7 +103,7 @@ gulp.task('compileSASS', function() {
     ])
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'nested',
+      outputStyle: 'compressed', // nested, expanded, compact, compressed
       imagePath: 'images/',
       precision: 3,
       errLogToConsole: true

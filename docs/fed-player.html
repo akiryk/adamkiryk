@@ -7,7 +7,9 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
   <link rel="stylesheet" href="css/main.css">
 
   <script>
@@ -71,6 +73,14 @@
     <div  class="node__content">
       <div class="node__full">
         <h1 class="node__title tk-serif">Streaming Player for NPR Stations</h1>
+        <figure class="node__hero">
+          <img
+          srcset="media/node-player/hero-1576.jpg 1576w,
+                  media/node-player/hero-1024.jpg 1024w,
+                  media/node-player/hero-640.jpg 640w"
+          src="media/node-player/hero-640.jpg"
+          alt="">
+        </figure>
       </div>
       <div class="node__side node__side--first node__side--only">
         <h3 class="node__side-title ge-sans--bold">Key Technologies</h3>
@@ -83,40 +93,56 @@
         </ul>
       </div>
 
-      <div class="node__body">
-        <h3 class="node__subtitle ge-sans--bold">Background</h3>
-        <p>Needs copy write copy lorem ipsum dolor sit amet, consectetur adipisicing elit. Est culpa incidunt accusamus dolorum provident ad omnis at vitae ut autem officia maiores impedit, necessitatibus sequi, enim beatae voluptatibus consequuntur ex.</p>
-        <figure>
-          <img src="media/node-player/meta-data_md-807.png" alt="" class="make-edges-visible">
-          <figcaption class="ge-sans">Something here...</figcaption>
-        </figure>
+      <div class="node__body node__body--first">
+        <h3 class="node__subtitle">Background</h3>
+        <p>You’d expect it to be easy to find ways to listen to live streams on a radio station’s website. But this hasn’t always been the case for a lot of public radio stations.</p>
+        <p>While almost every station’s web site has some mechanism for listening live, it often involves asking the would-be listener to navigate through a list of links with names like .pls and .m3u, or selecting from buttons for a “flash player,” “windows player” or “itunes.” Obviously, it shouldn’t be so hard.</p>
+        <p>For this project, I worked with a small team tasked with getting something out to stations relatively quickly. Something we could test, learn from, and improve upon over time. I always like these kinds of projects, because the focus is on moving quickly from research to prototype to design and build — and because it was a small team, I got to be involved in all aspects of the process.</p>
+      </div>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">UX</h3>
+        <p>In the first week, I spoke with stations and to a panel of public radio listeners — and did some quick guerilla research out in the field (a local cafe where I asked strangers for their thoughts). In the prototypes I showed, people generally understood how to start and stop the player; they understood the name of the thing they were listening to; they understood there were other listening options.</p>
+        <p>Working with paper prototypes, I was able to try a lot of ideas quickly — different copy; different information; different arrangements features. We found that the phrase ‘Live Radio’ communicated clearly to most people the difference between listening live and listening to on-demand — more clearly than “listen live,” at least with our panel of public radio listeners.</p>
       </div>
       <div class="node__full">
         <figure>
           <img src="media/node-player/sketches_lg-1367.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
+          <figcaption class="ge-sans">Paper prototypes used in testing and in discovery work with our team. Prototypes like this helped us identify the most important information to display in a player.</figcaption>
         </figure>
       </div>
-      <div class="node__body">
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">Designing and building the front end</h3>
+        <p>We wanted the player to be persistent but we also had reservations. Creating a player that could live on station’s existing sites and be persistent would be a difficult problem, both technically and in terms of usability.</p>
+        <p>Further — and critically — it wasn’t at clear to us that our audience actually wanted or needed a persistent player. If you’re listening to a news/talk program like Fresh Air or All Things Considered, how likely is it you’ll want to be browsing a site and reading at the same time? If it’s a music stream, the possibility seems more likely, but it was still just a guess.</p>
+        <figure>
+          <img src="media/node-player/final_md-807.jpg" alt="" class="make-edges-visible">
+          <figcaption class="ge-sans">We build a stand-alone player that stations could use to stream their regular broadcasting and to promote short clips from recent stories.</figcaption>
+        </figure>
+        <p>We decided to split the difference, creating a player that would reside in its own browser window. Users who wanted to listen could go to an uncluttered, focused listening experience, where they could browse between different sorts of audio content. Putting the player into its own window also enabled us to take the first steps toward building persistence without having to solve the various challenges of working on an existing universe of drupal sites.</p>
+
+        <p>We used Backbone.js, jQuery, and jPlayer to get it up and running quickly.</p>
+
+        <p>Over a few weeks, we built a player that let users select from among various live streams, see appropriate information about what they were listening to, and listen to a selection of on-demand clips.</p>
+
+        <p>Was it any good? It was okay, a lot better than the stations had before. But it was only a first step, one that enabled us to work out various challenges, learn about audience and user-needs, and try out some ideas — like, did people actually care to listen to on-demand clips in this context? (Answer: a little bit). Or, would stations be able to sell underwriting against a player? (Answer: yes).</p>
+
+        <p>Although this player no longer exists in the NPR ecosystem, much of what we learned in terms of user experience and technology became invaluable to our teams in later projects. For example, we learned that users were much more interested in listening to live streams than to “on-demand” audio clips and that a sizeable sub-set of regular listeners enjoyed going straight to a stand-alone player.</p>
+      </div>
+
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">The visual design in process</h3>
+        <p>Following are screenshots of different ways I thought about handling branding and the UI. In the end, we decided to use a visual style that would align better with existing station designs at the time. </p>
         <figure>
           <img src="media/node-player/process1_lg-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
         </figure>
         <figure>
           <img src="media/node-player/process2_lg-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
         </figure>
         <figure>
           <img src="media/node-player/process3_lg-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
         </figure>
         <figure>
           <img src="media/node-player/process4_lg-807.jpg" alt="">
-          <figcaption class="ge-sans">Something here...</figcaption>
-        </figure>
-        <figure>
-          <img src="media/node-player/final_md-807.jpg" alt="" class="make-edges-visible">
-          <figcaption class="ge-sans">Something here...</figcaption>
         </figure>
       </div>
     </div>
@@ -124,13 +150,25 @@
   <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 66.25rem)"
-            srcset="media/portrait.jpg" />
-          <source media="(max-width: 799px)"
-            srcset="media/portrait-wide_lg-1200.jpg 1200w,
-                    media/portrait-wide_sm-640.jpg 640w" />
-         <source srcset="media/portrait-square.jpg" />
-         <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
+        <source
+          media="(min-width: 1060px)"
+          srcset="media/portrait.jpg 1541w,
+                  media/portrait_1312.jpg 1312w,
+                  media/portrait_656.jpg 656w"
+          sizes="656px"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset="media/portrait-square_780.jpg 780w,
+                    media/portrait-square_390.jpg 390w"
+          sizes="390px"
+        />
+        <source
+          srcset="media/portrait-wide_1568.jpg 1568w,
+                  media/portrait-wide_784.jpg 784w"
+          sizes="784px"
+        />
+        <img class="mb-0" src="portrait_656.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>

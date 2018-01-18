@@ -8,6 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+
   <link rel="stylesheet" href="css/main.css">
 
   <script>
@@ -73,10 +77,23 @@
         <h1 class="node__title tk-serif">Community Calendar</h1>
         <div class="node-gallery mb-2">
           <div class="node-gallery__2up">
-            <a href="http://kacu.org/community-calendar" target="_blank"><img src="media/node-calendar/kacu-home_2226.png" alt="" class="make-edges-visible"></a>
+            <a href="http://kacu.org/community-calendar" target="_blank">
+              <img
+                srcset="media/node-calendar/kacu-home_1544.jpg 1544w,
+                        media/node-calendar/kacu-home_772.jpg 772w"
+                sizes="772px"
+                src="media/node-calendar/kacu-home_772.jpg"
+                alt="KACU example calendar page"
+                class="make-edges-visible"></a>
           </div>
           <div class="node-gallery__2up">
-            <a href="http://kacu.org/community-calendar" target="_blank"><img src="media/node-calendar/kacu-event_2226.png" alt="" class="make-edges-visible"></a>
+            <a href="http://kacu.org/community-calendar" target="_blank">
+              <img
+                srcset="media/node-calendar/kacu-event_1544.jpg 1544w,
+                        media/node-calendar/kacu-event_772.jpg 772w"
+                sizes="772px"
+                alt="KACU example calendar page"
+                src="media/node-calendar/kacu-event_772.jpg" alt="" class="make-edges-visible"></a>
           </div>
         </div>
       </div>
@@ -94,60 +111,94 @@
           <li><a href="http://kacu.org/community-calendar" target="_blank">KACU.org Calendar</a></li>
           <li><a href="http://michiganradio.org/community-calendar" target="_blank">Michigan Radio Calendar</a></li>
           <li><a href="http://kunm.org/community-calendar/event/254804" target="_blank">KUNM Event</a></li>
+          <li><a href="http://digitalservices.npr.org/post/community-calendar-beta-release" target="_blank">Blog post I wrote about the calendar</a></li>
         </ul>
       </div>
 
-      <div class="node__body">
-        <h3 class="node__subtitle ge-sans--bold">Background</h3>
-        <p>NPR created this web application so stations could create and publish content directly into a single API — enabling stations to more easily share stories with one another and giving them greater flexibility to display content on websites or apps of their choosing.</p>
-
-        <p>I led front end development on two of the application’s components, one for finding, filtering, and sorting stories, the other for playing a story’s primary audio.</p>
+      <div class="node__body node__body--first">
+        <h3 class="node__subtitle">Background</h3>
+        <p>Community Calendar is a tool for helping NPR stations promote local events. I designed and helped build it — and I made the video below to promote its adoption by stations.</p>
+        <div class="video video--youtube">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bUXoSDgA1Ac" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <p>Members of the public can submit events using a form that sends the details to station administrators. The administrators can modify and publish the event or contact the submitter with questions.</p>
+        <p>Once the event is published, it displays on the station's "Community Calendar" pages, where people can find it by date, category, or keyword search.</p>
       </div>
-      <div class="node__full">
-
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">The Event Form</h3>
+        <p>When creating the form, we needed to satisfy the needs of many different stations, so we built it to accommodate a wide-range of event-types regarding cost, recurrence, and venue. I created prototypes for exploring different interactions and UIs, and for doing user testing that guided our work. See an <a href="https://akiryk.github.io/community-calendar/index.html" target="_blank">example prototype</a>.</p>
+        <figure>
+          <a href="http://kacu.org/community-calendar" target="_blank">
+            <img
+              srcset="media/node-calendar/submit_1368.jpg 1368w,
+                      media/node-calendar/submit_752.jpg 752w,
+                      media/node-calendar/submit_684.jpg 684w"
+              sizes="(max-width: 799px) 752px, 684px"
+              src="media/node-calendar/submit_684.jpg" alt="Form for submitting an event" class="make-edges-visible"></a>
+          <figcaption class="ge-sans">Screenshot of part of the form for creating an event.</figcaption>
+        </figure>
       </div>
-      <div class="node__body">
-        <h3 class="node__subtitle">Finding, Filtering, and Sorting Stories</h3>
-
-        <p>Managers need to edit, approve, and publish several stories a day, but finding the stories on their docket isn’t always easy. Often, they don’t have enough information — perhaps just the author’s name or a few keywords — so they waste time searching.</p>
-
-        <p>I created a simple and effective UI for displaying and finding stories, tested it with station users, and implemented it using React, Redux, and CSS modules.</p>
+      <div class="node__body node__body--example">
+        <h3 class="node__subtitle">Event Listings</h3>
+        <p>Events can be listed with various amounts of information, including description, image, map data, and more. Following are screenshots of event listings pages and individual event pages.</p>
+        <figure>
+          <img
+            srcset="media/node-calendar/ipad_815.jpg 815w,
+                    media/node-calendar/ipad_752.jpg 752w,
+                    media/node-calendar/ipad_684.jpg 684w"
+            sizes="(max-width: 799px) 752px, 684px"
+            src="media/node-calendar/ipad_684.jpg" alt="">
+        </figure>
       </div>
       <div class="node__full">
         <div class="node-gallery">
           <figure class="node-gallery__2up">
-            <a href="http://kacu.org/community-calendar" target="_blank"><img src="media/node-calendar/kunm-home.png" alt="" class="make-edges-visible"></a>
+            <a href="http://kacu.org/community-calendar" target="_blank">
+              <img
+                srcset="media/node-calendar/kunm-home_1544.jpg 1544w,
+                        media/node-calendar/kunm-home_772.jpg 772w"
+                sizes="772px"
+                src="media/node-calendar/kunm-home.png" alt="KUNM home page" class="make-edges-visible"></a>
             <figcaption class="ge-sans"></figcaption>
           </figure>
           <figure class="node-gallery__2up">
-            <a href="http://kacu.org/community-calendar" target="_blank"><img src="media/node-calendar/kunm-event.png" alt="" class="make-edges-visible"></a>
+            <a href="http://kacu.org/community-calendar" target="_blank">
+              <img
+                srcset="media/node-calendar/kunm-event_1544.jpg 1544w,
+                        media/node-calendar/kunm-event_772.jpg 772w"
+                sizes="772px"
+                src="media/node-calendar/kunm-event_772.jpg" alt="KUNM calendar event" class="make-edges-visible"></a>
             <figcaption class="ge-sans"></figcaption>
           </figure>
         </div>
       </div>
       <div class="node__body">
-        <p>The list of stories comes from an API as an array of objects, which I display using a custom 'story list' component that uses (React Bootstrap Table)[https://github.com/AllenFang/react-bootstrap-table]. React Bootstrap Table enabled customization that met many of our needs — for example, I created custom callback functions for displaying and sorting bylines, and for showing contextually relevent information on hover. To create filters that met our requirements, however, we decided to build a new component.</p>
 
-        <figure>
-          <a href="http://kacu.org/community-calendar" target="_blank"><img src="media/node-calendar/submit_lg-1468.jpg" alt="" class="make-edges-visible"></a>
-          <figcaption class="ge-sans">A small caption</figcaption>
-        </figure>
-
-        <p>The filtering component manages state with Redux. When a user enables or disables a filter, the component calls a reducer function that updates the state of the filters. For example, if you click on the 'includes audio' filter, the state of the audio filter becomes true. The filter UI responds by displaying the audio filter as enabled and the stories list responds by showing only stories that contain audio.</p>
       </div>
-
     </div>
   </div>
   <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 66.25rem)"
-            srcset="media/portrait.jpg" />
-          <source media="(max-width: 799px)"
-            srcset="media/portrait-wide_lg-1200.jpg 1200w,
-                    media/portrait-wide_sm-640.jpg 640w" />
-         <source srcset="media/portrait-square.jpg" />
-         <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
+        <source
+          media="(min-width: 1060px)"
+          srcset="media/portrait.jpg 1541w,
+                  media/portrait_1312.jpg 1312w,
+                  media/portrait_656.jpg 656w"
+          sizes="656px"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset="media/portrait-square_780.jpg 780w,
+                    media/portrait-square_390.jpg 390w"
+          sizes="390px"
+        />
+        <source
+          srcset="media/portrait-wide_1568.jpg 1568w,
+                  media/portrait-wide_784.jpg 784w"
+          sizes="784px"
+        />
+        <img class="mb-0" src="portrait_656.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
