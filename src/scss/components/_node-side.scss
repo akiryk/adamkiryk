@@ -20,6 +20,7 @@
 
 .node__side-title {
   @include heading-three;
+  margin-bottom: 0.375rem;
 }
 
 .node__side-list {

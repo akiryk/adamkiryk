@@ -7,27 +7,28 @@
  *
  */
 
-.node-gallery {
-  @include standard-grid(10, 1fr, 2rem, 0, false);
-}
+@media screen and (min-width: $small){
+  .node-gallery {
+    @include standard-grid(10, 1fr, 2rem, 0, false);
+  }
 
-.node-gallery__2up {
-  grid-column: 1/6;
-}
+  .node-gallery__2up {
+    grid-column: 1/6;
+  }
 
-.node-gallery__2up:nth-of-type(2n){
-  grid-column: 6/11;
-}
+  .node-gallery__2up:nth-of-type(2n){
+    grid-column: 6/11;
+  }
 
-.node-gallery--body {
-  @include standard-grid(6, 1fr, 2rem, 0, false);
-}
+  .node-gallery--body {
+    @include standard-grid(6, 1fr, 2rem, 0, false);
+  }
 
-.node-gallery--body__2up {
-  grid-column: 1/4;
-}
+  .node-gallery--body__2up {
+    grid-column: 1/4;
+  }
 
-.node-gallery--body__2up:nth-of-type(2n){
-  grid-column: 4/7;
+  .node-gallery--body__2up:nth-of-type(2n){
+    grid-column: 4/7;
+  }
 }
-

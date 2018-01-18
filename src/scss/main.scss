@@ -20,6 +20,7 @@
 @import "elements/figure-figcaption";
 @import "elements/video";
 
+// Objects
 @import "objects/wrappers";
 @import "objects/horizontal-list";
 
@@ -41,7 +42,6 @@
 @import "components/hp-work";
 @import "components/lazy-load";
 @import "components/node-gallery";
-@import "components/node-heading";
 @import "components/node-navigation";
 @import "components/node-page";
 @import "components/node-side";
@@ -60,7 +60,7 @@
 @import "trumps/visible-edges";
 @import "trumps/smooth-scrolling";
 @import "trumps/no-javascript";
-// @import "trumps/test";
+@import "trumps/test";
 
 /**
  * Styles for testing and development

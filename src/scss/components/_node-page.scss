@@ -17,7 +17,19 @@
 }
 
 .node__subtitle {
-  @include heading-three;
+  @include font-smoothing;
+  font-size: $font-md;
+  font-family: $serif;
+  margin-bottom: 1rem;
+}
+
+.node__subtitle--lead-in {
+  display: block;
+  color: #888;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: .875rem;
+  margin-bottom: .375rem;
 }
 
 .node__subtitle--callout {
@@ -29,6 +41,15 @@
 .node__body--example {
   padding-top: 2em;
   border-top: 1px solid #ccc;
+}
+
+.node__title {
+  @include font-smoothing;
+  color: $red;
+  font-size: $font-lg;
+  font-weight: 400;
+  margin-bottom: $space;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: $small){
@@ -54,6 +75,10 @@
       grid-column: 4/12;
     }
 
+    .node__body--no-side {
+      grid-column: 2/12;
+    }
+
     .node__body--first {
       grid-row: 2/5;
     }
@@ -64,10 +89,22 @@
   }
 }
 
+@media screen and (min-width: $medium){
+  .node__subtitle--lead-in {
+    margin-bottom: .875rem;
+  }
+@supports (display: grid){
+    .node__body--no-side {
+      grid-column: 3/11;
+    }
+  }
+}
+
 @media screen and (min-width: $large){
   @supports (display: grid){
     .node__content {
-      @include standard-grid(10)
+      @include standard-grid(10);
+      align-items: baseline;
     }
     .node__side--first {
       grid-row: 2;
@@ -85,6 +122,18 @@
 
     .node__body--first {
       grid-row: 2;
+    }
+
+    .node__body--no-side {
+      grid-column: 3/9;
+    }
+
+    .node__title {
+      font-size: $font-xl;
+    }
+
+    .node__subtitle {
+      font-size: $font-lg;
     }
   }
 }

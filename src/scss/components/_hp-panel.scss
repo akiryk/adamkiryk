@@ -13,20 +13,19 @@
   margin-bottom: 2rem;
 }
 
-// .no-scroll-js .panel--intro {
-//   margin-bottom: 15vh;
-// }
-
-// .yes-scroll-js .panel--intro {
-//   min-height: 90vh;
-// }
-
 .panel--about {
   background-color: black;
   min-height: unset;
   padding: 0 calc( (100% - 1640px) / 2 ) 4rem;
   margin-bottom: 0;
 }
+
+ .panel--intro {
+    min-height: 75vh;
+  }
+  .panel--skills {
+    min-height: 80vh;
+  }
 
 @supports (display: grid) {
   .panel--intro {
@@ -63,6 +62,9 @@
     padding-bottom: 0;
   }
   .panel--intro {
+    min-height: 100vh;
+  }
+  .panel--skills {
     min-height: 100vh;
   }
 }

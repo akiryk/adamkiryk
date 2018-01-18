@@ -26,6 +26,10 @@
   display: none;
 }
 
+.no-js .hide-no-js {
+  display: none;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

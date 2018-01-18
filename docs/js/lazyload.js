@@ -31,14 +31,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       video.load();
       video.classList.add('loaded');
       video.play();
-      // video.oncanplaythrough = function() {
-      //   video.classList.add('loaded');
-      //   video.play();
-      // }
     });
-  } else {
-    // Video won't play, so unhide and show the fallback image
-
   }
 })(typeof global !== "undefined" ? global : undefined);
 //# sourceMappingURL=lazyload.js.map

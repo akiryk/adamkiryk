@@ -8,7 +8,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+
   <link rel="stylesheet" href="css/main.css">
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
   <noscript>
     <!-- Display the aos-hidden content-->
     <link rel="stylesheet" href="css/no-aos.css">
@@ -25,7 +34,7 @@
     // Web font loader, Google
     WebFontConfig = {
       google: {
-        families: ['Open Sans:400','Open Sans:400i', 'Open Sans:700', 'Open Sans: 700i']
+        families: ['Open Sans:400', 'Open Sans:700']
       },
       typekit: {
         id: 'vdt8eam'
@@ -46,7 +55,7 @@
   <nav id="primaryNav" class="navbar">
     <ul class="navbar__menu">
       <li class="navbar__menu-item"><a href="#skills" class="navbar__menu-link">Skills</a></li>
-      <li class="navbar__menu-item"><a href="#workExperience" class="navbar__menu-link">Work Examples</a></li>
+      <li class="navbar__menu-item"><a href="#project-ce" class="navbar__menu-link">Work Examples</a></li>
       <li class="navbar__menu-item"><a href="#about" class="navbar__menu-link">About</a></li>
     </ul>
   </nav>
@@ -104,7 +113,7 @@
             <div class="site-subheading tk-serif" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-out-quad" data-aos-delay="250">Front End Developer / UI Designer </div>
           </div>
           <div id="introBody" class="intro__body" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-quad" data-aos-delay="750">
-            <p>I have over ten years experience building websites and writing smart, maintainable CSS and JavaScript. I’m a skilled visual and user interface designer. And I’m passionate about creating great user experiences.</p>
+            <p>I have over ten years experience building websites and writing smart, maintainable CSS and JavaScript. I prioritize accessibility and performance. I’m a skilled visual designer. And I’m passionate about creating great user experiences.</p>
             <p>Sound good? I also write and speak clearly about my work. I thrive in a collaborative environment. And I love learning new things.
             </p>
             <p class="scroll-js-only"><a href="#skills">Say more...</a></p>
@@ -114,19 +123,41 @@
     </section>
 
     <section id="skills" class="panel panel--skills">
-      <div id="skillsTitle" class="section-title section-title--skills" data-aos="fade-up" data-aos-anchor-placement="top-top" data-aos-duration="500" data-aos-easing="ease-out" data-aos-anchor="#primaryLogo">
+      <div id="skillsTitle" class="section-title section-title--skills"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        data-aos-offset="200"
+        data-aos-duration="500"
+        data-aos-easing="ease-out">
         <h2 class="section-title__heading section-title__heading--skills tk-serif">Skills</h2>
       </div>
       <div id="skillsList" class="hp-skills">
-        <div id="skill1" class="hp-skills__skill" data-aos="fade-up" data-aos-anchor="#skillsTitle" data-aos-anchor-placement="top-center" data-aos-duration="500" data-aos-easing="ease-out">
+        <div id="skill1" class="hp-skills__skill"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-duration="500"
+          data-aos-easing="ease-out">
           <h3 class="hp-skills__title tk-serif">Front End Development</h3>
           <div class="hp-skills__desc tk-serif">In addition to years of real-world, on-the-job training, I completed the <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" target="_blank">Udacity</a> front end developer certificate program in 2016. My technology skills include HTML, CSS, JavaScript, and PHP; React and Redux; Git; webpack, gulp, and grunt; SASS and LESS. I've long been interested in animation and data visualization, using tools like d3.js and GSAP.</div>
         </div>
-        <div id="skill2" class="hp-skills__skill" data-aos="fade-up" data-aos-anchor="#skill1" data-aos-anchor-placement="center-center" data-aos-duration="500" data-aos-delay="0" data-aos-easing="ease-out">
+        <div id="skill2" class="hp-skills__skill"
+          data-aos="fade-up"
+          data-aos-anchor="#skill1"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-delay="200"
+          data-aos-duration="500"
+          data-aos-easing="ease-out">
           <h3 class="hp-skills__title tk-serif">UX + UI Design</h3>
           <div class="hp-skills__desc tk-serif">I studied interaction design at the <a href="https://www.cca.edu/" target="_blank">California College of the Arts</a> in San Francisco, and have led numerous user experience and visual design projects while at Arnold and NPR.</div>
         </div>
-        <div id="skill3" class="hp-skills__skill" data-aos="fade-up" data-aos-anchor="#skill2" data-aos-anchor-placement="center-center" data-aos-duration="500" data-aos-easing="ease-out">
+        <div id="skill3" class="hp-skills__skill"
+          data-aos="fade-up"
+          data-aos-anchor="#skill1"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-delay="400"
+          data-aos-duration="500"
+          data-aos-easing="ease-out">
            <h3 class="hp-skills__title tk-serif">Communication</h3>
            <div class="hp-skills__desc tk-serif">I’m a strong writer and public speaker; I'm comfortable explaining my work to clients and stakeholders; and I'm experienced collaborating with colleagues to discuss challenges, resolve conflicts, and work out solutions.</div>
         </div>
@@ -138,8 +169,8 @@
       <div id="work-experience-title"
            class="section-title section-title--work"
            data-aos="fade-up"
-           data-aos-anchor-placement="center-center"
-           data-aos-anchor="#skill3"
+           data-aos-anchor-placement="top-bottom"
+           data-aos-offset="200"
            data-aos-duration="500"
            data-aos-easing="ease-out">
         <h2 class="section-title__heading section-title__heading--work-experience tk-serif">Work Examples</h2>
@@ -150,15 +181,17 @@
         <div id="projectNum1"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#workExperience"
-          data-aos-anchor-placement="top-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">1</div>
         <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum1"
-          data-aos-anchor-placement="top-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="fed-story-editor.html">
             <img srcset="media/hp/hp-ce-map_lg-1024.jpg 1024w,
@@ -174,8 +207,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum1"
-          data-aos-anchor-placement="top-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Story Editor for NPR Stations</h2>
           <p id="storyEditorCopy" class="mt-0 mb-2 tk-serif hp-project__desc">
@@ -200,15 +235,17 @@
         <div id="projectNum2"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-ce"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">2</div>
          <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum2"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="fed-core-publisher.html">
             <img srcset="media/hp/hp-cp-devices--large.jpg 1099w,
@@ -224,8 +261,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum2"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Responsive design for a news platform used by over 180 NPR stations.</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -250,15 +289,17 @@
         <div id="projectNum3"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-cp"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">3</div>
          <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum3"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="fed-calendar.html">
             <img srcset="media/hp/hp-calendar_lg-2026.jpg 2026w,
@@ -272,8 +313,10 @@
          <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum3"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Community Calendar</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -296,15 +339,17 @@
         <div id="projectNum4"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-calendar"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">4</div>
         <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum4"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
            <a href="fed-composer.html">
             <img src="media/hp/hp-composer.jpg" alt="">
@@ -313,8 +358,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum4"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Composer</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -337,15 +384,17 @@
         <div id="projectNum5"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-composer"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">5</div>
         <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum5"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="fed-player.html">
             <img srcset="media/hp/nhpr-devices_lg-949.jpg 949w,
@@ -357,8 +406,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum5"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Streaming Player</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -381,15 +432,17 @@
         <div id="projectNum6"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-player"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">6</div>
         <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum6"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="fed-mobile.html">
             <img src="media/hp/hp-mobile-web-phones.jpg" alt="">
@@ -398,8 +451,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum6"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Mobile Web</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -421,15 +476,17 @@
         <div id="projectNum7"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-mobile-web"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">7</div>
         <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum7"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="fed-arnold.html">
             <img src="media/hp/hp-didja-logo.jpg" alt="Logo for Didja Ever campaign">
@@ -438,8 +495,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum7"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Websites and Digital Marketing Campaigns at Arnold Worldwide.</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -462,15 +521,17 @@
         <div id="projectNum8"
           class="hp-project__number tk-serif"
           data-aos="fade-up"
-          data-aos-anchor="#project-arnold"
-          data-aos-anchor-placement="bottom-center"
+          data-aos-anchor-placement="top-bottom"
           data-aos-duration="500"
+          data-aos-offset="200"
           data-aos-easing="ease-out">8</div>
         <div class="hp-project__image"
           data-aos="zoom-in-up"
           data-aos-anchor="#projectNum8"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <a href="http://research2action.net/" target="_blank">
             <img src="media/hp/hp-r2a.jpg" alt="Research to Action home page">
@@ -479,8 +540,10 @@
         <div class="hp-project__copy"
           data-aos="fade-up"
           data-aos-anchor="#projectNum8"
-          data-aos-anchor-placement="center-center"
-          data-aos-duration="500"
+          data-aos-anchor-placement="top-bottom"
+          data-aos-offset="200"
+          data-aos-delay="300"
+          data-aos-duration="700"
           data-aos-easing="ease-out">
           <h2 class="tk-serif hp-project__heading">Research To Action Youth Project.</h2>
           <p class="mt-0 tk-serif hp-project__desc">
@@ -502,19 +565,30 @@
   <footer id="about" class="panel panel--about">
     <div class="hp-about">
       <picture class="hp-about__image">
-         <source media="(min-width: 66.25rem)"
-            srcset="media/portrait.jpg" />
-          <source media="(max-width: 799px)"
-            srcset="media/portrait-wide_lg-1200.jpg 1200w,
-                    media/portrait-wide_sm-640.jpg 640w" />
-         <source srcset="media/portrait-square.jpg" />
-         <img class="mb-0" src="portrait.jpg" alt="Self portrait" />
+        <source
+          media="(min-width: 1060px)"
+          srcset="media/portrait.jpg 1541w,
+                  media/portrait_1312.jpg 1312w,
+                  media/portrait_656.jpg 656w"
+          sizes="656px"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset="media/portrait-square_780.jpg 780w,
+                    media/portrait-square_390.jpg 390w"
+          sizes="390px"
+        />
+        <source
+          srcset="media/portrait-wide_1568.jpg 1568w,
+                  media/portrait-wide_784.jpg 784w"
+          sizes="784px"
+        />
+        <img class="mb-0" src="portrait_656.jpg" alt="Self portrait" />
       </picture>
       <div class="hp-about__contents">
         <h2 class="section-title__heading section-title__heading--about tk-serif">About Me</h2>
         <p class="text-over-dark hp-about__desc">I’m married, two kids, I live in the Boston area. I like to run, hike, cook, eat good food, travel, take pictures, listen to podcasts. I do other stuff, too.</p>
         <a class="return-to-top__link" href="#home">Return to top</a>
-
       </div>
     </div>
   </footer>

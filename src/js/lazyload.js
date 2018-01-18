@@ -27,15 +27,7 @@
         video.load();
         video.classList.add('loaded');
         video.play();
-      // video.oncanplaythrough = function() {
-      //   video.classList.add('loaded');
-      //   video.play();
-      // }
     })
-  }
-  else {
-    // Video won't play, so unhide and show the fallback image
-
   }
 
 }(typeof global !== "undefined" ? global : this));
