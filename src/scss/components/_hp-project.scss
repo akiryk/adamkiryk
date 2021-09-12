@@ -12,9 +12,16 @@
   margin: 0 1em 4rem 1em;
 }
 
+.hp-project__note {
+  max-width: $p-max;
+  color: #777;
+  // TODO: replace !important when I refactor this old css
+  font-size: 18px !important;
+}
+
 .hp-project__heading {
   @include heading-two;
-  font-size: 2.5rem;//40px;
+  font-size: 2.5rem; //40px;
 }
 
 .hp-project__image {
@@ -32,17 +39,16 @@
 
 .hp-project__number {
   color: #eee;
-  display: block;;
+  display: block;
   flex: 1 0 100%;
   font-size: 6rem;
   font-family: serif;
   line-height: 1.5;
-  margin-bottom:-2rem;
+  margin-bottom: -2rem;
   text-align: center;
 }
 
 @media screen and (min-width: $small) {
-
   .hp-project {
     width: 80%;
     margin: 2rem auto;
@@ -80,7 +86,6 @@
       text-align: left;
     }
 
-
     .hp-project__image {
       margin: unset;
       grid-row: 2;
@@ -96,7 +101,6 @@
 }
 
 @media screen and (min-width: $medium) {
-
   /********************************************
    --------------------------------------------
             Medium breakpoint, no grid
@@ -137,15 +141,12 @@
     font-size: 3.125rem; //50px
   }
 
-
-
   /********************************************
    ++++++++++++++++++++++++++++++++++++++++++++
             Medium breakpoint, yes grid
    ++++++++++++++++++++++++++++++++++++++++++++
    ********************************************/
   @supports (display: grid) {
-
     .hp-project {
       @include standard-grid();
     }
@@ -180,7 +181,7 @@
       }
 
       .hp-project__copy {
-        grid-column: 1/9
+        grid-column: 1/9;
       }
 
       .hp-project__image {
@@ -191,7 +192,6 @@
 }
 
 @media screen and (min-width: $large) {
-
   .hp-project__number {
     font-size: 15rem;
   }
@@ -206,7 +206,7 @@
     }
 
     .hp-project__copy {
-      grid-column: 5/12
+      grid-column: 5/12;
     }
 
     .hp-project__image {
@@ -219,7 +219,7 @@
       }
 
       .hp-project__copy {
-        grid-column: 2/9
+        grid-column: 2/9;
       }
 
       .hp-project__image {
@@ -227,52 +227,49 @@
       }
     }
   }
-
 }
 
 @media screen and (min-width: $max-width) {
-
   .hp-project {
     margin: 0 auto 8rem auto;
   }
 
   @supports (display: grid) {
-  /*
+    /*
    * Case study grid, default
    */
-  .hp-project__copy {
-    grid-column: 6/13;
-    grid-row: a;
-    position: relative;
-  }
-
-  .hp-project__number {
-    grid-column: 6/13;
-  }
-
-  .hp-project__image {
-    grid-column: 1/5;
-    grid-row: b;
-    margin: 0;
-  }
-
-  /*
-   * Case study grid, odd
-   */
-  .hp-project:nth-of-type(odd) {
-
     .hp-project__copy {
-      grid-column: 1/7
+      grid-column: 6/13;
+      grid-row: a;
+      position: relative;
     }
 
     .hp-project__number {
-      grid-column: 1/13;
+      grid-column: 6/13;
     }
 
     .hp-project__image {
-      grid-column: 8/13;
+      grid-column: 1/5;
+      grid-row: b;
+      margin: 0;
     }
-  }
+
+    /*
+   * Case study grid, odd
+   */
+    .hp-project:nth-of-type(odd) {
+      .hp-project__copy {
+        grid-column: 1/7;
+      }
+
+      .hp-project__number {
+        grid-column: 1/13;
+      }
+
+      .hp-project__image {
+        grid-column: 8/13;
+      }
+    }
   }
 
   /*
@@ -281,22 +278,20 @@
   .hp-project--ce .hp-project__image {
     margin-right: -4rem;
   }
-
 }
 
-
-@supports ((-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white))
-  or ((-moz-text-stroke-color: #666)and (-moz-text-fill-color: white)) {
-
+@supports (
+    (-webkit-text-stroke-color: #666) and (-webkit-text-fill-color: white)
+  )
+  or ((-moz-text-stroke-color: #666) and (-moz-text-fill-color: white)) {
   .hp-project__number {
     color: transparent;
     opacity: 0.5;
-       -moz-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
-       -moz-text-stroke-color: $red;
+    -moz-text-stroke-color: $red;
     -webkit-text-stroke-color: $red;
-       -moz-text-stroke-width: 1px;
+    -moz-text-stroke-width: 1px;
     -webkit-text-stroke-width: 1px;
   }
-
 }
