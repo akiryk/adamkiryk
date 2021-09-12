@@ -8,7 +8,7 @@
  *
  */
 
- /**
+/**
  *
  * Component: Chapter
  * -----------------------------------------------------------
@@ -39,9 +39,10 @@
 
 .hp-skills__desc {
   @include body-copy;
+  margin-top: 0;
 }
 
-@media screen and (min-width: $small){
+@media screen and (min-width: $small) {
   .hp-skills {
     width: 80%;
     margin: 2rem auto;
@@ -64,56 +65,53 @@
       grid-column: 2/12;
     }
   }
-
 }
 
-  @media screen and (min-width: $medium){
+@media screen and (min-width: $medium) {
+  .hp-skills {
+    width: calc(65% - 2em);
+    margin-left: 30%;
+  }
 
+  @supports (display: grid) {
     .hp-skills {
-      width: calc(65% - 2em);
-      margin-left: 30%;
+      margin-left: unset;
+      width: unset;
+      @include standard-grid();
     }
 
-    @supports (display: grid) {
-      .hp-skills {
-        margin-left: unset;
-        width: unset;
-        @include standard-grid();
-      }
-
-      .hp-skills__skill {
-        grid-column: 4/12;
-      }
+    .hp-skills__skill {
+      grid-column: 4/12;
     }
   }
+}
 
-  @media screen and (min-width: $large){
-    @supports (display: grid) {
-      .hp-skills__skill {
-        grid-column: 5/12;
-      }
+@media screen and (min-width: $large) {
+  @supports (display: grid) {
+    .hp-skills__skill {
+      grid-column: 5/12;
     }
   }
+}
 
-  @media screen and (min-width: $xlarge){
-    @supports (display: grid) {
-      .hp-skills__skill {
-        grid-column: 5/11;
-        margin: 2rem 0;
-      }
+@media screen and (min-width: $xlarge) {
+  @supports (display: grid) {
+    .hp-skills__skill {
+      grid-column: 5/11;
+      margin: 2rem 0;
     }
   }
+}
 
-  @media screen and (min-width: $max-width){
-
-    @supports (display: grid) {
-      .hp-skills {
-        margin: auto;
-        width: 100%;
-        max-width: $wrapper-width-lg;
-      }
-      .hp-skills__skill {
-        grid-column: 6/12;
-      }
+@media screen and (min-width: $max-width) {
+  @supports (display: grid) {
+    .hp-skills {
+      margin: auto;
+      width: 100%;
+      max-width: $wrapper-width-lg;
+    }
+    .hp-skills__skill {
+      grid-column: 6/12;
     }
   }
+}
