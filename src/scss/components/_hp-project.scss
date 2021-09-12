@@ -149,6 +149,8 @@
   @supports (display: grid) {
     .hp-project {
       @include standard-grid();
+      margin-left: 4rem;
+      margin-right: 4rem;
     }
     /*
      * Case study grid, default
